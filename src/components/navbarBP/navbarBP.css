@@ -1,0 +1,28 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    margin-bottom: 100px;
+}
+
+.navbar-brand{
+    color: white !important;
+    font-size: 300%;
+}
+
+.navbar-brand:hover{
+    color: yellowgreen !important;
+}
+
+.nav-link{
+    color: white !important;
+    font-size: 130%;
+}
+
+.nav-link:hover{
+    color: yellowgreen !important;
+}
+
+.navbar-toggler-icon {
+    border-color: white;
+}

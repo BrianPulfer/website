@@ -1,0 +1,21 @@
+#Index{
+    border: 5px solid grey;
+    margin-bottom: 300px;
+}
+
+.sectionTitle{
+    margin-top: 50px;
+}
+
+.project{
+    margin-bottom: 300px;
+}
+
+.prjimg{
+    max-height: 500px;
+    max-width: 100%;
+}
+
+.bp-paragraph-project{
+    margin: 0;
+}
