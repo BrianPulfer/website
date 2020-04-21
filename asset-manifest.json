@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/BrianPulfer/website/static/css/main.72a46262.chunk.css",
+    "main.js": "/BrianPulfer/website/static/js/main.513a8a87.chunk.js",
+    "main.js.map": "/BrianPulfer/website/static/js/main.513a8a87.chunk.js.map",
+    "runtime-main.js": "/BrianPulfer/website/static/js/runtime-main.e3db3272.js",
+    "runtime-main.js.map": "/BrianPulfer/website/static/js/runtime-main.e3db3272.js.map",
+    "static/css/2.69121389.chunk.css": "/BrianPulfer/website/static/css/2.69121389.chunk.css",
+    "static/js/2.07f6efcf.chunk.js": "/BrianPulfer/website/static/js/2.07f6efcf.chunk.js",
+    "static/js/2.07f6efcf.chunk.js.map": "/BrianPulfer/website/static/js/2.07f6efcf.chunk.js.map",
+    "index.html": "/BrianPulfer/website/index.html",
+    "precache-manifest.77a700704a8a4f047c39f626c1b772c8.js": "/BrianPulfer/website/precache-manifest.77a700704a8a4f047c39f626c1b772c8.js",
+    "service-worker.js": "/BrianPulfer/website/service-worker.js",
+    "static/css/2.69121389.chunk.css.map": "/BrianPulfer/website/static/css/2.69121389.chunk.css.map",
+    "static/css/main.72a46262.chunk.css.map": "/BrianPulfer/website/static/css/main.72a46262.chunk.css.map",
+    "static/js/2.07f6efcf.chunk.js.LICENSE.txt": "/BrianPulfer/website/static/js/2.07f6efcf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3db3272.js",
+    "static/css/2.69121389.chunk.css",
+    "static/js/2.07f6efcf.chunk.js",
+    "static/css/main.72a46262.chunk.css",
+    "static/js/main.513a8a87.chunk.js"
+  ]
+}
