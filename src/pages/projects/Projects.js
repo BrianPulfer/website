@@ -6,10 +6,15 @@ import './Projects.css'
 import BPTitle from "../../components/title/BPTitle";
 import BPParagraph from "../../components/paragraph/BPParagraph";
 
+import DLL from './img/Deep Learning Lab.png'
+import ML from './img/Machine Learning.gif'
+import Bachelor from './img/Machine Learning for disambiguation of scientific article authors.png'
+import NannySearch from './img/NannySearch.png'
+import SmartBin from './img/SmartBin.png'
+import Tiforma from './img/Tiforma.png';
+
 class Projects extends React.Component{
     render() {
-        const base_path = '/resources/img/projects/';
-
         const paragraphSize = '180%';
         const projectLink_paragraphStyle = {
             fontSize: paragraphSize,
@@ -72,7 +77,7 @@ class Projects extends React.Component{
                             </div>
                             <Row className={"project-image"}>
                                 <Col className={'text-center'}>
-                                    <Image className={"prjimg"} src={base_path + 'Machine Learning for disambiguation of scientific article authors.png'} fluid/>
+                                    <Image className={"prjimg"} src={Bachelor} fluid/>
                                 </Col>
                             </Row>
                             <div className={"project-description"}>
@@ -93,7 +98,7 @@ class Projects extends React.Component{
                                 </div>
                                 <div className={"project-link"}>
                                     <p className={"text-center"} style={projectLink_paragraphStyle}>
-                                        Documentation (Italian Only) of the bachelor's thesis can be downloaded at this <a href={"/resources/docs/Brian Pulfer - NannySearch Report.pdf"}>link</a>.
+                                        Documentation (Italian Only) of the bachelor's thesis can be downloaded at this <a href={process.env.PUBLIC_URL+"/resources/docs/Brian Pulfer - Machine Learning for disambiguation of scientific article authors.pdf"}>link</a>.
                                     </p>
                                 </div>
                             </div>
@@ -104,7 +109,7 @@ class Projects extends React.Component{
                             </div>
                             <Row className={"project-image"}>
                                 <Col className={"text-center"}>
-                                    <Image className={"prjimg"} src={base_path + 'Deep Learning Lab.png'} fluid/>
+                                    <Image className={"prjimg"} src={DLL} fluid/>
                                 </Col>
                             </Row>
                             <div className={"project-description"}>
@@ -124,7 +129,7 @@ class Projects extends React.Component{
                             </div>
                             <Row className={"project-image"}>
                                 <Col className={'text-center'}>
-                                    <Image className={"prjimg"} src={base_path + 'Machine Learning.gif'} fluid/>
+                                    <Image className={"prjimg"} src={ML} fluid/>
                                 </Col>
                             </Row>
                             <div className={"project-description"}>
@@ -145,7 +150,7 @@ class Projects extends React.Component{
                             </div>
                             <Row className={"project-image"}>
                                 <Col className={'text-center'}>
-                                    <Image className={"mx-auto prjimg"} src={base_path + 'SmartBin.png'} fluid/>
+                                    <Image className={"mx-auto prjimg"} src={SmartBin} fluid/>
                                 </Col>
                             </Row>
                             <div className={"project-description"}>
@@ -169,7 +174,7 @@ class Projects extends React.Component{
                             </div>
                             <Row className={"project-image"}>
                                 <Col className={"text-center"}>
-                                    <Image className={"prjimg"} src={base_path + 'NannySearch.png'} fluid/>
+                                    <Image className={"prjimg"} src={NannySearch} fluid/>
                                 </Col>
                             </Row>
                             <div className={"project-description"}>
@@ -184,7 +189,7 @@ class Projects extends React.Component{
                                 </div>
                                 <div className={"project-link"}>
                                     <p className={"text-center"} style={projectLink_paragraphStyle}>
-                                        A tiny documentation of the project can be found at the following <a href={"/resources/docs/Brian Pulfer - NannySearch Report.pdf"}>link</a>.
+                                        A tiny documentation of the project can be found at the following <a href={process.env.PUBLIC_URL+"/resources/docs/Brian Pulfer - NannySearch Report.pdf"}>link</a>.
                                     </p>
                                 </div>
                             </div>
@@ -195,7 +200,7 @@ class Projects extends React.Component{
                             </div>
                             <Row className={"project-image"}>
                                 <Col className={"text-center"}>
-                                    <Image className={"prjimg"} src={base_path + 'Tiforma.png'} fluid/>
+                                    <Image className={"prjimg"} src={Tiforma} fluid/>
                                 </Col>
                             </Row>
                             <div className={"project-description"}>

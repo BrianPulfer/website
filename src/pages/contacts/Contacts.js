@@ -5,6 +5,13 @@ import './Contacts.css';
 import BPTitle from "../../components/title/BPTitle";
 import BPParagraph from "../../components/paragraph/BPParagraph";
 
+import Mail from './img/gmail.png'
+import Linkedin from './img/linkedin.png'
+import Twitter from './img/twitter.png'
+import GitHub from './img/github.png'
+import Kaggle from './img/kaggle.png'
+import TDS from './img/tds.png'
+
 class Contacts extends React.Component {
     render() {
         const base_path = '/resources/img/contacts/';
@@ -16,7 +23,7 @@ class Contacts extends React.Component {
                 <CardGroup className={"contacts"}>
                     <Card id={"mail"} className={"contact"}>
                         <a href={'mailto:brianpulfer95@gmail.com'}>
-                            <CardImg variant={'top'} src={base_path + 'gmail.png'}/>
+                            <CardImg variant={'top'} src={Mail}/>
                         </a>
                         <Card.Body>
                             <Card.Title>
@@ -34,7 +41,7 @@ class Contacts extends React.Component {
                     </Card>
                     <Card id={"linkedin"} className={"contact"}>
                         <a href={'https://www.linkedin.com/in/brian-pulfer-91a65417b/'}>
-                            <CardImg variant={'top'} src={base_path + 'linkedin.png'}/>
+                            <CardImg variant={'top'} src={Linkedin}/>
                         </a>
                         <Card.Body>
                             <Card.Title>
@@ -52,7 +59,7 @@ class Contacts extends React.Component {
                     </Card>
                     <Card id={"twitter"} className={"contact"}>
                         <a href={'https://twitter.com/PulferBrian21'}>
-                            <CardImg variant={'top'} src={base_path + 'twitter.png'}/>
+                            <CardImg variant={'top'} src={Twitter}/>
                         </a>
                         <Card.Body>
                             <Card.Title>
@@ -68,7 +75,7 @@ class Contacts extends React.Component {
                     </Card>
                     <Card id={"github"} className={"contact"}>
                         <a href={'https://github.com/BrianPulfer'}>
-                            <CardImg variant={'top'} src={base_path + 'github.png'}/>
+                            <CardImg variant={'top'} src={GitHub}/>
                         </a>
                         <Card.Body>
                             <Card.Title>
@@ -85,7 +92,7 @@ class Contacts extends React.Component {
                     </Card>
                     <Card id={"kaggle"} className={"contact"}>
                         <a href={'https://www.kaggle.com/brianpulfer'}>
-                            <CardImg variant={'top'} src={base_path + 'kaggle.png'}/>
+                            <CardImg variant={'top'} src={Kaggle}/>
                         </a>
                         <Card.Body>
                             <Card.Title>
@@ -101,7 +108,7 @@ class Contacts extends React.Component {
                     </Card>
                     <Card id={"tds"} className={"contact"}>
                         <a href={'https://medium.com/@brianpulfer'}>
-                            <CardImg variant={'top'} src={base_path + 'tds.png'}/>
+                            <CardImg variant={'top'} src={TDS}/>
                         </a>
                         <Card.Body>
                             <Card.Title>

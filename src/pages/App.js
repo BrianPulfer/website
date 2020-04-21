@@ -16,11 +16,11 @@ class App extends React.Component {
                 <NavbarBP />
                 <Container fluid>
                     <Router>
-                        <Route exact path="/" component={Me}/>
-                        <Route path={"/Me"} component={Me}/>
-                        <Route path={"/Career"} component={Career}/>
-                        <Route path={"/Projects"} component={Projects}/>
-                        <Route path={"/Contacts"} component={Contacts}/>
+                        <Route exact path={process.env.PUBLIC_URL+"/"} component={Me}/>
+                        <Route path={process.env.PUBLIC_URL+"/Me"} component={Me}/>
+                        <Route path={process.env.PUBLIC_URL+"/Career"} component={Career}/>
+                        <Route path={process.env.PUBLIC_URL+"/Projects"} component={Projects}/>
+                        <Route path={process.env.PUBLIC_URL+"/Contacts"} component={Contacts}/>
                     </Router>
                 </Container>
             </React.Fragment>

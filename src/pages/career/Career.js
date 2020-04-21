@@ -6,6 +6,11 @@ import BPParagraph from "../../components/paragraph/BPParagraph";
 import './Career.css';
 import {Image, Row, Col} from "react-bootstrap";
 
+import CPC from './img/cpc.jpg'
+import Army from './img/army.png'
+import SUPSI from './img/supsi.png'
+import USI from './img/usi.png'
+
 class Career extends React.Component{
 
     render() {
@@ -16,7 +21,7 @@ class Career extends React.Component{
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image src={base_path + 'usi.png'} fluid/>
+                            <Image src={USI} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"} text={"Master in Artificial Intelligence (2019 - 2021)"}/>
@@ -30,7 +35,7 @@ class Career extends React.Component{
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image src={base_path + 'supsi.png'} fluid/>
+                            <Image src={SUPSI} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"} text={"Bachelor in Computer Science (2016 - 2019)"}/>
@@ -45,7 +50,7 @@ class Career extends React.Component{
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image id={"army_img"} src={base_path + 'army.png'} fluid/>
+                            <Image id={"army_img"} src={Army} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"} text={"Service by the Swiss Army (2015 - 2016)"}/>
@@ -60,7 +65,7 @@ class Career extends React.Component{
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image src={base_path + 'cpc.jpg'} fluid/>
+                            <Image src={CPC} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"} text={"Commercial High School (2010 - 2014)"}/>
