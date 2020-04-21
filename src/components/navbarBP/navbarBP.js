@@ -3,6 +3,7 @@ import {Navbar, Nav} from 'react-bootstrap';
 
 import './navbarBP.css'
 
+
 class NavbarBP extends React.Component{
 
     constructor(props) {
@@ -18,6 +19,7 @@ class NavbarBP extends React.Component{
     }
 
     render() {
+        const home_link = process.env.PUBLIC_URL+'/';
         const me_link = process.env.PUBLIC_URL+'/Me';
         const career_link = process.env.PUBLIC_URL+'/Career';
         const projects_link = process.env.PUBLIC_URL+'/Projects';
@@ -25,7 +27,7 @@ class NavbarBP extends React.Component{
 
         return (
             <Navbar expand="lg" bg={"dark"}>
-                <Navbar.Brand className="BPBrand" href={me_link}>Brian Pulfer</Navbar.Brand>
+                <Navbar.Brand className="BPBrand" href={home_link}>Brian Pulfer</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
