@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Router, Route} from "react-router-dom";
+import {BrowserRouter, Router, Route, HashRouter} from "react-router-dom";
 
 import Me from "./me/Me";
 import Career from "./career/Career";
@@ -15,13 +15,13 @@ class App extends React.Component {
             <React.Fragment>
                 <NavbarBP />
                 <Container fluid>
-                    <BrowserRouter basename={process.env.PUBLIC_URL}>
+                    <HashRouter>
                         <Route exact path={"/"} component={Me}/>
                         <Route path={"/Me"} component={Me}/>
                         <Route path={"/Career"} component={Career}/>
                         <Route path={"/Projects"} component={Projects}/>
                         <Route path={"/Contacts"} component={Contacts}/>
-                    </BrowserRouter>
+                    </HashRouter>
                 </Container>
             </React.Fragment>
         )
