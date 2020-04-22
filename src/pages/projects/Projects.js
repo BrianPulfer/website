@@ -1,6 +1,7 @@
 import React from "react";
 
 import {Image, ListGroup, ListGroupItem, Row, Col} from 'react-bootstrap'
+import {HashLink} from "react-router-hash-link";
 
 import './Projects.css'
 import BPTitle from "../../components/title/BPTitle";
@@ -12,6 +13,7 @@ import Bachelor from './img/Machine Learning for disambiguation of scientific ar
 import NannySearch from './img/NannySearch.png'
 import SmartBin from './img/SmartBin.png'
 import Tiforma from './img/Tiforma.png';
+
 
 class Projects extends React.Component{
     render() {
@@ -29,41 +31,40 @@ class Projects extends React.Component{
                     <div id={"AI-Index"}>
                         <ListGroup>
                             <ListGroupItem>
-                                <a href={"#AI1"}>
+                                <HashLink to={"#AI1"}>
                                     <BPTitle size={"200%"} text={"Machine Learning for disambiguation of scientific article authors"} side={true}/>
-                                </a>
+                                </HashLink>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <a href={"#AI2"}>
+                                <HashLink to={"#AI2"}>
                                     <BPTitle size={"200%"} text={"Deep Learning Lab"} side={true}/>
-                                </a>
+                                </HashLink>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <a href={"#AI3"}>
+                                <HashLink to={"#AI3"}>
                                     <BPTitle size={"200%"} text={"Machine Learning"} side={true}/>
-                                </a>
+                                </HashLink>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <a href={"#AI4"}>
+                                <HashLink to={"#AI4"}>
                                     <BPTitle size={"200%"} text={"SmartBin (USI Hackathon 2019)"} side={true}/>
-                                </a>
+                                </HashLink>
                             </ListGroupItem>
                         </ListGroup>
-
                     </div>
 
                     <BPTitle classes={"sectionTitle"} size={"400%"} text={"Others"} side={true}/>
                     <div id={"Others-Index"}>
                         <ListGroup>
                             <ListGroupItem>
-                                <a href={"#O1"}>
+                                <HashLink to={"#O1"}>
                                     <BPTitle size={"200%"} text={"Nanny Search"} side={true}/>
-                                </a>
+                                </HashLink>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <a href={"#O2"}>
+                                <HashLink to={"#O2"}>
                                     <BPTitle size={"200%"} text={"Tiforma Blockchain"} side={true}/>
-                                </a>
+                                </HashLink>
                             </ListGroupItem>
                         </ListGroup>
                     </div>
