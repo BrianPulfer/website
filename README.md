@@ -9,4 +9,4 @@ In the website, you'll be able to know more about who I am, my career, projects 
 
 # Link
 The website is reachable from the following link:
-<center><a href="https://brianpulfer.github.io/website">https://brianpulfer.github.io/website</a></center>
+<center><a href="https://brianpulfer.ch">brianpulfer.ch</a></center>
