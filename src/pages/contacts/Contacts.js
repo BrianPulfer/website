@@ -14,7 +14,7 @@ import TDS from './img/tds.png'
 
 class Contacts extends React.Component {
     render() {
-        const base_path = '/resources/img/contacts/';
+
         return (
             <div>
                 <BPTitle size={"600%"} text={"Contacts"}/>
@@ -33,10 +33,9 @@ class Contacts extends React.Component {
                                 Feel free to send me e-mails if you are interest in learning more about who I am and
                                 what i do.
                             </Card.Text>
-                            <Card.Link>
-                                <Button className={"contact-btn"} href={'mailto:brianpulfer95@gmail.com'}>Send me an
-                                    e-mail</Button>
-                            </Card.Link>
+                            <Button className={"contact-btn"} href={'mailto:brianpulfer95@gmail.com'}>Send me an
+                                    e-mail
+                            </Button>
                         </Card.Body>
                     </Card>
                     <Card id={"linkedin"} className={"contact"}>
@@ -50,11 +49,10 @@ class Contacts extends React.Component {
                             <Card.Text>
                                 Everything about my professional carreer can be found on my LinkedIn profile.
                             </Card.Text>
-                            <Card.Link>
-                                <Button className={"contact-btn"}
+                            <Button className={"contact-btn"}
                                         href={'https://www.linkedin.com/in/brian-pulfer-91a65417b/'}>Find me on
-                                    LinkedIn</Button>
-                            </Card.Link>
+                                    LinkedIn
+                            </Button>
                         </Card.Body>
                     </Card>
                     <Card id={"twitter"} className={"contact"}>
@@ -68,9 +66,8 @@ class Contacts extends React.Component {
                             <Card.Text>
                                 Usually I only tweet about my own major achievements and deep thoughts.
                             </Card.Text>
-                            <Card.Link>
-                                <Button className={"contact-btn"} href={'https://twitter.com/PulferBrian21'}>Tweet @Brian</Button>
-                            </Card.Link>
+                            <Button className={"contact-btn"} href={'https://twitter.com/PulferBrian21'}>Tweet @Brian
+                            </Button>
                         </Card.Body>
                     </Card>
                     <Card id={"github"} className={"contact"}>
@@ -84,10 +81,9 @@ class Contacts extends React.Component {
                             <Card.Text>
                                 Checkout some of my professional work and toy-projects, as well as my contributions.
                             </Card.Text>
-                            <Card.Link>
-                                <Button className={"contact-btn"} href={'https://github.com/BrianPulfer'}>Find me on
-                                    GitHub</Button>
-                            </Card.Link>
+                            <Button className={"contact-btn"} href={'https://github.com/BrianPulfer'}>Find me on
+                                    GitHub
+                            </Button>
                         </Card.Body>
                     </Card>
                     <Card id={"kaggle"} className={"contact"}>
@@ -101,9 +97,7 @@ class Contacts extends React.Component {
                             <Card.Text>
                                 In my free time I like to compete through some challenges and get inspired by data.
                             </Card.Text>
-                            <Card.Link>
-                                <Button className={"contact-btn"} href={'https://www.kaggle.com/brianpulfer'}>My challenges</Button>
-                            </Card.Link>
+                            <Button className={"contact-btn"} href={'https://www.kaggle.com/brianpulfer'}>My challenges</Button>
                         </Card.Body>
                     </Card>
                     <Card id={"tds"} className={"contact"}>
@@ -117,10 +111,9 @@ class Contacts extends React.Component {
                             <Card.Text>
                                 Some of my work / thoughts that I felt worth sharing can be found at my TDS account.
                             </Card.Text>
-                            <Card.Link>
-                                <Button className={"contact-btn"} href={'https://medium.com/@brianpulfer'}>Read my
-                                    posts</Button>
-                            </Card.Link>
+                            <Button className={"contact-btn"} href={'https://medium.com/@brianpulfer'}>Read my
+                                    posts
+                            </Button>
                         </Card.Body>
                     </Card>
                 </CardGroup>
