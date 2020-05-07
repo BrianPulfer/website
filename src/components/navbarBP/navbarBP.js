@@ -6,18 +6,6 @@ import './navbarBP.css'
 
 class NavbarBP extends React.Component{
 
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount() {
-        // Called right after component renders
-    }
-
-    componentWillUnmount() {
-        // Called right before component will be deleted
-    }
-
     render() {
         const home_link = process.env.PUBLIC_URL+'/';
         const me_link = process.env.PUBLIC_URL+'/#/Me';

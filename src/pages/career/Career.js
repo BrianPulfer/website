@@ -14,8 +14,6 @@ import USI from './img/usi.png'
 class Career extends React.Component{
 
     render() {
-        const base_path = '/resources/img/career/';
-
         return (
             <div>
                 <div className={"career-step"}>

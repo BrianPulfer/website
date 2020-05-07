@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Router, Route, HashRouter} from "react-router-dom";
+import {Route, HashRouter} from "react-router-dom";
 
 import Me from "./me/Me";
 import Career from "./career/Career";
