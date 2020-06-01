@@ -170,6 +170,11 @@ class Projects extends React.Component{
                                         You can visit the project's repository at the following <a href={"https://github.com/BrianPulfer/Learning-to-drive-by-crashing"}>link</a>.
                                     </p>
                                 </div>
+                                <div className={"project-link"}>
+                                    <p className={"text-center"} style={projectLink_paragraphStyle}>
+                                        A very brief paper of what has been done during the project can be downloaded at the following <a href={process.env.PUBLIC_URL+"/resources/docs/Brian Pulfer - Self driving Robot - Final Paper.pdf"}>link</a>.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <div id={'AI5'} className={"project"}>
