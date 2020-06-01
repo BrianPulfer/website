@@ -13,6 +13,7 @@ import Bachelor from './img/Machine Learning for disambiguation of scientific ar
 import NannySearch from './img/NannySearch.png'
 import SmartBin from './img/SmartBin.png'
 import Tiforma from './img/Tiforma.png';
+import SDR from './img/Self Driving Robot.gif'
 
 
 class Projects extends React.Component{
@@ -47,6 +48,11 @@ class Projects extends React.Component{
                             </ListGroupItem>
                             <ListGroupItem>
                                 <HashLink to={"#AI4"}>
+                                    <BPTitle size={"200%"} text={"Self-driving Robot"} side={true}/>
+                                </HashLink>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <HashLink to={"#AI5"}>
                                     <BPTitle size={"200%"} text={"SmartBin (USI Hackathon 2019)"} side={true}/>
                                 </HashLink>
                             </ListGroupItem>
@@ -146,6 +152,27 @@ class Projects extends React.Component{
                             </div>
                         </div>
                         <div id={'AI4'} className={"project"}>
+                            <div className={"project-title"}>
+                                <BPTitle classes={"prjtit"} text={"Self-driving Robot"} />
+                            </div>
+                            <Row className={"project-image"}>
+                                <Col className={'text-center'}>
+                                    <Image className={"mx-auto prjimg"} src={SDR} fluid/>
+                                </Col>
+                            </Row>
+                            <div className={"project-description"}>
+                                <BPParagraph size={paragraphSize} className={"p bp-paragraph-project"} text={'This project represents the final assignment of the course of Robotics held by the University of Southern Switzerland (USI). The goal of the project was to use both the theoretical and practical knowledge in the field of robotics to implement some complex program that would make the robot accomplish some goals.'}/>
+                                <BPParagraph size={paragraphSize} className={"p bp-paragraph-project"} text={'The project me and my team (2 other persons) came up with is a self-driving robot that, with the use of CNN, learns to avoid obstacles and walls in a virtual environment (ROS + Gazebo).'}/>
+                            </div>
+                            <div className={"project-links"}>
+                                <div className={"project-link"}>
+                                    <p className={"text-center"} style={projectLink_paragraphStyle}>
+                                        You can visit the project's repository at the following <a href={"https://github.com/BrianPulfer/Learning-to-drive-by-crashing"}>link</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id={'AI5'} className={"project"}>
                             <div className={"project-title"}>
                                 <BPTitle classes={"prjtit"} text={"SmartBin (USI Hackathon 2019)"} />
                             </div>
