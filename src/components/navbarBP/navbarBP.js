@@ -8,10 +8,10 @@ class NavbarBP extends React.Component{
 
     render() {
         const home_link = process.env.PUBLIC_URL+'/';
-        const me_link = process.env.PUBLIC_URL+'/#/Me';
-        const career_link = process.env.PUBLIC_URL+'/#/Career';
-        const projects_link = process.env.PUBLIC_URL+'/#/Projects';
-        const contacts_link = process.env.PUBLIC_URL+'/#/Contacts';
+        const me_link = process.env.PUBLIC_URL+'/Me';
+        const career_link = process.env.PUBLIC_URL+'/Career';
+        const projects_link = process.env.PUBLIC_URL+'/Projects';
+        const contacts_link = process.env.PUBLIC_URL+'/Contacts';
 
         return (
             <Navbar expand="lg" bg={"dark"}>

@@ -40,7 +40,7 @@ class Career extends React.Component{
                     <BPParagraph size={"150%"}
                                  text={
                                      "From September 2016 to September 2019 I have been studying computer science by the University of Applied Sciences of Southern Switzerland (SUPSI - Scuola Universitaria Professionale della Svizzera Italiana) were I obtained my degree in Computer Science." +
-                                     "During these 3 years I have learned a lot both in mathematics subjects, such as Linear Algebra, Calculus, Probability, Statistics, both in computer science subjects such as algorithms and data structures, software engineering, design patterns, agile development, through many practical projects including a graphic engine written in C++ (OpenGL) and a web application based on blockchain."
+                                     " During these 3 years I have learned a lot both in mathematics subjects, such as Linear Algebra, Calculus, Probability, Statistics, both in computer science subjects such as algorithms and data structures, software engineering, design patterns, agile development, through many practical projects."
                                  }
                     />
                 </div>

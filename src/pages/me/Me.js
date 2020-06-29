@@ -34,7 +34,7 @@ class Me extends React.Component{
                 <BPParagraph size={paragraphSize}
                     text={
                         " My biggest interests are music, books and video games. Football is my biggest passion and I feel that sports are the biggest source of happiness, this is why I also frequent the gym regularly." +
-                        " I also worry about living my life in the best possible way, that's why I like reading about philosophy (mainly Aristotle) and try to carry a mentally healthy lifestyle through meditation and gratitude."
+                        " I also worry about living my life in the best possible way, that's why I like reading about philosophy and try to carry a mentally healthy lifestyle through meditation and gratitude."
                     }
                 />
 
