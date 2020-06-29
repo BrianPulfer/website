@@ -1,28 +1,24 @@
 import React from "react";
 import {Navbar, Nav} from 'react-bootstrap';
 
+import {HOME_PATH, ME_PATH, CAREER_PATH, PROJECTS_PATH, CONTACTS_PATH} from './../../utilities/paths.js'
+
 import './navbarBP.css'
 
 
 class NavbarBP extends React.Component{
 
     render() {
-        const home_link = process.env.PUBLIC_URL+'/';
-        const me_link = process.env.PUBLIC_URL+'/Me';
-        const career_link = process.env.PUBLIC_URL+'/Career';
-        const projects_link = process.env.PUBLIC_URL+'/Projects';
-        const contacts_link = process.env.PUBLIC_URL+'/Contacts';
-
         return (
             <Navbar expand="lg" bg={"dark"}>
-                <Navbar.Brand className="BPBrand" href={home_link}>Brian Pulfer</Navbar.Brand>
+                <Navbar.Brand className="BPBrand" href={HOME_PATH}>Brian Pulfer</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link href={me_link}>Me</Nav.Link>
-                        <Nav.Link href={career_link}>Career</Nav.Link>
-                        <Nav.Link href={projects_link}>Projects</Nav.Link>
-                        <Nav.Link href={contacts_link}>Contacts</Nav.Link>
+                        <Nav.Link href={ME_PATH}>Me</Nav.Link>
+                        <Nav.Link href={CAREER_PATH}>Career</Nav.Link>
+                        <Nav.Link href={PROJECTS_PATH}>Projects</Nav.Link>
+                        <Nav.Link href={CONTACTS_PATH}>Contacts</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

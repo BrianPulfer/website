@@ -9,6 +9,8 @@ import Contacts from "./contacts/Contacts";
 import Container from "react-bootstrap/Container";
 import NavbarBP from "../components/navbarBP/navbarBP";
 
+import {HOME_PATH, ME_PATH, CAREER_PATH, PROJECTS_PATH, CONTACTS_PATH} from './../utilities/paths.js'
+
 class App extends React.Component {
     render() {
         return (
@@ -16,11 +18,11 @@ class App extends React.Component {
                 <NavbarBP />
                 <Container fluid>
                     <BrowserRouter>
-                        <Route exact path={"/"} component={Me}/>
-                        <Route path={"/Me"} component={Me}/>
-                        <Route path={"/Career"} component={Career}/>
-                        <Route path={"/Projects"} component={Projects}/>
-                        <Route path={"/Contacts"} component={Contacts}/>
+                        <Route exact path={HOME_PATH} component={Me}/>
+                        <Route path={ME_PATH} component={Me}/>
+                        <Route path={CAREER_PATH} component={Career}/>
+                        <Route path={PROJECTS_PATH} component={Projects}/>
+                        <Route path={CONTACTS_PATH} component={Contacts}/>
                     </BrowserRouter>
                 </Container>
             </React.Fragment>
