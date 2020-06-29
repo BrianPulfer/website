@@ -1,14 +1,18 @@
 import React from "react";
 import {Navbar, Nav} from 'react-bootstrap';
 
-import {HOME_PATH, ME_PATH, CAREER_PATH, PROJECTS_PATH, CONTACTS_PATH} from './../../utilities/paths.js'
-
 import './navbarBP.css'
 
 
 class NavbarBP extends React.Component{
 
     render() {
+        const HOME_PATH = process.env.PUBLIC_URL+'/';
+        const ME_PATH = process.env.PUBLIC_URL+'/Me';
+        const CAREER_PATH = process.env.PUBLIC_URL+'/Career';
+        const PROJECTS_PATH = process.env.PUBLIC_URL+'/Projects';
+        const CONTACTS_PATH = process.env.PUBLIC_URL+'/Contacts';
+
         return (
             <Navbar expand="lg" bg={"dark"}>
                 <Navbar.Brand className="BPBrand" href={HOME_PATH}>Brian Pulfer</Navbar.Brand>
