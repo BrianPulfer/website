@@ -28,13 +28,13 @@ class Me extends React.Component{
                 <BPParagraph size={paragraphSize}
                     text={
                         "My name is Brian Pulfer, I am a 24 years old software engineer currently studying Artificial Intelligence in a master course offered by the University of Southern Switzerland (USI)." +
-                        " I was born on September 21st, 1995 in my hometown Lugano (Southern part of Switzerland) where I have been living in ever since. I also served the Swiss Army from March 2015 to January 2016 (that's where I learned french), completing all of my obligations as a Swiss citizen."
+                        " I was born on September 21st, 1995 in my hometown Lugano (Southern part of Switzerland) where I have been living in ever since. I also served the Swiss Army from March 2015 to January 2016, completing all of my obligations as a Swiss citizen."
                     }
                 />
                 <BPParagraph size={paragraphSize}
                     text={
                         " My biggest interests are music, books and video games. Football is my biggest passion and I feel that sports are the biggest source of happiness, this is why I also frequent the gym regularly." +
-                        " I also worry about living my life in the best possible way, that's why I like reading about philosophy and try to carry a mentally healthy lifestyle through meditation and gratitude."
+                        " I also worry about living my life in the best possible way, that's why I like reading about philosophy and try to carry a mentally healthy lifestyle through meditation."
                     }
                 />
 
