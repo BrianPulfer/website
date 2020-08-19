@@ -9,6 +9,8 @@ import Contacts from "./contacts/Contacts";
 import Container from "react-bootstrap/Container";
 import NavbarBP from "../components/navbarBP/navbarBP";
 
+import './App.css'
+
 class App extends React.Component {
     render() {
         return (
