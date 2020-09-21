@@ -39,7 +39,7 @@ class Contacts extends React.Component {
                         </Card.Body>
                     </Card>
                     <Card id={"linkedin"} className={"contact"}>
-                        <a href={'https://www.linkedin.com/in/brian-pulfer-91a65417b/'}>
+                        <a href={'https://www.linkedin.com/in/BrianPulfer/'}>
                             <CardImg variant={'top'} src={Linkedin}/>
                         </a>
                         <Card.Body>
@@ -50,7 +50,7 @@ class Contacts extends React.Component {
                                 Everything about my professional carreer can be found on my LinkedIn profile.
                             </Card.Text>
                             <Button className={"contact-btn"}
-                                        href={'https://www.linkedin.com/in/brian-pulfer-91a65417b/'}>Find me on
+                                        href={'https://www.linkedin.com/in/BrianPulfer/'}>Find me on
                                     LinkedIn
                             </Button>
                         </Card.Body>
