@@ -27,7 +27,7 @@ class Me extends React.Component{
                 <BPTitle classes={"h1 bp-title-me"} size={titleSize} color={"black"} text={"About Me"} underline={true}/>
                 <BPParagraph size={paragraphSize}
                     text={
-                        "My name is Brian Pulfer, I am a 24 years old software engineer currently studying Artificial Intelligence in a master course offered by the University of Southern Switzerland (USI)." +
+                        "My name is Brian Pulfer, I am a 25 years old software engineer currently studying Artificial Intelligence in a master course offered by the University of Southern Switzerland (USI)." +
                         " I was born on September 21st, 1995 in my hometown Lugano (Southern part of Switzerland) where I have been living in ever since. I also served the Swiss Army from March 2015 to January 2016, completing all of my obligations as a Swiss citizen."
                     }
                 />
