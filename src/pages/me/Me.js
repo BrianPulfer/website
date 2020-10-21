@@ -4,7 +4,7 @@ import {Button, Image, Row, Col} from 'react-bootstrap';
 import BPTitle from "../../components/title/BPTitle";
 import BPParagraph from "../../components/paragraph/BPParagraph";
 
-import MeHome from './img/MeHome.png';
+import MeHome from './img/MeHome.jpg';
 
 import './Me.css';
 
@@ -18,7 +18,7 @@ class Me extends React.Component{
             <div id={"Image"}>
                 <Row>
                     <Col className={"text-center"}>
-                        <Image id={"me-img"} src={MeHome} className={"mx-auto"} rounded fluid />
+                        <Image id={"me-img"} src={MeHome} className={"mx-auto"} fluid />
                     </Col>
                 </Row>
             </div>

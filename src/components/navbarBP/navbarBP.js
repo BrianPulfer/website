@@ -14,7 +14,7 @@ class NavbarBP extends React.Component{
         const CONTACTS_PATH = process.env.PUBLIC_URL+'/#/Contacts';
 
         return (
-            <Navbar expand="lg" bg={"dark"}>
+            <Navbar expand="lg">
                 <Navbar.Brand className="BPBrand" href={HOME_PATH}>Brian Pulfer</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
