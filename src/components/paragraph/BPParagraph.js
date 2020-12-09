@@ -1,6 +1,6 @@
 import React from "react";
 
-//import './BPParagraph.css'
+import './BPParagraph.css'
 
 class BPParagraph extends React.Component{
     constructor(props) {
