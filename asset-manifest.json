@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f14bf15.chunk.css",
-    "main.js": "/static/js/main.92f3e0b2.chunk.js",
-    "main.js.map": "/static/js/main.92f3e0b2.chunk.js.map",
+    "main.css": "/static/css/main.b30b50a7.chunk.css",
+    "main.js": "/static/js/main.43889e6f.chunk.js",
+    "main.js.map": "/static/js/main.43889e6f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d1594a52.js",
     "runtime-main.js.map": "/static/js/runtime-main.d1594a52.js.map",
-    "static/js/2.5710c823.chunk.js": "/static/js/2.5710c823.chunk.js",
-    "static/js/2.5710c823.chunk.js.map": "/static/js/2.5710c823.chunk.js.map",
+    "static/js/2.e1b90523.chunk.js": "/static/js/2.e1b90523.chunk.js",
+    "static/js/2.e1b90523.chunk.js.map": "/static/js/2.e1b90523.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f589cd3e7de2fe786d766adb29544ee2.js": "/precache-manifest.f589cd3e7de2fe786d766adb29544ee2.js",
+    "precache-manifest.2370dc9bb68de1007e0701cfb707cb28.js": "/precache-manifest.2370dc9bb68de1007e0701cfb707cb28.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.7f14bf15.chunk.css.map": "/static/css/main.7f14bf15.chunk.css.map",
-    "static/js/2.5710c823.chunk.js.LICENSE.txt": "/static/js/2.5710c823.chunk.js.LICENSE.txt",
+    "static/css/main.b30b50a7.chunk.css.map": "/static/css/main.b30b50a7.chunk.css.map",
+    "static/js/2.e1b90523.chunk.js.LICENSE.txt": "/static/js/2.e1b90523.chunk.js.LICENSE.txt",
     "static/media/Deep Learning Lab.png": "/static/media/Deep Learning Lab.49a3dbf9.png",
     "static/media/Machine Learning for disambiguation of scientific article authors.png": "/static/media/Machine Learning for disambiguation of scientific article authors.41431c6b.png",
     "static/media/Machine Learning.gif": "/static/media/Machine Learning.f2976ba4.gif",
     "static/media/MeHome.jpg": "/static/media/MeHome.bb3cba69.jpg",
     "static/media/NannySearch.png": "/static/media/NannySearch.cf67c8be.png",
+    "static/media/BPParagraph.css": "/static/media/Roboto-Thin.321de678.ttf",
     "static/media/Self Driving Robot.gif": "/static/media/Self Driving Robot.fa042b6d.gif",
     "static/media/SmartBin.png": "/static/media/SmartBin.7378cb9f.png",
     "static/media/StyleGAN2 Distillation.png": "/static/media/StyleGAN2 Distillation.65193b1f.png",
@@ -30,8 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d1594a52.js",
-    "static/js/2.5710c823.chunk.js",
-    "static/css/main.7f14bf15.chunk.css",
-    "static/js/main.92f3e0b2.chunk.js"
+    "static/js/2.e1b90523.chunk.js",
+    "static/css/main.b30b50a7.chunk.css",
+    "static/js/main.43889e6f.chunk.js"
   ]
 }
