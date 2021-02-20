@@ -30,6 +30,7 @@ class NavbarBP extends React.Component {
 
     closeNav() {
         this.setState({navExpanded: false});
+        window.scrollTo(0, 0);
     }
 
     render() {
