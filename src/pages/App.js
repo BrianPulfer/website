@@ -13,7 +13,6 @@ import './App.css'
 
 // TODO: Fix port-view for all pages except for Contacts
 // TODO: Fix scrolling issue (scrolling on one page results in scrolling in all)
-// TODO: Fix non-closing menu after getting clicked
 // TODO: Change how main picture gets displayed based on screen size
 // TODO: Change from hash-routing to browser-routing
 // TODO: Change navbar to be transparent and color-changing
