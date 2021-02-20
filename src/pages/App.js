@@ -13,7 +13,6 @@ import './App.css'
 
 // TODO: Fix port-view for all pages except for Contacts
 // TODO: Change how main picture gets displayed based on screen size
-// TODO: Change from hash-routing to browser-routing
 // TODO: Change navbar to be transparent and color-changing
 
 class App extends React.Component {
