@@ -18,7 +18,8 @@ class Contacts extends React.Component {
         return (
             <div>
                 <BPTitle size={"600%"} text={"Contacts"}/>
-                <BPParagraph size={"200%"} text={"Here are some ways you can contact me to learn more about who I am."} />
+                <BPParagraph size={"200%"}
+                             text={"Here are some ways you can contact me to learn more about who I am."}/>
 
                 <CardGroup className={"contacts"}>
                     <Card id={"mail"} className={"contact"}>
@@ -34,7 +35,7 @@ class Contacts extends React.Component {
                                 what i do.
                             </Card.Text>
                             <Button className={"contact-btn"} href={'mailto:brianpulfer95@gmail.com'}>Send me an
-                                    e-mail
+                                e-mail
                             </Button>
                         </Card.Body>
                     </Card>
@@ -50,8 +51,8 @@ class Contacts extends React.Component {
                                 Everything about my professional carreer can be found on my LinkedIn profile.
                             </Card.Text>
                             <Button className={"contact-btn"}
-                                        href={'https://www.linkedin.com/in/BrianPulfer/'}>Find me on
-                                    LinkedIn
+                                    href={'https://www.linkedin.com/in/BrianPulfer/'}>Find me on
+                                LinkedIn
                             </Button>
                         </Card.Body>
                     </Card>
@@ -82,7 +83,7 @@ class Contacts extends React.Component {
                                 Checkout some of my professional work and toy-projects, as well as my contributions.
                             </Card.Text>
                             <Button className={"contact-btn"} href={'https://github.com/BrianPulfer'}>Find me on
-                                    GitHub
+                                GitHub
                             </Button>
                         </Card.Body>
                     </Card>
@@ -97,7 +98,8 @@ class Contacts extends React.Component {
                             <Card.Text>
                                 In my free time I like to compete through some challenges and get inspired by data.
                             </Card.Text>
-                            <Button className={"contact-btn"} href={'https://www.kaggle.com/brianpulfer'}>My challenges</Button>
+                            <Button className={"contact-btn"} href={'https://www.kaggle.com/brianpulfer'}>My
+                                challenges</Button>
                         </Card.Body>
                     </Card>
                     <Card id={"tds"} className={"contact"}>
@@ -112,7 +114,7 @@ class Contacts extends React.Component {
                                 Some of my work / thoughts that I felt worth sharing can be found at my TDS account.
                             </Card.Text>
                             <Button className={"contact-btn"} href={'https://medium.com/@brianpulfer'}>Read my
-                                    posts
+                                posts
                             </Button>
                         </Card.Body>
                     </Card>

@@ -11,7 +11,7 @@ import Army from './img/army.png'
 import SUPSI from './img/supsi.png'
 import USI from './img/usi.png'
 
-class Career extends React.Component{
+class Career extends React.Component {
 
     render() {
         return (
@@ -22,10 +22,11 @@ class Career extends React.Component{
                             <Image src={USI} fluid/>
                         </Col>
                     </Row>
-                    <BPTitle className={"bp-title-career"} text={"Internship as Machine Learning Engineer (July & August 2020)"}/>
+                    <BPTitle className={"bp-title-career"}
+                             text={"Internship as Machine Learning Engineer (July & August 2020)"}/>
                     <BPParagraph size={"150%"}
                                  text={
-                                     "During the summer of 2020, I have been working as a Machine Learning Engineer by the University of Southern Switzerland (USI) on a project regarding image classification, object detection and segmentation."+
+                                     "During the summer of 2020, I have been working as a Machine Learning Engineer by the University of Southern Switzerland (USI) on a project regarding image classification, object detection and segmentation." +
                                      " During this short but enriching experience I have been working daily with frameworks such as Pytorch, Tensorflow's Keras and OpenCV. With these frameworks, operations such as image processing, data augmentation and transfer-learning were carried out."
                                  }
                     />
@@ -84,9 +85,9 @@ class Career extends React.Component{
                     </Row>
                     <BPTitle className={"bp-title-career"} text={"Commercial High School (2010 - 2014)"}/>
                     <BPParagraph size={"150%"}
-                        text={
-                            "From september 2010 to september 2014 I have studied in the Commercial High School of Lugano (CPC - Centro Professionale Commerciale) where I obtained both the AFC (Attestato federale di capacità) degree and the commercial federal maturity degree (MFC - Maturità Federale Commerciale)."
-                        }
+                                 text={
+                                     "From september 2010 to september 2014 I have studied in the Commercial High School of Lugano (CPC - Centro Professionale Commerciale) where I obtained both the AFC (Attestato federale di capacità) degree and the commercial federal maturity degree (MFC - Maturità Federale Commerciale)."
+                                 }
                     />
                 </div>
 

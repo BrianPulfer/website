@@ -21,7 +21,7 @@ class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <NavbarBP />
+                <NavbarBP/>
                 <Container fluid>
                     <HashRouter>
                         <Route exact path={'/'} component={Me}/>

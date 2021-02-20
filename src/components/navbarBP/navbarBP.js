@@ -3,13 +3,13 @@ import {Navbar, Nav} from 'react-bootstrap';
 
 import './navbarBP.css'
 
-const HOME_PATH = process.env.PUBLIC_URL+'/';
-const ME_PATH = process.env.PUBLIC_URL+'/#/Me';
-const CAREER_PATH = process.env.PUBLIC_URL+'/#/Career';
-const PROJECTS_PATH = process.env.PUBLIC_URL+'/#/Projects';
-const CONTACTS_PATH = process.env.PUBLIC_URL+'/#/Contacts';
+const HOME_PATH = process.env.PUBLIC_URL + '/';
+const ME_PATH = process.env.PUBLIC_URL + '/#/Me';
+const CAREER_PATH = process.env.PUBLIC_URL + '/#/Career';
+const PROJECTS_PATH = process.env.PUBLIC_URL + '/#/Projects';
+const CONTACTS_PATH = process.env.PUBLIC_URL + '/#/Contacts';
 
-class NavbarBP extends React.Component{
+class NavbarBP extends React.Component {
 
     constructor(props) {
         super(props);
@@ -23,12 +23,12 @@ class NavbarBP extends React.Component{
         }
     }
 
-    toggleExpand(){
+    toggleExpand() {
         let newExpanded = !this.state.navExpanded;
         this.setState({navExpanded: newExpanded});
     }
 
-    closeNav(){
+    closeNav() {
         this.setState({navExpanded: false});
     }
 
@@ -37,7 +37,7 @@ class NavbarBP extends React.Component{
         return (
             <Navbar expand="lg" onClick={this.toggleExpand} expanded={this.state.navExpanded}>
                 <Navbar.Brand className="BPBrand" href={HOME_PATH}>Brian Pulfer</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse>
                     <Nav className="ml-auto" onSelect={this.closeNav}>
                         <Nav.Link href={ME_PATH}>Me</Nav.Link>

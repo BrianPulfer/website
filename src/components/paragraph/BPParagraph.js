@@ -2,20 +2,20 @@ import React from "react";
 
 import './BPParagraph.css'
 
-class BPParagraph extends React.Component{
+class BPParagraph extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             classes: props.classes,
             text: props.text,
-            size : props.size,
+            size: props.size,
         };
     }
 
-    render(){
+    render() {
         const style = {
-            "fontSize" : this.state.size,
+            "fontSize": this.state.size,
         };
 
 
