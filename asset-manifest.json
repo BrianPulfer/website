@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.b30b50a7.chunk.css",
-    "main.js": "/static/js/main.eeef37b6.chunk.js",
-    "main.js.map": "/static/js/main.eeef37b6.chunk.js.map",
+    "main.css": "/static/css/main.c901caec.chunk.css",
+    "main.js": "/static/js/main.12c5d3ae.chunk.js",
+    "main.js.map": "/static/js/main.12c5d3ae.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d1594a52.js",
     "runtime-main.js.map": "/static/js/runtime-main.d1594a52.js.map",
-    "static/js/2.28e763e7.chunk.js": "/static/js/2.28e763e7.chunk.js",
-    "static/js/2.28e763e7.chunk.js.map": "/static/js/2.28e763e7.chunk.js.map",
+    "static/js/2.e45cb389.chunk.js": "/static/js/2.e45cb389.chunk.js",
+    "static/js/2.e45cb389.chunk.js.map": "/static/js/2.e45cb389.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.76cdef0df1d7ef3366ae8ecf2e34de75.js": "/precache-manifest.76cdef0df1d7ef3366ae8ecf2e34de75.js",
+    "precache-manifest.0465a146d2256ab1f1cb2d82511328ed.js": "/precache-manifest.0465a146d2256ab1f1cb2d82511328ed.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.b30b50a7.chunk.css.map": "/static/css/main.b30b50a7.chunk.css.map",
-    "static/js/2.28e763e7.chunk.js.LICENSE.txt": "/static/js/2.28e763e7.chunk.js.LICENSE.txt",
+    "static/css/main.c901caec.chunk.css.map": "/static/css/main.c901caec.chunk.css.map",
+    "static/js/2.e45cb389.chunk.js.LICENSE.txt": "/static/js/2.e45cb389.chunk.js.LICENSE.txt",
     "static/media/Deep Learning Lab.png": "/static/media/Deep Learning Lab.49a3dbf9.png",
     "static/media/Machine Learning for disambiguation of scientific article authors.png": "/static/media/Machine Learning for disambiguation of scientific article authors.41431c6b.png",
     "static/media/Machine Learning.gif": "/static/media/Machine Learning.f2976ba4.gif",
@@ -26,13 +26,12 @@
     "static/media/cpc.jpg": "/static/media/cpc.a889c1e4.jpg",
     "static/media/linkedin.png": "/static/media/linkedin.9c372ea9.png",
     "static/media/supsi.png": "/static/media/supsi.a3fd0ad0.png",
-    "static/media/tds.png": "/static/media/tds.a9ae42ad.png",
     "static/media/usi.png": "/static/media/usi.a7fe36e0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d1594a52.js",
-    "static/js/2.28e763e7.chunk.js",
-    "static/css/main.b30b50a7.chunk.css",
-    "static/js/main.eeef37b6.chunk.js"
+    "static/js/2.e45cb389.chunk.js",
+    "static/css/main.c901caec.chunk.css",
+    "static/js/main.12c5d3ae.chunk.js"
   ]
 }
