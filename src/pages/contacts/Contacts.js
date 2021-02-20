@@ -9,8 +9,6 @@ import Mail from './img/gmail.png'
 import Linkedin from './img/linkedin.png'
 import Twitter from './img/twitter.png'
 import GitHub from './img/github.png'
-import Kaggle from './img/kaggle.png'
-import TDS from './img/tds.png'
 
 class Contacts extends React.Component {
     render() {
@@ -19,7 +17,7 @@ class Contacts extends React.Component {
             <div>
                 <BPTitle size={"600%"} text={"Contacts"}/>
                 <BPParagraph size={"200%"}
-                             text={"Here are some ways you can contact me to learn more about who I am."}/>
+                             text={"Here are some ways you can learn more about who I am."}/>
 
                 <CardGroup className={"contacts"}>
                     <Card id={"mail"} className={"contact"}>
@@ -84,37 +82,6 @@ class Contacts extends React.Component {
                             </Card.Text>
                             <Button className={"contact-btn"} href={'https://github.com/BrianPulfer'}>Find me on
                                 GitHub
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                    <Card id={"kaggle"} className={"contact"}>
-                        <a href={'https://www.kaggle.com/brianpulfer'}>
-                            <CardImg variant={'top'} src={Kaggle}/>
-                        </a>
-                        <Card.Body>
-                            <Card.Title>
-                                Kaggle
-                            </Card.Title>
-                            <Card.Text>
-                                In my free time I like to compete through some challenges and get inspired by data.
-                            </Card.Text>
-                            <Button className={"contact-btn"} href={'https://www.kaggle.com/brianpulfer'}>My
-                                challenges</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card id={"tds"} className={"contact"}>
-                        <a href={'https://medium.com/@brianpulfer'}>
-                            <CardImg variant={'top'} src={TDS}/>
-                        </a>
-                        <Card.Body>
-                            <Card.Title>
-                                Towards Data Science
-                            </Card.Title>
-                            <Card.Text>
-                                Some of my work / thoughts that I felt worth sharing can be found at my TDS account.
-                            </Card.Text>
-                            <Button className={"contact-btn"} href={'https://medium.com/@brianpulfer'}>Read my
-                                posts
                             </Button>
                         </Card.Body>
                     </Card>
