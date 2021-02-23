@@ -10,17 +10,21 @@
     font-size: 300%;
 }
 
-.navbar-brand:hover{
-    color: yellowgreen !important;
-}
-
 .nav-link{
     color: white !important;
     font-size: 130%;
 }
 
+.navbar-brand:hover{
+    color: yellowgreen !important;
+}
+
 .nav-link:hover{
     color: yellowgreen !important;
+}
+
+.selected{
+    color: green !important;
 }
 
 .navbar-toggler{
