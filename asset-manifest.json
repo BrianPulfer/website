@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c901caec.chunk.css",
-    "main.js": "/static/js/main.f8206047.chunk.js",
-    "main.js.map": "/static/js/main.f8206047.chunk.js.map",
+    "main.css": "/static/css/main.8f43f11f.chunk.css",
+    "main.js": "/static/js/main.6f4193ff.chunk.js",
+    "main.js.map": "/static/js/main.6f4193ff.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d1594a52.js",
     "runtime-main.js.map": "/static/js/runtime-main.d1594a52.js.map",
     "static/js/2.e45cb389.chunk.js": "/static/js/2.e45cb389.chunk.js",
     "static/js/2.e45cb389.chunk.js.map": "/static/js/2.e45cb389.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b983df73dbcbdffbf6e9dec8bf2d2c38.js": "/precache-manifest.b983df73dbcbdffbf6e9dec8bf2d2c38.js",
+    "precache-manifest.3b52c0ab3b106204f769dffb84e78ec2.js": "/precache-manifest.3b52c0ab3b106204f769dffb84e78ec2.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.c901caec.chunk.css.map": "/static/css/main.c901caec.chunk.css.map",
+    "static/css/main.8f43f11f.chunk.css.map": "/static/css/main.8f43f11f.chunk.css.map",
     "static/js/2.e45cb389.chunk.js.LICENSE.txt": "/static/js/2.e45cb389.chunk.js.LICENSE.txt",
     "static/media/Deep Learning Lab.png": "/static/media/Deep Learning Lab.49a3dbf9.png",
     "static/media/Machine Learning for disambiguation of scientific article authors.png": "/static/media/Machine Learning for disambiguation of scientific article authors.41431c6b.png",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.d1594a52.js",
     "static/js/2.e45cb389.chunk.js",
-    "static/css/main.c901caec.chunk.css",
-    "static/js/main.f8206047.chunk.js"
+    "static/css/main.8f43f11f.chunk.css",
+    "static/js/main.6f4193ff.chunk.js"
   ]
 }
