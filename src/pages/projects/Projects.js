@@ -3,7 +3,6 @@ import './../../../node_modules/video-react/dist/video-react.css';
 
 import {Image, ListGroup, ListGroupItem, Row, Col} from 'react-bootstrap'
 import {HashLink} from "react-router-hash-link";
-import {Player} from 'video-react';
 
 import './Projects.css'
 import BPTitle from "../../components/title/BPTitle";
@@ -11,7 +10,6 @@ import BPParagraph from "../../components/paragraph/BPParagraph";
 
 
 // Images
-import Master from './img/MSc Thesis - Resume Video.mp4'
 import Bachelor from './img/Machine Learning for disambiguation of scientific article authors.png'
 import StyleGAN2 from './img/StyleGAN2 Distillation.png'
 import SDR from './img/Self Driving Robot.gif'
