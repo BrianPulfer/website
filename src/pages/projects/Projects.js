@@ -1,7 +1,9 @@
 import React from "react";
+import './../../../node_modules/video-react/dist/video-react.css';
 
 import {Image, ListGroup, ListGroupItem, Row, Col} from 'react-bootstrap'
 import {HashLink} from "react-router-hash-link";
+import {Player} from 'video-react';
 
 import './Projects.css'
 import BPTitle from "../../components/title/BPTitle";
@@ -9,6 +11,7 @@ import BPParagraph from "../../components/paragraph/BPParagraph";
 
 
 // Images
+import Master from './img/MSc Thesis - Resume Video.mp4'
 import Bachelor from './img/Machine Learning for disambiguation of scientific article authors.png'
 import StyleGAN2 from './img/StyleGAN2 Distillation.png'
 import SDR from './img/Self Driving Robot.gif'
@@ -31,40 +34,46 @@ class Projects extends React.Component {
             <div>
                 <div id={"Index"}>
                     <BPTitle size={"500%"} text={"Index"} underline={true}/>
-
                     <BPTitle classes={"sectionTitle"} size={"400%"} text={"Artificial Intelligence"} side={true}/>
                     <div id={"AI-Index"}>
                         <ListGroup>
                             <ListGroupItem>
                                 <HashLink to={"#AI1"}>
                                     <BPTitle size={"200%"}
-                                             text={"Machine Learning for disambiguation of scientific article authors"}
+                                             text={"From Simulated to Real Test Environments for Self Driving Cars"}
                                              side={true}/>
                                 </HashLink>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <HashLink to={"#AI2"}>
-                                    <BPTitle size={"200%"} text={"StyleGAN2 Distillation"} side={true}/>
+                                    <BPTitle size={"200%"}
+                                             text={"Machine Learning for disambiguation of scientific article authors"}
+                                             side={true}/>
                                 </HashLink>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <HashLink to={"#AI3"}>
-                                    <BPTitle size={"200%"} text={"Self-driving Robot"} side={true}/>
+                                    <BPTitle size={"200%"} text={"StyleGAN2 Distillation"} side={true}/>
                                 </HashLink>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <HashLink to={"#AI4"}>
-                                    <BPTitle size={"200%"} text={"Deep Learning Lab"} side={true}/>
+                                    <BPTitle size={"200%"} text={"Self-driving Robot"} side={true}/>
                                 </HashLink>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <HashLink to={"#AI5"}>
+                                    <BPTitle size={"200%"} text={"Deep Learning Lab"} side={true}/>
+                                </HashLink>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <HashLink to={"#AI6"}>
                                     <BPTitle size={"200%"} text={"Machine Learning"} side={true}/>
                                 </HashLink>
                             </ListGroupItem>
 
                             <ListGroupItem>
-                                <HashLink to={"#AI6"}>
+                                <HashLink to={"#AI7"}>
                                     <BPTitle size={"200%"} text={"SmartBin (USI Hackathon 2019)"} side={true}/>
                                 </HashLink>
                             </ListGroupItem>
@@ -91,6 +100,41 @@ class Projects extends React.Component {
                 <div id={"Projects"}>
                     <div id={"AI-Projects"}>
                         <div id={'AI1'} className={"project"}>
+                            <div className={"project-title"}>
+                                <BPTitle classes={"prjtit"}
+                                         text={"From Simulated to Real Test Environments for Self Driving Cars"}/>
+                            </div>
+                            <Row className={"project-image"}>
+                                <Col className={'text-center'}>
+                                    <iframe width="800" height="450" src="https://www.youtube.com/embed/7q2hwzWo7Cw"
+                                            title="YouTube video player" frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen>
+                                    </iframe>
+                                </Col>
+                            </Row>
+                            <div className={"project-description"}>
+                                <BPParagraph size={paragraphSize} className={"p bp-paragraph-project"}
+                                             text={"In my master thesis in Artificial Intelligence, I studied testing in the field of self-driving cars through a small-scale car and simulator."}/>
+                                <BPParagraph size={paragraphSize} className={"p bp-paragraph-project"}
+                                             text={"Through the use of CycleGAN, I propose a method to estimate the Cross-Track Error in the real world (important testing metric already in use for simulators) and use it to assess whether offline and online testing for self-driving cars yields similar results, both in a real and simulated environment."}/>
+                            </div>
+                            <div className={"project-links"}>
+                                <div className={"project-link"}>
+                                    <p className={"text-center"} style={projectLink_paragraphStyle}>
+                                        You can visit the project's repository at the following <a
+                                        href={"https://github.com/BrianPulfer/MasterThesis"}>link</a>.
+                                    </p>
+                                </div>
+                                <div className={"project-link"}>
+                                    <p className={"text-center"} style={projectLink_paragraphStyle}>
+                                        Thesis can be downloaded at this  <a
+                                        href={process.env.PUBLIC_URL + "/resources/docs/Brian Pulfer - From Simulated to Real Test Environments for Self Driving Cars.pdf"}>link</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id={'AI2'} className={"project"}>
                             <div className={"project-title"}>
                                 <BPTitle classes={"prjtit"}
                                          text={"Machine Learning for disambiguation of scientific article authors"}/>
@@ -130,7 +174,7 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div id={'AI2'} className={"project"}>
+                        <div id={'AI3'} className={"project"}>
                             <div className={"project-title"}>
                                 <BPTitle classes={"prjtit"} text={"StyleGAN2 distillation"}/>
                             </div>
@@ -165,7 +209,7 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div id={'AI3'} className={"project"}>
+                        <div id={'AI4'} className={"project"}>
                             <div className={"project-title"}>
                                 <BPTitle classes={"prjtit"} text={"Self-driving Robot"}/>
                             </div>
@@ -196,7 +240,7 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div id={'AI4'} className={"project"}>
+                        <div id={'AI5'} className={"project"}>
                             <div className={"project-title"}>
                                 <BPTitle classes={"prjtit"} text={"Deep Learning Lab"}/>
                             </div>
@@ -218,7 +262,7 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div id={'AI5'} className={"project"}>
+                        <div id={'AI6'} className={"project"}>
                             <div className={"project-title"}>
                                 <BPTitle classes={"prjtit"} text={"Machine Learning"}/>
                             </div>
@@ -242,8 +286,7 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
-
-                        <div id={'AI6'} className={"project"}>
+                        <div id={'AI7'} className={"project"}>
                             <div className={"project-title"}>
                                 <BPTitle classes={"prjtit"} text={"SmartBin (USI Hackathon 2019)"}/>
                             </div>
