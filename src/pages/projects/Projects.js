@@ -20,14 +20,30 @@ import SmartBin from './img/SmartBin.png'
 import NannySearch from './img/NannySearch.png'
 import Tiforma from './img/Tiforma.png';
 
-
 class Projects extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            videosWidth: window.innerWidth * 0.9,
+            videosHeight: window.innerWidth * 0.9 * 0.5625
+        };
+
+        window.onresize = (ev)=>{
+            this.setState({
+                videosWidth: ev.target.innerWidth * 0.9,
+                videosHeight: ev.target.innerWidth * 0.9 * 0.5625
+            });
+        };
+    }
+
     render() {
         const paragraphSize = '180%';
         const projectLink_paragraphStyle = {
             fontSize: paragraphSize,
             margin: 0
         };
+
         return (
             <div>
                 <div id={"Index"}>
@@ -104,7 +120,9 @@ class Projects extends React.Component {
                             </div>
                             <Row className={"project-image"}>
                                 <Col className={'text-center'}>
-                                    <iframe width="800" height="450" src="https://www.youtube.com/embed/7q2hwzWo7Cw"
+                                    <iframe width={this.state.videosWidth + "px"}
+                                            height={this.state.videosHeight + "px"}
+                                            src="https://www.youtube.com/embed/7q2hwzWo7Cw"
                                             title="YouTube video player" frameBorder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen>
@@ -126,7 +144,7 @@ class Projects extends React.Component {
                                 </div>
                                 <div className={"project-link"}>
                                     <p className={"text-center"} style={projectLink_paragraphStyle}>
-                                        Thesis can be downloaded at this  <a
+                                        Thesis can be downloaded at this <a
                                         href={process.env.PUBLIC_URL + "/resources/docs/Brian Pulfer - From Simulated to Real Test Environments for Self Driving Cars.pdf"}>link</a>.
                                     </p>
                                 </div>
