@@ -42,7 +42,9 @@ class Career extends React.Component {
                     <BPTitle className={"bp-title-career"} text={"Master in Artificial Intelligence (2019 - 2021)"}/>
                     <BPParagraph size={"150%"}
                                  text={
-                                     "I am currently a Master student in Artificial Intelligence by the University of Southern Switzerland (USI - Università della Svizzera Italiana)."
+                                     "From September 2019, I have been studying Machine Learning and Deep Learning in the Master course offered by the University of Southern Switzerland (USI).\n" +
+                                     "By learning about supervised/unsupervised/reinforcement learning, deep neural networks and fascinating mathematical and statistical concepts, I have grown a passion for the field." +
+                                     "I graduated in June 2021 with a GPA of 9.1/10."
                                  }
                     />
                 </div>
