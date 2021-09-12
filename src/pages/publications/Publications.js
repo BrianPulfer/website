@@ -6,10 +6,6 @@ import BPParagraph from "../../components/paragraph/BPParagraph";
 import "./Publications.css";
 
 class Publications extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const paragraphSize = "180%";
 
