@@ -7,9 +7,10 @@ const HOME_PATH = process.env.PUBLIC_URL + '/';
 const ME_PATH = process.env.PUBLIC_URL + '/#/Me';
 const CAREER_PATH = process.env.PUBLIC_URL + '/#/Career';
 const PROJECTS_PATH = process.env.PUBLIC_URL + '/#/Projects';
+const PUBLICATIONS_PATH = process.env.PUBLIC_URL + '/#/Publications';
 const CONTACTS_PATH = process.env.PUBLIC_URL + '/#/Contacts';
 
-const POSSIBLE_SELECTIONS = ["Me", "Career", "Projects", "Contacts"];
+const POSSIBLE_SELECTIONS = ["Me", "Career", "Projects", "Publications", "Contacts"];
 const SELECTED = "selected";
 const NOT_SELECTED = "not-selected";
 const NO_SELECTION = () => [NOT_SELECTED, NOT_SELECTED, NOT_SELECTED, NOT_SELECTED];
@@ -73,7 +74,8 @@ class NavbarBP extends React.Component {
                         <Nav.Link href={ME_PATH} className={this.state.selection[0]}>Me</Nav.Link>
                         <Nav.Link href={CAREER_PATH} className={this.state.selection[1]}>Career</Nav.Link>
                         <Nav.Link href={PROJECTS_PATH} className={this.state.selection[2]}>Projects</Nav.Link>
-                        <Nav.Link href={CONTACTS_PATH} className={this.state.selection[3]}>Contacts</Nav.Link>
+                        <Nav.Link href={PUBLICATIONS_PATH} className={this.state.selection[3]}>Publications</Nav.Link>
+                        <Nav.Link href={CONTACTS_PATH} className={this.state.selection[4]}>Contacts</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
