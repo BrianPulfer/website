@@ -6,16 +6,31 @@ import BPParagraph from "../../components/paragraph/BPParagraph";
 import './Career.css';
 import {Image, Row, Col} from "react-bootstrap";
 
-import CPC from './img/cpc.jpg'
 import Army from './img/army.png'
 import SUPSI from './img/supsi.png'
 import USI from './img/usi.png'
+import UNIGE from './img/unige.png'
 
 class Career extends React.Component {
 
     render() {
         return (
             <div>
+                <div className={"career-step"}>
+                    <Row>
+                        <Col className={"text-center"}>
+                            <Image src={UNIGE} fluid/>
+                        </Col>
+                    </Row>
+                    <BPTitle className={"bp-title-career"}
+                             text={"Ph.D. Student in Machine Learning (2021-)"}/>
+                    <BPParagraph size={"150%"}
+                                 text={
+                                     "Starting on November 1st, 2021, I will join the Stochastic Information Processing (SIP) group by the University of Geneva, Switzerland, as a Ph.D. Student in Machine Learning and Computer Vision."
+                                 }
+                    />
+                </div>
+
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
@@ -78,21 +93,6 @@ class Career extends React.Component {
                                  }
                     />
                 </div>
-
-                <div className={"career-step"}>
-                    <Row>
-                        <Col className={"text-center"}>
-                            <Image src={CPC} fluid/>
-                        </Col>
-                    </Row>
-                    <BPTitle className={"bp-title-career"} text={"Commercial High School (2010 - 2014)"}/>
-                    <BPParagraph size={"150%"}
-                                 text={
-                                     "From september 2010 to september 2014 I have studied in the Commercial High School of Lugano (CPC - Centro Professionale Commerciale) where I obtained both the AFC (Attestato federale di capacità) degree and the commercial federal maturity degree (MFC - Maturità Federale Commerciale)."
-                                 }
-                    />
-                </div>
-
             </div>
         );
     }
