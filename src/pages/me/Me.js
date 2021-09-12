@@ -24,25 +24,39 @@ class Me extends React.Component {
                 </div>
 
                 <div id={"Text"}>
-                    <BPTitle classes={"h1 bp-title-me"} size={titleSize} color={"black"} text={"About Me"}
+                    <BPTitle classes={"h1 bp-title-me"} size={titleSize} color={"black"} text={"Overview"}
                              underline={true}/>
+                    <BPParagraph size={paragraphSize} text={"Hey there, this is Brian! 👨🏽‍💻"}/>
                     <BPParagraph size={paragraphSize}
                                  text={
-                                     "My name is Brian Pulfer, I am a 25 years old software engineer currently studying Artificial Intelligence in a master course offered by the University of Southern Switzerland (USI)." +
-                                     " I was born on September 21st, 1995 in my hometown Lugano (Southern part of Switzerland) where I have been living in ever since. I also served the Swiss Army from March 2015 to January 2016, completing all of my obligations as a Swiss citizen."
+                                     "I am a Machine Learning practitioner and enthusiast. I am fascinated by the potential of these beautiful and elegant algorithms and their potential impact on our world. " +
+                                     "Someday in the future, I'd love to use Machine Learning to fight the climate crisis, as I believe is one of the biggest priorities and challenges of my generation. " +
+                                     "Before that, I am constantly working on becoming a world expert in the field of ML and learn interesting 'hacks' in Computer Science in general."
                                  }
                     />
                     <BPParagraph size={paragraphSize}
                                  text={
-                                     " My biggest interests are music, books and video games. Football is my biggest passion and I feel that sports are the biggest source of happiness, this is why I also frequent the gym regularly." +
-                                     " I also worry about living my life in the best possible way, that's why I like reading about philosophy and try to carry a mentally healthy lifestyle through meditation."
+                                     "This is my personal portfolio, where I publish updates on my career, projects, publications and more. Should anything be unclear, don't hesitate to contact me through the '/contact' section."
+                                 }
+                    />
+
+                    <BPTitle classes={"h1 bp-title-me"} size={titleSize} color={"black"} text={"About Me"}
+                             underline={true}/>
+                    <BPParagraph size={paragraphSize}
+                                 text={
+                                     "I was born on September 21st, 1995 in my hometown Lugano, Switzerland 🇨🇭, where I have been living in ever since."
+                                 }
+                    />
+                    <BPParagraph size={paragraphSize}
+                                 text={
+                                     "As everyone, I am interested in music, books and video games. I frequent the gym and do jogging regularly, although football is my favourite sport. " +
+                                     "I also enjoy meditating, In my free time, I like to learn about new things. That's why I usually take on challenges like hackathons and toy-projects."
                                  }
                     />
 
                     <BPParagraph size={paragraphSize}
                                  text={
-                                     " People say of me that I am determined, funny, precise and smart." +
-                                     " My main interests regarding computer science are Artificial Intelligence, smart algorithms in general, virtual reality, web development and mobile development."
+                                     "People say of me that I am determined, funny, precise and smart."
                                  }
                     />
                 </div>
