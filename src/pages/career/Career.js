@@ -19,7 +19,7 @@ class Career extends React.Component {
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image src={UNIGE} fluid/>
+                            <Image src={UNIGE} className={"career-img"} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"}
@@ -34,7 +34,7 @@ class Career extends React.Component {
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image src={USI} fluid/>
+                            <Image src={USI} className={"career-img"} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"}
@@ -51,7 +51,7 @@ class Career extends React.Component {
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image src={USI} fluid/>
+                            <Image src={USI} className={"career-img"} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"} text={"Master in Artificial Intelligence (2019 - 2021)"}/>
@@ -67,7 +67,7 @@ class Career extends React.Component {
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image src={SUPSI} fluid/>
+                            <Image src={SUPSI} className={"career-img"} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"} text={"Bachelor in Computer Science (2016 - 2019)"}/>
@@ -82,7 +82,7 @@ class Career extends React.Component {
                 <div className={"career-step"}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image id={"army_img"} src={Army} fluid/>
+                            <Image src={Army} className={"career-img"} fluid/>
                         </Col>
                     </Row>
                     <BPTitle className={"bp-title-career"} text={"Service by the Swiss Army (2015 - 2016)"}/>
