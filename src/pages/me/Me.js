@@ -4,21 +4,57 @@ import {Button, Image, Row, Col} from 'react-bootstrap';
 import BPTitle from "../../components/title/BPTitle";
 import BPParagraph from "../../components/paragraph/BPParagraph";
 
-import MeHome from './img/MeHome.jpg';
+import MeBig from './img/MeBig.jpg';
+import MeSmall from './img/MeSmall.jpg';
 
 import './Me.css';
 
 class Me extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            maxWidth: window.innerWidth,
+            maxHeight: window.innerHeight,
+            useBig: window.innerWidth > 900
+        }
+
+        this.onResizeWindow = this.onResizeWindow.bind(this);
+        window.onresize = this.onResizeWindow;
+    }
+
+    onResizeWindow(){
+        this.setState({
+            maxWidth: window.innerWidth,
+            maxHeight: window.innerHeight,
+            useBig: window.innerWidth > 900
+        });
+    }
+
     render() {
         const titleSize = "500%"
         const paragraphSize = "180%";
 
+        let mainImage = <Image
+            id={"me-img"}
+            src={this.state.useBig ? MeBig : MeSmall}
+            className={"mx-auto"}
+            fluid
+            style={
+                {
+                    maxWidth: this.state.maxWidth,
+                    maxHeight: this.state.maxHeight
+                }
+            }/>;
+        //mainImage.style.width = window.innerWidth;
+        //mainImage.style.height = window.innerHeight;
+
         return (
             <div>
-                <div id={"Image"}>
+                <div id={"Image"} style={{backgroundColor: "black"}}>
                     <Row>
                         <Col className={"text-center"}>
-                            <Image id={"me-img"} src={MeHome} className={"mx-auto"} fluid/>
+                            {mainImage}
                         </Col>
                     </Row>
                 </div>

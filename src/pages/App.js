@@ -13,7 +13,6 @@ import NavbarBP from "../components/navbarBP/navbarBP";
 import './App.css'
 
 // TODO: Fix view-port for all pages except for Contacts
-// TODO: Change how main picture gets displayed based on screen size
 // TODO: Change navbar to be transparent and color-changing
 // TODO: Add 'Leadership and Awards' & 'Blog' sections?
 
