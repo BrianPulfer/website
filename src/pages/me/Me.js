@@ -72,6 +72,11 @@ class Me extends React.Component {
                     />
                     <BPParagraph size={paragraphSize}
                                  text={
+                                     "I am currently a Ph.D. student in Machine Learning, with a focus on anomaly detection and adversarial attacks, by the University of Geneva, Switzerland."
+                                 }
+                    />
+                    <BPParagraph size={paragraphSize}
+                                 text={
                                      "This is my personal portfolio, where I publish updates on my career, projects, publications and more. Should anything be unclear, don't hesitate to contact me through the '/contact' section."
                                  }
                     />

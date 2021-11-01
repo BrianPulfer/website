@@ -26,7 +26,7 @@ class Career extends React.Component {
                              text={"Ph.D. Student in Machine Learning (2021-)"}/>
                     <BPParagraph size={"150%"}
                                  text={
-                                     "Starting on November 1st, 2021, I will join the Stochastic Information Processing (SIP) group by the University of Geneva, Switzerland, as a Ph.D. Student in Machine Learning and Computer Vision."
+                                     "Since November 1st, 2021, I am a Ph.D. student in Machine Learning for the Stochastic Information Processing (SIP) group by the University of Geneva, Switzerland."
                                  }
                     />
                 </div>

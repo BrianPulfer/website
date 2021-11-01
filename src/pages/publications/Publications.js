@@ -12,11 +12,7 @@ class Publications extends React.Component {
         return (
             <React.Fragment>
                 <div className={"publication"}>
-                    <BPTitle text={"No publication yet 😅"} />
-                    <BPParagraph
-                        size={paragraphSize}
-                        text={"As I am starting my Ph.D. on Nov 1st, I have still no official publication except for my BSc and MSc thesis, which you can find under the 'Projects' section."}
-                    />
+                    <BPTitle text={"No publication yet"} />
                 </div>
             </React.Fragment>
         );
