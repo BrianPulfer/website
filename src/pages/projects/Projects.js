@@ -134,6 +134,8 @@ class Projects extends React.Component {
                                              text={"In my master thesis in Artificial Intelligence, I studied testing in the field of self-driving cars through a small-scale car and simulator."}/>
                                 <BPParagraph size={paragraphSize} className={"p bp-paragraph-project"}
                                              text={"Through the use of CycleGAN, I propose a method to estimate the Cross-Track Error in the real world (important testing metric already in use for simulators) and use it to assess whether offline and online testing for self-driving cars yields similar results, both in a real and simulated environment."}/>
+                                <BPParagraph size={paragraphSize} className={"p bp-paragraph-project"}
+                                             text={"Given the enthusiasm that me and my co-supervisor had towards this small-scale car, we even organized the first FormulaUSI event! The goal of the event was to educate participants on Artificial Intelligence while racing self-driving small-scale cars. We had much fun organizing the event, and I have personally grown by such an experience."}/>
                             </div>
                             <div className={"project-links"}>
                                 <div className={"project-link"}>
@@ -146,6 +148,11 @@ class Projects extends React.Component {
                                     <p className={"text-center"} style={projectLink_paragraphStyle}>
                                         Thesis can be downloaded at this <a
                                         href={process.env.PUBLIC_URL + "/resources/docs/Brian Pulfer - From Simulated to Real Test Environments for Self Driving Cars.pdf"}>link</a>.
+                                    </p>
+                                </div>
+                                <div className={"project-link"}>
+                                    <p className={"text-center"} style={projectLink_paragraphStyle}>
+                                        Link to the FormulaUSI competition <a href={"https://formulausi.si.usi.ch/2021/"}>website</a> and <a href={"https://www.youtube.com/watch?v=PDeCb4vBEC4&ab_channel=SoftwareInstitute"}>highlights</a>.
                                     </p>
                                 </div>
                             </div>
