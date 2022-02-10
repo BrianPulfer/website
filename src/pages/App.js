@@ -5,6 +5,7 @@ import Me from "./me/Me";
 import Career from "./career/Career";
 import Projects from "./projects/Projects";
 import Publications from "./publications/Publications";
+import Blog from "./blog/blog";
 import Contacts from "./contacts/Contacts";
 
 import Container from "react-bootstrap/Container";
@@ -27,6 +28,7 @@ class App extends React.Component {
                         <Route path={'/Career'} component={Career}/>
                         <Route path={'/Projects'} component={Projects}/>
                         <Route path={'/Publications'} component={Publications}/>
+                        <Route path={'/Blog'} component={Blog} />
                         <Route path={'/Contacts'} component={Contacts}/>
                     </HashRouter>
                 </Container>
