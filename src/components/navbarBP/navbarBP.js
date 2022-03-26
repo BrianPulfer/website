@@ -6,12 +6,13 @@ import './navbarBP.css'
 const HOME_PATH = process.env.PUBLIC_URL + '/';
 const ME_PATH = process.env.PUBLIC_URL + '/#/Me';
 const CAREER_PATH = process.env.PUBLIC_URL + '/#/Career';
+const AWARDS_PATH = process.env.PUBLIC_URL + '/#/Awards';
 const PROJECTS_PATH = process.env.PUBLIC_URL + '/#/Projects';
 const PUBLICATIONS_PATH = process.env.PUBLIC_URL + '/#/Publications';
 const BLOG_PATH = process.env.PUBLIC_URL + '/#/Blog';
 const CONTACTS_PATH = process.env.PUBLIC_URL + '/#/Contacts';
 
-const POSSIBLE_SELECTIONS = ["Me", "Career", "Projects", "Publications", "Blog", "Contacts"];
+const POSSIBLE_SELECTIONS = ["Me", "Career", "Awards", "Projects", "Publications", "Blog", "Contacts"];
 const SELECTED = "selected";
 const NOT_SELECTED = "not-selected";
 const NO_SELECTION = () => [NOT_SELECTED, NOT_SELECTED, NOT_SELECTED, NOT_SELECTED, NOT_SELECTED];
@@ -74,10 +75,11 @@ class NavbarBP extends React.Component {
                     <Nav className="ml-auto" onSelect={this.closeNav}>
                         <Nav.Link href={ME_PATH} className={this.state.selection[0]}>Me</Nav.Link>
                         <Nav.Link href={CAREER_PATH} className={this.state.selection[1]}>Career</Nav.Link>
-                        <Nav.Link href={PROJECTS_PATH} className={this.state.selection[2]}>Projects</Nav.Link>
-                        <Nav.Link href={PUBLICATIONS_PATH} className={this.state.selection[3]}>Publications</Nav.Link>
-                        <Nav.Link href={BLOG_PATH} className={this.state.selection[4]}>Blog</Nav.Link>
-                        <Nav.Link href={CONTACTS_PATH} className={this.state.selection[5]}>Contacts</Nav.Link>
+                        <Nav.Link href={AWARDS_PATH} className={this.state.selection[2]}>Awards</Nav.Link>
+                        <Nav.Link href={PROJECTS_PATH} className={this.state.selection[3]}>Projects</Nav.Link>
+                        <Nav.Link href={PUBLICATIONS_PATH} className={this.state.selection[4]}>Publications</Nav.Link>
+                        <Nav.Link href={BLOG_PATH} className={this.state.selection[5]}>Blog</Nav.Link>
+                        <Nav.Link href={CONTACTS_PATH} className={this.state.selection[6]}>Contacts</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
