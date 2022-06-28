@@ -15,7 +15,6 @@ import NavbarBP from "../components/navbarBP/navbarBP";
 import './App.css'
 
 // TODO: Change navbar to be transparent and color-changing
-// TODO: Add 'Leadership and Awards' & 'Blog' sections?
 
 class App extends React.Component {
     render() {

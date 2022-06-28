@@ -6,10 +6,6 @@ import Post from "../../components/post/post";
 import vit from './imgs/vit.png';
 
 class Blog extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className={"blog-content"}>

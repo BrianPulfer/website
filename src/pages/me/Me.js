@@ -40,14 +40,7 @@ class Me extends React.Component {
             src={this.state.useBig ? MeBig : MeSmall}
             className={"mx-auto"}
             fluid
-            style={
-                {
-                    maxWidth: this.state.maxWidth,
-                    maxHeight: this.state.maxHeight
-                }
-            }/>;
-        //mainImage.style.width = window.innerWidth;
-        //mainImage.style.height = window.innerHeight;
+        />;
 
         return (
             <div>

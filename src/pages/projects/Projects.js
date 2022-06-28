@@ -21,7 +21,6 @@ import NannySearch from './img/NannySearch.png'
 import Tiforma from './img/Tiforma.png';
 
 class Projects extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
