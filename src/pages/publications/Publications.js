@@ -13,6 +13,20 @@ class Publications extends React.Component {
                     <Col className={'col-10 offset-1'}>
                         <div className={"publication"}>
                             <BPPublication
+                                link={"https://arxiv.org/abs/2206.11793"}
+                                date={"Jun 22"}
+                                title={"Authentication of Copy Detection Patterns under Machine Learning Attacks: A Supervised Approach"}
+                                abstract={"Copy detection patterns (CDP) are an attractive technology that allows manufacturers to defend their products against counterfeiting. The main assumption behind the protection mechanism of CDP is that these codes printed with the smallest symbol size (1x1) on an industrial printer cannot be copied or cloned with sufficient accuracy due to data processing inequality. However, previous works have shown that Machine Learning (ML) based attacks can produce high-quality fakes, resulting in decreased accuracy of authentication based on traditional feature-based authentication systems. While Deep Learning (DL) can be used as a part of the authentication system, to the best of our knowledge, none of the previous works has studied the performance of a DL-based authentication system against ML-based attacks on CDP with 1x1 symbol size. In this work, we study such a performance assuming a supervised learning (SL) setting."}
+                                citation={"B. Pulfer, R. Chaban, Y. Belousov, J. Tutt, O. Taran, T. Holotyak, and S. Voloshynovskiy, “Authentication of copy detection patterns under machine learning attacks: A supervised approach,” in IEEE International Conference on Image Processing (ICIP), Bordeaux, France, October 2022."}
+                                />
+                        </div>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col className={'col-10 offset-1'}>
+                        <div className={"publication"}>
+                            <BPPublication
                                 link={"https://arxiv.org/abs/2112.11255"}
                                 date={"Dec 21"}
                                 title={"Mind the Gap! A Study on the Transferability of Virtual vs Physical-world Testing of Autonomous Driving Systems"}
