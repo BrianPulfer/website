@@ -139,12 +139,6 @@ class Projects extends React.Component {
                             <div className={"project-links"}>
                                 <div className={"project-link"}>
                                     <p className={"text-center"} style={projectLink_paragraphStyle}>
-                                        You can visit the project's repository at the following <a
-                                        href={"https://github.com/BrianPulfer/MasterThesis"}>link</a>.
-                                    </p>
-                                </div>
-                                <div className={"project-link"}>
-                                    <p className={"text-center"} style={projectLink_paragraphStyle}>
                                         Thesis can be downloaded at this <a
                                         href={process.env.PUBLIC_URL + "/resources/docs/Brian Pulfer - From Simulated to Real Test Environments for Self Driving Cars.pdf"}>link</a>.
                                     </p>
