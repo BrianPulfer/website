@@ -12,6 +12,7 @@ class BPPublication extends React.Component {
             date: props.date,
             title: props.title,
             abstract: props.abstract,
+            publishedon: props.publishedon,
             citation: props.citation
         }
     }
@@ -22,6 +23,9 @@ class BPPublication extends React.Component {
                 <h4><a href={this.state.link}>{this.state.title}</a> ({this.state.date})</h4>
                 <b>Abstract:</b>
                 <p>{this.state.abstract}</p>
+                <div className={"published_on"}>
+                    <b>{this.state.publishedon}</b>
+                </div>
                 <i>{this.state.citation}</i>
             </div>
         );

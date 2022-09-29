@@ -24,14 +24,14 @@ class Projects extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            videosWidth: window.innerWidth * 0.9,
-            videosHeight: window.innerWidth * 0.9 * 0.5625
+            videosWidth: window.innerWidth * 0.7,
+            videosHeight: window.innerWidth * 0.7 * 0.5625
         };
 
         window.onresize = (ev)=>{
             this.setState({
-                videosWidth: ev.target.innerWidth * 0.9,
-                videosHeight: ev.target.innerWidth * 0.9 * 0.5625
+                videosWidth: ev.target.innerWidth * 0.7,
+                videosHeight: ev.target.innerWidth * 0.7 * 0.5625
             });
         };
     }
