@@ -13,6 +13,21 @@ class Publications extends React.Component {
                     <Col className={'col-10 offset-1'}>
                         <div className={"publication"}>
                             <BPPublication
+                                link={"https://arxiv.org/abs/2209.15625"}
+                                date={"Aug 22"}
+                                title={"Anomaly localization for copy detection patterns through print estimation"}
+                                abstract={"Copy detection patterns (CDP) are recent technologies for protecting products from counterfeiting. However, in contrast to traditional copy fakes, deep learning-based fakes have shown to be hardly distinguishable from originals by traditional authentication systems. Systems based on classical supervised learning and digital templates assume knowledge of fake CDP at training time and cannot generalize to unseen types of fakes. Authentication based on printed copies of originals is an alternative that yields better results even for unseen fakes and simple authentication metrics but comes at the impractical cost of acquisition and storage of printed copies. In this work, to overcome these shortcomings, we design a machine learning (ML) based authentication system that only requires digital templates and printed original CDP for training, whereas authentication is based solely on digital templates, which are used to estimate original printed codes. The obtained results show that the proposed system can efficiently authenticate original and detect fake CDP by accurately locating the anomalies in the fake CDP. The empirical evaluation of the authentication system under investigation is performed on the original and ML-based fakes CDP printed on two industrial printers."}
+                                publishedon={"IEEE International Workshop on Information Forensics and Security (WIFS), 2022"}
+                                citation={"Pulfer, B., Belousov, Y., Tutt, J., Chaban, R., Taran, O., Holotyak, T., & Voloshynovskiy, S.. (2022). \"Anomaly localization for copy detection patterns through print estimations,\" in IEEE International Workshop on Information Forensics and Security (WIFS), 2022"}
+                            />
+                        </div>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col className={'col-10 offset-1'}>
+                        <div className={"publication"}>
+                            <BPPublication
                                 link={"https://arxiv.org/abs/2206.11793"}
                                 date={"Jun 22"}
                                 title={"Authentication of Copy Detection Patterns under Machine Learning Attacks: A Supervised Approach"}
