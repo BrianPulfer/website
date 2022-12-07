@@ -13,6 +13,21 @@ class Publications extends React.Component {
                     <Col className={'col-10 offset-1'}>
                         <div className={"publication"}>
                             <BPPublication
+                                link={"https://arxiv.org/abs/2212.02456"}
+                                date={"Dec 22"}
+                                title={"Solving the Weather4cast Challenge via Visual Transformers for 3D Images"}
+                                abstract={"Accurately forecasting the weather is an important task, as many real-world processes and decisions depend on future meteorological conditions. The NeurIPS 2022 challenge entitled Weather4cast poses the problem of predicting rainfall events for the next eight hours given the preceding hour of satellite observations as a context. Motivated by the recent success of transformer-based architectures in computer vision, we implement and propose two methodologies based on this architecture to tackle this challenge. We find that ensembling different transformers with some baseline models achieves the best performance we could measure on the unseen test data. Our approach has been ranked 3rd in the competition."}
+                                publishedon={"ArXiv (NeurIPS 2022 challenge), 2022"}
+                                citation={"Belousov, Y., Polezhaev, S., Pulfer, B."}
+                            />
+                        </div>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col className={'col-10 offset-1'}>
+                        <div className={"publication"}>
+                            <BPPublication
                                 link={"https://arxiv.org/abs/2209.15625"}
                                 date={"Aug 22"}
                                 title={"Anomaly localization for copy detection patterns through print estimation"}
