@@ -4,31 +4,13 @@ import {Button, Image, Row, Col} from 'react-bootstrap';
 import BPTitle from "../../components/title/BPTitle";
 import BPParagraph from "../../components/paragraph/BPParagraph";
 
-import MeBig from './img/MeBig.jpg';
-import MeSmall from './img/MeSmall.jpg';
+import Avatar from "./img/avatar.png";
 
 import './Me.css';
 
 class Me extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            maxWidth: window.innerWidth,
-            maxHeight: window.innerHeight,
-            useBig: window.innerWidth > 900
-        }
-
-        this.onResizeWindow = this.onResizeWindow.bind(this);
-        window.onresize = this.onResizeWindow;
-    }
-
-    onResizeWindow(){
-        this.setState({
-            maxWidth: window.innerWidth,
-            maxHeight: window.innerHeight,
-            useBig: window.innerWidth > 900
-        });
     }
 
     render() {
@@ -37,14 +19,14 @@ class Me extends React.Component {
 
         let mainImage = <Image
             id={"me-img"}
-            src={this.state.useBig ? MeBig : MeSmall}
+            src={Avatar}
             className={"mx-auto"}
             fluid
         />;
 
         return (
             <div>
-                <div id={"Image"} style={{backgroundColor: "black"}}>
+                <div id={"Image"}>
                     <Row>
                         <Col className={"text-center"}>
                             {mainImage}
