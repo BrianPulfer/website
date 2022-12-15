@@ -3,6 +3,7 @@ import React from 'react';
 import './blog.css';
 import Post from "../../components/post/post";
 
+import ppo from "./imgs/ppo.gif";
 import vit from './imgs/vit.png';
 import ddpm from './imgs/ddpm.gif';
 
@@ -10,6 +11,13 @@ class Blog extends React.Component {
     render() {
         return (
             <div className={"blog-content"}>
+                <Post
+                    title={'PPO — Intuitive guide to state-of-the-art Reinforcement Learning'}
+                    img={ppo}
+                    description={"I implemented the original 'Proximal Policy Optimization Algorithms' paper (Schulman et. al., 2017). I train a PPO model from scratch on the Cart-pole gym environment. Click on the above image to read the medium story. Code is publicly available."}
+                    link={"https://medium.com/@brianpulfer/ppo-intuitive-guide-to-state-of-the-art-reinforcement-learning-410a41cb675b"}
+                />
+                
                 <Post
                     title={'Generating images with DDPMs: A PyTorch Implementation'}
                     img={ddpm}
