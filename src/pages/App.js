@@ -1,5 +1,6 @@
 import React from "react";
 import {Route, HashRouter} from "react-router-dom";
+import { createBrowserHistory } from 'history';
 
 import Me from "./me/Me";
 import Career from "./career/Career";
@@ -18,11 +19,19 @@ import './App.css'
 
 class App extends React.Component {
     render() {
+        var history = createBrowserHistory();
+
+        history.listen((location) => {
+            window.gtag("set", "page", location.pathname + location.hash);
+            window.gtag('send', 'pageview');
+            }
+        );
+
         return (
             <React.Fragment>
                 <NavbarBP/>
                 <Container fluid>
-                    <HashRouter>
+                    <HashRouter history={history}>
                         <Route exact path={'/'} component={Me}/>
                         <Route path={'/Me'} component={Me}/>
                         <Route path={'/Career'} component={Career}/>
