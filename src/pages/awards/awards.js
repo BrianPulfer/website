@@ -1,10 +1,16 @@
 import React from 'react';
+import ReactGA from "react-ga";
+
 import BPTitle from "../../components/title/BPTitle";
 import BPParagraph from "../../components/paragraph/BPParagraph";
 
 import "./awards.css";
 
 class Awards extends React.Component{
+    componentDidMount(){
+        ReactGA.initialize('G-BH82F18037');
+        ReactGA.pageview(window.location.pathname + window.location.hash);
+    }
 
     render() {
         const titleSize = "36px";

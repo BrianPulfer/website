@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 
 import {Button, Card, CardGroup, CardImg} from "react-bootstrap";
 import './Contacts.css';
@@ -11,6 +12,11 @@ import Twitter from './img/twitter.png'
 import GitHub from './img/github.png'
 
 class Contacts extends React.Component {
+    componentDidMount(){
+        ReactGA.initialize('G-BH82F18037');
+        ReactGA.pageview(window.location.pathname + window.location.hash);
+    }
+
     render() {
 
         return (

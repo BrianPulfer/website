@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from "react-ga";
 
 import './blog.css';
 import Post from "../../components/post/post";
@@ -8,6 +9,11 @@ import vit from './imgs/vit.png';
 import ddpm from './imgs/ddpm.gif';
 
 class Blog extends React.Component {
+    componentDidMount(){
+        ReactGA.initialize('G-BH82F18037');
+        ReactGA.pageview(window.location.pathname + window.location.hash);
+    }
+
     render() {
         return (
             <div className={"blog-content"}>

@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import './../../../node_modules/video-react/dist/video-react.css';
 
 import {Image, ListGroup, ListGroupItem, Row, Col} from 'react-bootstrap'
@@ -34,6 +35,11 @@ class Projects extends React.Component {
                 videosHeight: ev.target.innerWidth * 0.7 * 0.5625
             });
         };
+    }
+
+    componentDidMount(){
+        ReactGA.initialize('G-BH82F18037');
+        ReactGA.pageview(window.location.pathname + window.location.hash);
     }
 
     render() {

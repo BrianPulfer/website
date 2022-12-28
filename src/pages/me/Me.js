@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from "react-ga";
 import {Button, Image, Row, Col} from 'react-bootstrap';
 
 import BPTitle from "../../components/title/BPTitle";
@@ -11,6 +12,11 @@ import './Me.css';
 class Me extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount(){
+        ReactGA.initialize('G-BH82F18037');
+        ReactGA.pageview(window.location.pathname + window.location.hash);
     }
 
     render() {

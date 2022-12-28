@@ -1,6 +1,6 @@
 import React from "react";
 import {Route, HashRouter} from "react-router-dom";
-import { createBrowserHistory } from 'history';
+import ReactGA from 'react-ga';
 
 import Me from "./me/Me";
 import Career from "./career/Career";
@@ -15,23 +15,18 @@ import NavbarBP from "../components/navbarBP/navbarBP";
 
 import './App.css'
 
-// TODO: Change navbar to be transparent and color-changing
-
 class App extends React.Component {
+    componentDidMount(){
+        ReactGA.initialize('G-BH82F18037');
+        ReactGA.pageview(window.location.pathname + window.location.hash);
+    }
+
     render() {
-        var history = createBrowserHistory();
-
-        history.listen((location) => {
-            window.gtag("set", "page", location.pathname + location.hash);
-            window.gtag('send', 'pageview');
-            }
-        );
-
         return (
             <React.Fragment>
                 <NavbarBP/>
                 <Container fluid>
-                    <HashRouter history={history}>
+                    <HashRouter>
                         <Route exact path={'/'} component={Me}/>
                         <Route path={'/Me'} component={Me}/>
                         <Route path={'/Career'} component={Career}/>

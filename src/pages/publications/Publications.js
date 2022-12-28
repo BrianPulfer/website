@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from "react-ga";
 
 import {Col, Row} from "react-bootstrap";
 import BPPublication from "../../components/publication/BPPublication";
@@ -6,6 +7,11 @@ import BPPublication from "../../components/publication/BPPublication";
 import "./Publications.css";
 
 class Publications extends React.Component {
+    componentDidMount(){
+        ReactGA.initialize('G-BH82F18037');
+        ReactGA.pageview(window.location.pathname + window.location.hash);
+    }
+
     render() {
         return (
             <React.Fragment>
