@@ -1,5 +1,4 @@
 import React from "react";
-import ReactGA from "react-ga";
 import './../../../node_modules/video-react/dist/video-react.css';
 
 import {Image, ListGroup, ListGroupItem, Row, Col} from 'react-bootstrap'
@@ -20,6 +19,7 @@ import SmartBin from './img/SmartBin.png'
 
 import NannySearch from './img/NannySearch.png'
 import Tiforma from './img/Tiforma.png';
+import trackPage from "../../utilities/ga/ga";
 
 class Projects extends React.Component {
     constructor(props) {
@@ -29,7 +29,7 @@ class Projects extends React.Component {
             videosHeight: window.innerWidth * 0.7 * 0.5625
         };
 
-        window.onresize = (ev)=>{
+        window.onresize = (ev) => {
             this.setState({
                 videosWidth: ev.target.innerWidth * 0.7,
                 videosHeight: ev.target.innerWidth * 0.7 * 0.5625
@@ -37,12 +37,9 @@ class Projects extends React.Component {
         };
     }
 
-    componentDidMount(){
-        ReactGA.initialize('G-BH82F18037');
-        ReactGA.pageview(window.location.pathname + window.location.hash);
-    }
-
     render() {
+        trackPage();
+
         const paragraphSize = '180%';
         const projectLink_paragraphStyle = {
             fontSize: paragraphSize,
@@ -128,7 +125,7 @@ class Projects extends React.Component {
                                     <iframe width={this.state.videosWidth + "px"}
                                             height={this.state.videosHeight + "px"}
                                             src="https://www.youtube.com/embed/7q2hwzWo7Cw"
-                                            title="YouTube video player" frameBorder="0"
+                                            title="From Simulated to Real Test Environments for Self Driving Cars"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen>
                                     </iframe>
@@ -151,7 +148,9 @@ class Projects extends React.Component {
                                 </div>
                                 <div className={"project-link"}>
                                     <p className={"text-center"} style={projectLink_paragraphStyle}>
-                                        Link to the FormulaUSI competition <a href={"https://formulausi.si.usi.ch/2021/"}>website</a> and <a href={"https://www.youtube.com/watch?v=PDeCb4vBEC4&ab_channel=SoftwareInstitute"}>highlights</a>.
+                                        Link to the FormulaUSI competition <a
+                                        href={"https://formulausi.si.usi.ch/2021/"}>website</a> and <a
+                                        href={"https://www.youtube.com/watch?v=PDeCb4vBEC4&ab_channel=SoftwareInstitute"}>highlights</a>.
                                     </p>
                                 </div>
                             </div>
@@ -320,7 +319,7 @@ class Projects extends React.Component {
                             <div className={"project-description"}>
                                 <BPParagraph size={paragraphSize} className={"p bp-paragraph-project"}
                                              text={'This toy project took place during the USI Hackathon 2019 (48 hours coding hackathon) event held by the University of Southern Switzerland.\n' +
-                                             'The goal of the hackathon was to use data provided by the city of Lugano and others (Swisscom, A.I.L, TPL, ...) to develop an application that would be beneficial for the city.'}/>
+                                                 'The goal of the hackathon was to use data provided by the city of Lugano and others (Swisscom, A.I.L, TPL, ...) to develop an application that would be beneficial for the city.'}/>
                                 <BPParagraph size={paragraphSize} className={"p bp-paragraph-project"}
                                              text={'The project that my team and I have come up with is a mock-up of how a smart trash bin would work and how easy would it be for it to classify correctly different trash types (Paper, ALU, Batteries, Plastic, Others), which would make life of humans easier and help climate.'}/>
                             </div>

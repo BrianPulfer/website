@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./BPTitle.css";
+
 class BPTitle extends React.Component {
     constructor(props) {
         super(props);

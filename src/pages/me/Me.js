@@ -1,25 +1,18 @@
 import React from 'react';
-import ReactGA from "react-ga";
 import {Button, Image, Row, Col} from 'react-bootstrap';
 
 import BPTitle from "../../components/title/BPTitle";
 import BPParagraph from "../../components/paragraph/BPParagraph";
 
 import Avatar from "./img/avatar.png";
-
 import './Me.css';
 
+import trackPage from "../../utilities/ga/ga";
+
 class Me extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount(){
-        ReactGA.initialize('G-BH82F18037');
-        ReactGA.pageview(window.location.pathname + window.location.hash);
-    }
-
     render() {
+        trackPage();
+
         const titleSize = "500%"
         const paragraphSize = "180%";
 
