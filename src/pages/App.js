@@ -1,5 +1,5 @@
 import React from "react";
-import {HashRouter as Router, Route} from "react-router-dom";
+import {HashRouter as Router, Route, Switch} from "react-router-dom";
 
 import Me from "./me/Me";
 import Career from "./career/Career";
@@ -22,15 +22,17 @@ function App() {
             <NavbarBP/>
             <Container fluid>
                 <Router>
-                    <Route exact path={'/'} component={Me}/>
-                    <Route exact path={'/Me'} component={Me}/>
-                    <Route exact path={'/Career'} component={Career}/>
-                    <Route exact path={'/Awards'} component={Awards}/>
-                    <Route exact path={'/Projects'} component={Projects}/>
-                    <Route exact path={'/Publications'} component={Publications}/>
-                    <Route exact path={'/Blog'} component={Blog}/>
-                    <Route exact path={'/Contacts'} component={Contacts}/>
-                    <Route component={NoMatch} />
+                    <Switch>
+                        <Route exact path={'/'} component={Me}/>
+                        <Route exact path={'/Me'} component={Me}/>
+                        <Route exact path={'/Career'} component={Career}/>
+                        <Route exact path={'/Awards'} component={Awards}/>
+                        <Route exact path={'/Projects'} component={Projects}/>
+                        <Route exact path={'/Publications'} component={Publications}/>
+                        <Route exact path={'/Blog'} component={Blog}/>
+                        <Route exact path={'/Contacts'} component={Contacts}/>
+                        <Route component={NoMatch} />
+                    </Switch>
                 </Router>
             </Container>
         </React.Fragment>
