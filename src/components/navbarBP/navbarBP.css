@@ -1,33 +1,33 @@
-.navbar{
-    position: sticky;
-    top: 0;
-    z-index: 99;
-    background-color: black;
-    text-align: center;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: black;
+  text-align: center;
 }
 
-.navbar-brand{
-    color: white !important;
-    font-size: 300%;
+.navbar-brand {
+  color: white !important;
+  font-size: 300%;
 }
 
-.nav-link{
-    color: white !important;
-    font-size: 130%;
+.nav-link {
+  color: white !important;
+  font-size: 130%;
 }
 
-.navbar-brand:hover{
-    color: yellowgreen !important;
+.navbar-brand:hover {
+  color: yellowgreen !important;
 }
 
-.nav-link:hover{
-    color: yellowgreen !important;
+.nav-link:hover {
+  color: yellowgreen !important;
 }
 
-.selected{
-    color: green !important;
+.selected {
+  color: green !important;
 }
 
-.navbar-toggler{
-    background-color: white;
+.navbar-toggler {
+  background-color: white;
 }

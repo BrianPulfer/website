@@ -1,18 +1,18 @@
-.award{
-    margin-top: 100px;
-    margin-bottom: 300px;
+.award {
+  margin-top: 100px;
+  margin-bottom: 300px;
 }
 
-.awardTitle{
-    font-weight: bold;
-    text-align: center;
-    color: #FFF;
-    background: linear-gradient(to right, #FFC107, #FFD54F);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.awardTitle {
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, #ffc107, #ffd54f);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.bp-paragraph{
-    margin-top: 0;
+.bp-paragraph {
+  margin-top: 0;
 }

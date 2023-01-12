@@ -1,5 +1,5 @@
 import React from "react";
-import {HashRouter as Router, Route, Switch} from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import Me from "./me/Me";
 import Career from "./career/Career";
@@ -13,30 +13,29 @@ import NoMatch from "./nomatch/NoMatch";
 import Container from "react-bootstrap/Container";
 import NavbarBP from "../components/navbarBP/navbarBP";
 
-import './App.css'
-
+import "./App.css";
 
 function App() {
-    return (
-        <React.Fragment>
-            <NavbarBP/>
-            <Container fluid>
-                <Router>
-                    <Switch>
-                        <Route exact path={'/'} component={Me}/>
-                        <Route exact path={'/Me'} component={Me}/>
-                        <Route exact path={'/Career'} component={Career}/>
-                        <Route exact path={'/Awards'} component={Awards}/>
-                        <Route exact path={'/Projects'} component={Projects}/>
-                        <Route exact path={'/Publications'} component={Publications}/>
-                        <Route exact path={'/Blog'} component={Blog}/>
-                        <Route exact path={'/Contacts'} component={Contacts}/>
-                        <Route component={NoMatch} />
-                    </Switch>
-                </Router>
-            </Container>
-        </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <NavbarBP />
+      <Container fluid>
+        <Router>
+          <Switch>
+            <Route exact path={"/"} component={Me} />
+            <Route exact path={"/Me"} component={Me} />
+            <Route exact path={"/Career"} component={Career} />
+            <Route exact path={"/Awards"} component={Awards} />
+            <Route exact path={"/Projects"} component={Projects} />
+            <Route exact path={"/Publications"} component={Publications} />
+            <Route exact path={"/Blog"} component={Blog} />
+            <Route exact path={"/Contacts"} component={Contacts} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Router>
+      </Container>
+    </React.Fragment>
+  );
 }
 
 export default App;

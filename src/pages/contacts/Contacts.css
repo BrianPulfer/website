@@ -1,3 +1,11 @@
-.contact-btn{
-    width: 100%;
+.contacts {
+  margin-top: 5%;
+}
+
+.contact-btn {
+  width: 100%;
+}
+
+.card {
+  border: none;
 }

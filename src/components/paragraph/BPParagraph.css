@@ -1,11 +1,11 @@
 @font-face {
-    font-family: MyRoboto;
-    src: url("./fonts/Roboto/Roboto-Thin.ttf");
+  font-family: MyRoboto;
+  src: url("./fonts/Roboto/Roboto-Thin.ttf");
 }
 
-.bp-paragraph{
-    font-family: MyRoboto;
-    margin-top: 60px;
-    margin-left: 5%;
-    margin-right: 5%;
+.bp-paragraph {
+  font-family: MyRoboto;
+  margin-top: 60px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
