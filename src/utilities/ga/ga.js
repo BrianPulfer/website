@@ -1,3 +1,5 @@
+// Reference: https://blog.saeloun.com/2022/02/17/how-to-integrate-react-app-with-google-analytics.html
+
 import ReactGA from "react-ga";
 
 const G_TOKEN = "G-BH82F18037";

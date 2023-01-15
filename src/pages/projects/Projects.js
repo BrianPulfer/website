@@ -1,8 +1,7 @@
 import React from "react";
 import "./../../../node_modules/video-react/dist/video-react.css";
 
-import { Image, ListGroup, ListGroupItem, Row, Col } from "react-bootstrap";
-import { HashLink } from "react-router-hash-link";
+import { Image, Row, Col } from "react-bootstrap";
 
 import "./Projects.css";
 import BPTitle from "../../components/title/BPTitle";
