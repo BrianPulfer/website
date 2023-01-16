@@ -5,10 +5,15 @@ import ReactGA from "react-ga";
 const G_TOKEN = "G-BH82F18037";
 
 function trackPage() {
-  let url = window.location.pathname + window.location.hash;
+  let path = window.location.hash
+  let title = path.substring(2, path.length)
+  if (title.length === 0){
+    document.title = "Brian Pulfer"
+  } else{
+    document.title = "Brian Pulfer - " + title;
+  }
   ReactGA.initialize(G_TOKEN);
-  ReactGA.set({ url });
-  ReactGA.pageview(url);
+  ReactGA.pageview(path, [], title);
 }
 
 export default trackPage;
