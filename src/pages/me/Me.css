@@ -13,3 +13,12 @@
 #me-img {
   margin-top: 1%;
 }
+
+.news{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+}

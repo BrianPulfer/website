@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Image, Row, Col } from "react-bootstrap";
+import { Button, Image, Row, Col, ListGroup } from "react-bootstrap";
 
 import BPTitle from "../../components/title/BPTitle";
 import BPParagraph from "../../components/paragraph/BPParagraph";
@@ -28,7 +28,7 @@ class Me extends React.Component {
           </Row>
         </div>
 
-        <div id={"Text"}>
+        <div id={"Overview"}>
           <BPTitle
             classes={"h1 bp-title-me"}
             size={titleSize}
@@ -57,50 +57,41 @@ class Me extends React.Component {
           <BPParagraph
             size={paragraphSize}
             text={
-              "This is my personal portfolio, where I publish updates on my career, projects, publications and more. Should anything be unclear, don't hesitate to contact me through the '/contact' section."
+              "This is my personal portfolio, where I publish updates on my career, projects, publications and more. I hope you enjoy it!"
             }
           />
 
-          <BPTitle
-            classes={"h1 bp-title-me"}
-            size={titleSize}
-            color={"black"}
-            text={"About Me"}
-            underline={true}
-          />
-          <BPParagraph
-            size={paragraphSize}
-            text={
-              "I was born on September 21st, 1995 in my hometown Lugano, Switzerland 🇨🇭, where I have been living in ever since."
-            }
-          />
-          <BPParagraph
-            size={paragraphSize}
-            text={
-              "As everyone, I am interested in music, books and video games. I frequent the gym and do jogging regularly, although football is my favourite sport. " +
-              "I also enjoy meditating, In my free time, I like to learn about new things. That's why I usually take on challenges like hackathons and toy-projects."
-            }
-          />
-
-          <BPParagraph
-            size={paragraphSize}
-            text={
-              "People say of me that I am determined, funny, precise and smart."
-            }
-          />
         </div>
+
+        <div id={"News"}>
+          <BPTitle
+              classes={"h1 bp-title-me"}
+              size={titleSize}
+              color={"black"}
+              text={"News 📰"}
+              underline={true}
+            />
+
+          <ListGroup>
+            <ListGroup.Item className={"news"}>
+              <BPTitle text={"01.11.2021"} size={paragraphSize} side={true}/>
+              <BPParagraph text={"I Joined the Stochastic Information Processing (SIP) group of the University of Geneva in quality of Ph.D. Student in Machine Learning."} size={paragraphSize}/>
+            </ListGroup.Item>
+          </ListGroup>
+        </div>
+
         <div id={"Download"} className={"last"}>
           <BPTitle
             classes={"h1 bp-title-me"}
             size={titleSize}
             color={"black"}
-            text={"My Curriculum Vitae"}
+            text={"My CV"}
             underline={true}
           />
           <BPParagraph
             size={paragraphSize}
             text={
-              "You can download my curriculum vitae from the following button."
+              "You can download my CV from the following button."
             }
           />
 
