@@ -28,17 +28,17 @@ class Me extends React.Component {
           </Row>
         </div>
 
-        <div id={"Overview"}>
+        <div id={"About"}>
           <BPTitle
             classes={"h1 bp-title-me"}
             size={titleSize}
             color={"black"}
-            text={"Overview"}
+            text={"About"}
             underline={true}
           />
           <BPParagraph
             size={paragraphSize}
-            text={"Hey there, this is Brian! 👨🏽‍💻"}
+            text={"Hey there, this is Brian! 👋"}
           />
           <BPParagraph
             size={paragraphSize}
@@ -74,8 +74,40 @@ class Me extends React.Component {
 
           <ListGroup>
             <ListGroup.Item className={"news"}>
-              <BPTitle text={"01.11.2021"} size={paragraphSize} side={true}/>
-              <BPParagraph text={"I Joined the Stochastic Information Processing (SIP) group of the University of Geneva in quality of Ph.D. Student in Machine Learning."} size={paragraphSize}/>
+              <BPTitle text={"December 2022"} size={paragraphSize} side={true}/>
+              <p>
+               🥉 Our work <a href="https://arxiv.org/abs/2212.02456">Solving the Weather4cast Challenge via Visual Transformers for 3D Images</a> got us the third place in the <a href="https://www.iarai.ac.at/weather4cast/">2022 NeurIPS Weather4cast competition workshop</a>.
+              </p>
+            </ListGroup.Item>
+            <ListGroup.Item className={"news"}>
+              <BPTitle text={"August 2022"} size={paragraphSize} side={true}/>
+              <p>
+               📃 Our work <a href="https://arxiv.org/abs/2209.15625">Anomaly localization for copy detection patterns through print estimations</a> was accepted for publication in the <a href="https://wifs2022.utt.fr/">IEEE International Workshop on Information Forensics & Security</a>.
+              </p>
+            </ListGroup.Item>
+            <ListGroup.Item className={"news"}>
+              <BPTitle text={"June 2022"} size={paragraphSize} side={true}/>
+              <p>
+               📃 Our work <a href="https://arxiv.org/abs/2206.11793">Authentication of Copy Detection Patterns under Machine Learning Attacks: A Supervised Approach</a> was accepted for publication in the <a href="https://2022.ieeeicip.org/">29th IEEE International Conference on Image Processing (ICIP)</a>.
+              </p>
+            </ListGroup.Item>
+            <ListGroup.Item className={"news"}>
+              <BPTitle text={"May 2022"} size={paragraphSize} side={true}/>
+              <p>
+               🥇 I won the best presentation award for the 2022 edition of the <a href="https://www.fondazionepremio.ch/premiati/">SwissEngineering Award Foundation</a>.
+              </p>
+            </ListGroup.Item>
+            <ListGroup.Item className={"news"}>
+              <BPTitle text={"December 2021"} size={paragraphSize} side={true}/>
+              <p>
+               📃 Our work <a href="https://arxiv.org/abs/2112.11255">Mind the Gap! A Study on the Transferability of Virtual vs Physical-world Testing of Autonomous Driving Systems</a> was accepted for publication in the <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32">IEEE Transactions of Software Engineering (TSE)</a>.
+              </p>
+            </ListGroup.Item>
+            <ListGroup.Item className={"news"}>
+              <BPTitle text={"November 2021"} size={paragraphSize} side={true}/>
+              <p>
+               👥 I Joined the <a href="http://sip.unige.ch">Stochastic Information Processing (SIP) group</a> of the University of Geneva in quality of Ph.D. Student in Machine Learning.
+              </p>
             </ListGroup.Item>
           </ListGroup>
         </div>
