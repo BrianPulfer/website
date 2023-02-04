@@ -1,8 +1,5 @@
 import React from "react";
 
-import BPTitle from "../../components/title/BPTitle";
-import BPParagraph from "../../components/paragraph/BPParagraph";
-
 import "./NoMatch.css";
 import trackPage from "../../utilities/ga/ga";
 
@@ -12,11 +9,12 @@ class NoMatch extends React.Component {
 
     return (
       <div className={"noMatch-div"}>
-        <BPTitle text={"Hmmm, that page doesn't seem to exist 🤔"} />
-        <BPParagraph
-          text={"Check the URL, there might be a typo!"}
-          size={"26px"}
-        />
+        <p className="nomatch-title">
+          Hmmm, that page doesn't seem to exist 🤔
+        </p>
+        <p className="nomatch-paragraph">
+          Check the URL, there might be a typo!
+        </p>
       </div>
     );
   }

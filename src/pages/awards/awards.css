@@ -3,16 +3,13 @@
   margin-bottom: 300px;
 }
 
-.awardTitle {
+.award-title {
   font-weight: bold;
+  font-size: 200%;
   text-align: center;
   color: #fff;
   background: linear-gradient(to right, #ffc107, #ffd54f);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.bp-paragraph {
-  margin-top: 0;
 }

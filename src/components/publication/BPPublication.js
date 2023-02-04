@@ -23,7 +23,7 @@ class BPPublication extends React.Component {
           <a href={this.state.link}>{this.state.title}</a> ({this.state.date})
         </h4>
         <b>Abstract:</b>
-        <p>{this.state.abstract}</p>
+        <p className="abstract">{this.state.abstract}</p>
         <div className={"published_on"}>
           <b>{this.state.publishedon}</b>
         </div>

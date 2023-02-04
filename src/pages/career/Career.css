@@ -1,5 +1,8 @@
-.bp-title-career {
-  margin-top: 50px;
+.career-title {
+  font-family: "MyRoboto";
+  text-align: center;
+  font-size: 300%;
+  font-weight: bolder;
 }
 
 .career-step {

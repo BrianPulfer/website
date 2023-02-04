@@ -4,8 +4,6 @@ import "./../../../node_modules/video-react/dist/video-react.css";
 import { Image, Row, Col } from "react-bootstrap";
 
 import "./Projects.css";
-import BPTitle from "../../components/title/BPTitle";
-import BPParagraph from "../../components/paragraph/BPParagraph";
 
 // Images
 import Bachelor from "./img/Machine Learning for disambiguation of scientific article authors.png";
@@ -38,23 +36,14 @@ class Projects extends React.Component {
   render() {
     trackPage();
 
-    const paragraphSize = "180%";
-    const projectLink_paragraphStyle = {
-      fontSize: paragraphSize,
-      margin: 0,
-    };
-
     return (
       <div className={"projects-div"}>
         <div id={"Projects"}>
           <div id={"AI1"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle
-                classes={"prjtit"}
-                text={
-                  "From Simulated to Real Test Environments for Self Driving Cars"
-                }
-              />
+            <div>
+              <p className="project-title">
+                From Simulated to Real Test Environments for Self Driving Cars
+              </p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -69,32 +58,34 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "In my master thesis in Artificial Intelligence, I studied testing in the field of self-driving cars through a small-scale car and simulator."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "Through the use of CycleGAN, I propose a method to estimate the Cross-Track Error in the real world (important testing metric already in use for simulators) and use it to assess whether offline and online testing for self-driving cars yields similar results, both in a real and simulated environment."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "Given the enthusiasm that me and my co-supervisor had towards this small-scale car, we even organized the first FormulaUSI event! The goal of the event was to educate participants on Artificial Intelligence while racing self-driving small-scale cars. We had much fun organizing the event, and I have personally grown by such an experience."
-                }
-              />
+              <p>
+                In my master thesis in Artificial Intelligence, I studied
+                testing in the field of self-driving cars through a small-scale
+                car and simulator.
+              </p>
+              <p>
+                Through the use of CycleGAN, I propose a method to estimate the
+                Cross-Track Error in the real world (important testing metric
+                already in use for simulators) and use it to assess whether
+                offline and online testing for self-driving cars yields similar
+                results, both in a real and simulated environment.
+              </p>
+              <p>
+                Given the enthusiasm that me and my co-supervisor had towards
+                this small-scale car, we even organized the first{" "}
+                <a href={"https://formulausi.si.usi.ch/2021/"}>
+                  <b>FormulaUSI</b>
+                </a>{" "}
+                event! The goal of the event was to educate participants on
+                Artificial Intelligence while racing self-driving small-scale
+                cars. We had much fun organizing the event, and I have
+                personally grown by such an experience.
+              </p>
             </div>
             <div className={"project-links"}>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
-                  Thesis can be downloaded at this{" "}
+                <p className={"text-center bold"}>
+                  My master thesis can be downloaded at this{" "}
                   <a
                     href={
                       process.env.PUBLIC_URL +
@@ -103,13 +94,11 @@ class Projects extends React.Component {
                   >
                     link
                   </a>
-                  .
-                </p>
-              </div>
-              <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
-                  Link to the FormulaUSI competition{" "}
-                  <a href={"https://formulausi.si.usi.ch/2021/"}>website</a> and{" "}
+                  .<br />
+                  Here's the links to the FormulaUSI competition{" "}
+                  <a href={"https://formulausi.si.usi.ch/2021/"}>
+                    website
+                  </a> and{" "}
                   <a
                     href={
                       "https://www.youtube.com/watch?v=PDeCb4vBEC4&ab_channel=SoftwareInstitute"
@@ -123,13 +112,11 @@ class Projects extends React.Component {
             </div>
           </div>
           <div id={"AI2"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle
-                classes={"prjtit"}
-                text={
-                  "Machine Learning for disambiguation of scientific article authors"
-                }
-              />
+            <div>
+              <p className="project-title">
+                Machine Learning for disambiguation of scientific article
+                authors
+              </p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -137,31 +124,28 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "This project is an open-source implementation of a classifier which goal is to predict whether a pair of scientific articles (biomedical articles from the PubMed dataset) belongs to the same author or not."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "The final classifier (Random Forest) used 15 features and had an accuracy of 87% with a 10-fold cross-validation. Further studies on the datasets revealed that for some combinations of last names and initial of first names (namespaces), over 100'000 articles could be found. This study explains the need for a classifier able to distinguish between these authors."
-                }
-              />
+              <p>
+                This project is an open-source implementation of a classifier
+                which goal is to predict whether a pair of scientific articles
+                (biomedical articles from the PubMed dataset) belongs to the
+                same author or not."
+              </p>
+              <p>
+                The final classifier (Random Forest) used 15 features and had an
+                accuracy of 87% with a 10-fold cross-validation. Further studies
+                on the datasets revealed that for some combinations of last
+                names and initial of first names (namespaces), over 100'000
+                articles could be found. This study explains the need for a
+                classifier able to distinguish between these authors.
+              </p>
             </div>
             <div className={"project-links"}>
-              <p
-                className={"text-center bp-paragraph"}
-                style={projectLink_paragraphStyle}
-              >
-                The project was my bachelor thesis job for which customer was{" "}
+              <p>
+                The project was my bachelor thesis job commissioned by{" "}
                 <b>Hoffmann-La Roche A.G</b>
               </p>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                <p className={"text-center bold"}>
                   You can visit the project's repository at the following{" "}
                   <a
                     href={
@@ -170,21 +154,13 @@ class Projects extends React.Component {
                   >
                     link
                   </a>
-                  .
-                </p>
-              </div>
-              <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                  .<br />
                   You can also visit the study on the Pubmed dataset at the
                   following{" "}
                   <a href={"https://github.com/BrianPulfer/PubMed-Namespacer"}>
                     link
                   </a>
-                  .
-                </p>
-              </div>
-              <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                  .<br />
                   Documentation (Italian Only) of the bachelor's thesis can be
                   downloaded at this{" "}
                   <a
@@ -201,8 +177,8 @@ class Projects extends React.Component {
             </div>
           </div>
           <div id={"AI3"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle classes={"prjtit"} text={"StyleGAN2 distillation"} />
+            <div>
+              <p className="project-title">StyleGAN2 distillation</p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -210,32 +186,23 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "Together with my brother, we re-implemented the work of Evgeny et. al. in their 'StyleGAN2 distillation' paper released in 2020. In their work, the authors show that a Pix2PixHD network can be trained on a synthetic dataset generated by a GAN (StyleGAN2)."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "In the re-implementation provided, we focus on the style-mixing task, and manage to train a vanilla Pix2PixHD network into creating a style-mixed face starting from 2 pictures of real persons."
-                }
-              />
+              <p>
+                Together with my brother, we re-implemented the work of{" "}
+                <a href={"https://arxiv.org/abs/2003.03581"}>Evgeny et. al.</a>
+                in their 'StyleGAN2 distillation' paper released in 2020. In
+                their work, the authors show that a Pix2PixHD network can be
+                trained on a synthetic dataset generated by a GAN (StyleGAN2).
+              </p>
+              <p>
+                In the re-implementation provided, we focus on the style-mixing
+                task, and manage to train a vanilla Pix2PixHD network into
+                creating a style-mixed face starting from 2 pictures of real
+                persons.
+              </p>
             </div>
             <div className={"project-links"}>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
-                  <a href={"https://arxiv.org/abs/2003.03581"}>
-                    Original paper
-                  </a>
-                  .
-                </p>
-              </div>
-              <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                <p className={"text-center bold"}>
                   The latest checkpoints of the network can be found{" "}
                   <a
                     href={
@@ -244,8 +211,9 @@ class Projects extends React.Component {
                   >
                     here
                   </a>
-                  <br />. The notebook containing the re-implementation of the
-                  project is publicly available at this{" "}
+                  . <br />
+                  The notebook containing the re-implementation of the project
+                  is publicly available at this{" "}
                   <a
                     href={
                       "https://colab.research.google.com/drive/1hxZvml_rbjF62W-9bW39Dap1zJgR9K5w?usp=sharing"
@@ -270,8 +238,8 @@ class Projects extends React.Component {
             </div>
           </div>
           <div id={"AI4"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle classes={"prjtit"} text={"Self-driving Robot"} />
+            <div>
+              <p className="project-title">Self-driving Robot</p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -279,24 +247,22 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "This project represents the final assignment of the course of Robotics held by the University of Southern Switzerland (USI). The goal of the project was to use both the theoretical and practical knowledge in the field of robotics to implement some complex program that would make the robot accomplish some goals."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "The project me and my team (2 other persons) came up with is a self-driving robot that, with the use of CNN, learns to avoid obstacles and walls in a virtual environment (ROS + Gazebo)."
-                }
-              />
+              <p>
+                This project represents the final assignment of the course of
+                Robotics held by the University of Southern Switzerland (USI).
+                The goal of the project was to use both the theoretical and
+                practical knowledge in the field of robotics to implement some
+                complex program that would make the robot accomplish some goals.
+              </p>
+              <p>
+                The project me and my team (2 other persons) came up with is a
+                self-driving robot that, with the use of CNN, learns to avoid
+                obstacles and walls in a virtual environment (ROS + Gazebo).
+              </p>
             </div>
             <div className={"project-links"}>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                <p className={"text-center bold"}>
                   You can visit the project's repository at the following{" "}
                   <a
                     href={
@@ -305,13 +271,8 @@ class Projects extends React.Component {
                   >
                     link
                   </a>
-                  .
-                </p>
-              </div>
-              <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
-                  A very brief paper of what has been done during the project
-                  can be downloaded at the following{" "}
+                  .<br />A very brief paper of what has been done during the
+                  project can be downloaded at the following{" "}
                   <a
                     href={
                       process.env.PUBLIC_URL +
@@ -326,8 +287,8 @@ class Projects extends React.Component {
             </div>
           </div>
           <div id={"AI5"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle classes={"prjtit"} text={"Deep Learning Lab"} />
+            <div className>
+              <p className="project-title">Deep Learning Lab</p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -335,17 +296,18 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "This project is the collection of all activities that were done during a University course. With the use of Tensorflow 1, you will find various implementations of linear regression, feed forward neural networks, recurrent neural networks, convolutional neural networks, long short-term memory networks and a deep Q-learning algorithm (break-out agent)."
-                }
-              />
+              <p>
+                This project is the collection of all activities that were done
+                during a University course. With the use of Tensorflow 1, you
+                will find various implementations of linear regression, feed
+                forward neural networks, recurrent neural networks,
+                convolutional neural networks, long short-term memory networks
+                and a deep Q-learning algorithm (break-out agent).
+              </p>
             </div>
             <div className={"project-links"}>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                <p className={"text-center bold"}>
                   You can visit the project's repository at the following{" "}
                   <a href={"https://github.com/BrianPulfer/Deep-Learning-Lab"}>
                     link
@@ -356,8 +318,8 @@ class Projects extends React.Component {
             </div>
           </div>
           <div id={"AI6"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle classes={"prjtit"} text={"Machine Learning"} />
+            <div>
+              <p className="project-title">Machine Learning</p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -365,24 +327,20 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "This project is the collection of all assignments that were done during a University course (Machine Learning)."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "Assignments cover a series of topics in Machine Learning such as a deep learning framework implementation, a hidden markov model dynamic programming implementation and some implementations of evolutionary strategies (CEM, CMA-ES, NES)."
-                }
-              />
+              <p>
+                This project is the collection of all assignments that were done
+                during a University course (Machine Learning).
+              </p>
+              <p>
+                "Assignments cover a series of topics in Machine Learning such
+                as a deep learning framework implementation, a hidden markov
+                model dynamic programming implementation and some
+                implementations of evolutionary strategies (CEM, CMA-ES, NES).
+              </p>
             </div>
             <div className={"project-links"}>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                <p className={"text-center bold"}>
                   You can visit the project's repository at the following{" "}
                   <a href={"https://github.com/BrianPulfer/Machine-Learning"}>
                     link
@@ -393,11 +351,8 @@ class Projects extends React.Component {
             </div>
           </div>
           <div id={"AI7"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle
-                classes={"prjtit"}
-                text={"SmartBin (USI Hackathon 2019)"}
-              />
+            <div>
+              <p className="project-title">SmartBin (USI Hackathon 2019)</p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -405,25 +360,24 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "This toy project took place during the USI Hackathon 2019 (48 hours coding hackathon) event held by the University of Southern Switzerland.\n" +
-                  "The goal of the hackathon was to use data provided by the city of Lugano and others (Swisscom, A.I.L, TPL, ...) to develop an application that would be beneficial for the city."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "The project that my team and I have come up with is a mock-up of how a smart trash bin would work and how easy would it be for it to classify correctly different trash types (Paper, ALU, Batteries, Plastic, Others), which would make life of humans easier and help climate."
-                }
-              />
+              <p>
+                This toy project took place during the USI Hackathon 2019 (48
+                hours coding hackathon) event held by the University of Southern
+                Switzerland. The goal of the hackathon was to use data provided
+                by the city of Lugano and others (Swisscom, A.I.L, TPL, ...) to
+                develop an application that would be beneficial for the city.
+              </p>
+              <p>
+                The project that my team and I have come up with is a mock-up of
+                how a smart trash bin would work and how easy would it be for it
+                to classify correctly different trash types (Paper, ALU,
+                Batteries, Plastic, Others), which would make life of humans
+                easier and help climate.
+              </p>
             </div>
             <div className={"project-links"}>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                <p className={"text-center bold"}>
                   You can visit the project's repository at the following{" "}
                   <a href={"https://github.com/BrianPulfer/USI-Hackathon-2019"}>
                     link
@@ -435,8 +389,8 @@ class Projects extends React.Component {
           </div>
 
           <div id={"O1"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle classes={"prjtit"} text={"NannySearch"} />
+            <div>
+              <p className="project-title">NannySearch</p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -444,34 +398,25 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "Tiny implementation of an information retrieval system (search engine)."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "Apache Nutch and Solr were used to crawl and index a collection of around 1'000 web pages of british nannies. Spring boot was then used to create a tiny web application that would serve as interface for the user to the collection."
-                }
-              />
+              <p>
+                Tiny implementation of an information retrieval system (search
+                engine).
+              </p>
+              <p>
+                Apache Nutch and Solr were used to crawl and index a collection
+                of around 1'000 web pages of british nannies. Spring boot was
+                then used to create a tiny web application that would serve as
+                interface for the user to the collection.
+              </p>
             </div>
             <div className={"project-links"}>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                <p className={"text-center bold"}>
                   You can visit the project's repository at the following{" "}
                   <a href={"https://github.com/BrianPulfer/NannySearch"}>
                     link
                   </a>
-                  .
-                </p>
-              </div>
-              <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
-                  A tiny documentation of the project can be found at the
+                  .<br />A tiny documentation of the project can be found at the
                   following{" "}
                   <a
                     href={
@@ -487,8 +432,8 @@ class Projects extends React.Component {
             </div>
           </div>
           <div id={"O2"} className={"project"}>
-            <div className={"project-title"}>
-              <BPTitle classes={"prjtit"} text={"Tiforma Blockchain"} />
+            <div>
+              <p className="project-title">Tiforma Blockchain</p>
             </div>
             <Row className={"project-image"}>
               <Col className={"text-center"}>
@@ -496,24 +441,24 @@ class Projects extends React.Component {
               </Col>
             </Row>
             <div className={"project-description"}>
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "Semester project with the goal of implementing a web application based on blockchain for the management of students, courses, modules and more of the University (SUPSI)."
-                }
-              />
-              <BPParagraph
-                size={paragraphSize}
-                className={"p bp-paragraph-project"}
-                text={
-                  "The goal of the project was to create a blockchain based back-end network through the hyperledger composer framework and provide users a front-end Angular7 interface to make transitions on the network. In the end, users were able to act the main CRUD operations on every entity of the network (students, courses, modules, classes, ...) as well as printing and browsing through the database."
-                }
-              />
+              <p>
+                Semester project with the goal of implementing a web application
+                based on blockchain for the management of students, courses,
+                modules and more of the University (SUPSI).
+              </p>
+              <p>
+                The goal of the project was to create a blockchain based
+                back-end network through the hyperledger composer framework and
+                provide users a front-end Angular7 interface to make transitions
+                on the network. In the end, users were able to act the main CRUD
+                operations on every entity of the network (students, courses,
+                modules, classes, ...) as well as printing and browsing through
+                the database.
+              </p>
             </div>
             <div className={"project-links"}>
               <div className={"project-link"}>
-                <p className={"text-center"} style={projectLink_paragraphStyle}>
+                <p className={"text-center bold"}>
                   Source code is not available, but documentation of the project
                   can be found at the following{" "}
                   <a href={"https://github.com/gionasdev/tiforma-blockchain"}>

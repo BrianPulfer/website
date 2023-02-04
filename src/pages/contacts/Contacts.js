@@ -2,8 +2,6 @@ import React from "react";
 
 import { Button, Card, CardGroup, CardImg, Row } from "react-bootstrap";
 import "./Contacts.css";
-import BPTitle from "../../components/title/BPTitle";
-import BPParagraph from "../../components/paragraph/BPParagraph";
 
 import Mail from "./img/gmail.png";
 import Linkedin from "./img/linkedin.png";
@@ -16,12 +14,6 @@ class Contacts extends React.Component {
     trackPage();
     return (
       <div className={"contacts-div"}>
-        <BPTitle size={"600%"} text={"Contacts"} />
-        <BPParagraph
-          size={"200%"}
-          text={"Here are some ways you can can in touch with me."}
-        />
-
         <Row className={"justify-content-center"}>
           <CardGroup className={"contacts col col-md-10 col-l-4"}>
             <Card id={"mail"} className={"contact"}>

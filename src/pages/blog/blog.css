@@ -1,3 +1,8 @@
-.BPost {
+.post-title {
+  font-size: 200%;
+  text-align: center;
+}
+
+.post {
   margin-bottom: 200px;
 }

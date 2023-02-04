@@ -1,3 +1,14 @@
+.contacts-title {
+  font-family: MyRoboto;
+  font-size: 400%;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.contacts-div {
+  margin-top: 100px;
+}
+
 .contact-btn {
   width: 100%;
 }

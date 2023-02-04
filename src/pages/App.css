@@ -1,0 +1,12 @@
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 120%;
+  text-align: left;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-weight: 100;
+}
+
+.bold {
+  font-weight: bold;
+}
