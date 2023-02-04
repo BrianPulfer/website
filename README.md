@@ -12,4 +12,4 @@ In the website, you'll be able to know more about who I am, my career, projects 
 
 # Link
 The website is reachable from the following link:
-<a href="https://brianpulfer.ch">brianpulfer.ch</a>
+<a href="https://www.brianpulfer.ch">brianpulfer.ch</a>
