@@ -3,6 +3,11 @@
   margin-bottom: 300px;
 }
 
+.awards-container{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .award-title {
   font-weight: bold;
   font-size: 200%;
@@ -10,6 +15,6 @@
   color: #fff;
   background: linear-gradient(to right, #ffc107, #ffd54f);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 100px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
