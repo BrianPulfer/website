@@ -51,14 +51,28 @@ class Me extends React.Component {
           <p className="me-title">News 📰</p>
 
           <ListGroup>
+          <ListGroup.Item className={"news"}>
+              <p className="news-title">January 2023</p>
+              <p>
+                📃 Our work{" "}
+                <i><a href="https://www.brianpulfer.ch">
+                  Model vs System Level Testing of Autonomous Driving Systems: A Replication and Extension Study
+                </a></i>{" "}
+                has been accepted for publication in {" "}
+                <a href="https://www.springer.com/journal/10664">
+                  Empirical Software Engineering
+                </a>
+                .
+              </p>
+            </ListGroup.Item>
             <ListGroup.Item className={"news"}>
               <p className="news-title">December 2022</p>
               <p>
                 🥉 Our work{" "}
-                <a href="https://arxiv.org/abs/2212.02456">
+                <i><a href="https://arxiv.org/abs/2212.02456">
                   Solving the Weather4cast Challenge via Visual Transformers for
                   3D Images
-                </a>{" "}
+                </a></i>{" "}
                 got us the third place in the{" "}
                 <a href="https://www.iarai.ac.at/weather4cast/">
                   2022 NeurIPS Weather4cast competition workshop
@@ -70,10 +84,10 @@ class Me extends React.Component {
               <p className="news-title">August 2022</p>
               <p>
                 📃 Our work{" "}
-                <a href="https://arxiv.org/abs/2209.15625">
+                <i><a href="https://arxiv.org/abs/2209.15625">
                   Anomaly localization for copy detection patterns through print
                   estimations
-                </a>{" "}
+                </a></i>{" "}
                 was accepted for publication in the{" "}
                 <a href="https://wifs2022.utt.fr/">
                   IEEE International Workshop on Information Forensics &
@@ -86,10 +100,10 @@ class Me extends React.Component {
               <p className="news-title">June 2022</p>
               <p>
                 📃 Our work{" "}
-                <a href="https://arxiv.org/abs/2206.11793">
+                <i><a href="https://arxiv.org/abs/2206.11793">
                   Authentication of Copy Detection Patterns under Machine
                   Learning Attacks: A Supervised Approach
-                </a>{" "}
+                </a></i>{" "}
                 was accepted for publication in the{" "}
                 <a href="https://2022.ieeeicip.org/">
                   29th IEEE International Conference on Image Processing (ICIP)
@@ -111,10 +125,10 @@ class Me extends React.Component {
               <p className="news-title">December 2021</p>
               <p>
                 📃 Our work{" "}
-                <a href="https://arxiv.org/abs/2112.11255">
+                <i><a href="https://arxiv.org/abs/2112.11255">
                   Mind the Gap! A Study on the Transferability of Virtual vs
                   Physical-world Testing of Autonomous Driving Systems
-                </a>{" "}
+                </a></i>{" "}
                 was accepted for publication in the{" "}
                 <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32">
                   IEEE Transactions of Software Engineering (TSE)
