@@ -7,9 +7,9 @@ export default function Navbar() {
 
   const paths = {
     "/": "Brian Pulfer",
+    "/publications": "Publications",
     "/projects": "Projects",
     "/blog": "Blog",
-    "/publications": "Publications"
   }
 
   const nPaths = Object.keys(paths).length;
