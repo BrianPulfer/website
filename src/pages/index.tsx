@@ -48,7 +48,7 @@ export default function Home() {
         </Link>
 
         <Link
-          href={"https://www.twitter.com/BrianPulfer"}
+          href={"https://www.x.com/PulferBrian21"}
           type="button"
           data-te-ripple-init
           data-te-ripple-color="light"
