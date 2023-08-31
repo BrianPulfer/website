@@ -6,10 +6,10 @@ export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const paths = {
-    "/": "Brian Pulfer",
-    "/publications": "Publications",
-    "/projects": "Projects",
-    "/blog": "Blog",
+    "/": "Brian Pulfer 👨🏻‍💻",
+    "/publications": "Publications 📄",
+    "/projects": "Projects 🚧",
+    "/blog": "Blog 💭",
   }
 
   const nPaths = Object.keys(paths).length;
