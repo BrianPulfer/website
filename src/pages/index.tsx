@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Image, Text, Box, Link } from '@chakra-ui/react'
+import { Container, Image, Text, Box, Link } from '@chakra-ui/react'
 
 import News from '@/components/News'
 

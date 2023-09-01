@@ -1,11 +1,11 @@
-import {Container, Link} from '@chakra-ui/react'
+import {Link} from '@chakra-ui/react'
 
 import Publication from '../../components/Publication'
 import {PublicationTitle, PublicationAbstract, PublicationVenue, PublicationCitation} from '../../components/Publication'
 
 export default function Publications() {
     return (
-      <Container m={0} maxW={"100%"}>
+      <>
           <Publication>
               <PublicationTitle className={"mb-4"}>
                 <Link textColor={"blue.500"} href="https://arxiv.org/abs/2212.02456">Solving the Weather4cast Challenge via Visual Transformers for 3D Images</Link> (Dec 22)
@@ -58,6 +58,6 @@ export default function Publications() {
               <PublicationVenue className={"mt-2"}>IEEE Transactions on Software Engineering</PublicationVenue>
               <PublicationCitation>A. Stocco, B. Pulfer and P. Tonella, "Mind the Gap! A Study on the Transferability of Virtual vs Physical-world Testing of Autonomous Driving Systems," in IEEE Transactions on Software Engineering, 2022, doi: 10.1109/TSE.2022.3202311.</PublicationCitation>
           </Publication>
-      </Container>
+      </>
     );
   }
