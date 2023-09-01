@@ -6,6 +6,11 @@ import Navbar from '@/components/Navbar'
 import theme from "./theme"
 import { ChakraProvider, Container } from '@chakra-ui/react'
 
+import "@fontsource/raleway/400.css";
+import "@fontsource/open-sans/700.css";
+
+import "../styles/globals.css";
+
 const inter = Inter({ subsets: ['latin'] })
 
 
