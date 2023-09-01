@@ -41,7 +41,7 @@ export function PublicationCitation({children, className}: {children: React.Reac
 
 export default function Publication({children}: {children: React.ReactNode}){
     return (
-        <Container m={0} maxW={"100%"} p={"4"} mb={"10"} backgroundColor={useColorModeValue("gray.100", "gray.900")}>
+        <Container m={0} maxW={"100%"} p={"4"} mb={"10"} borderRadius={"xl"} boxShadow={"2xl"} backgroundColor={useColorModeValue("gray.100", "gray.900")}>
             {children}
         </Container>
     )
