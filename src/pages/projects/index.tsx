@@ -1,4 +1,4 @@
-import { AspectRatio, Image, Link, Stack, StackItem, Text } from "@chakra-ui/react";
+import { AspectRatio, Center, Image, Link, Stack, StackItem, Text } from "@chakra-ui/react";
 
 export default function Projects() {
   return (
@@ -13,9 +13,11 @@ export default function Projects() {
             <Text fontSize={"2xl"} fontWeight={"bold"} textAlign={"center"}>
               From Simulated to Real Test Environments for Self Driving Cars
             </Text>
-            <AspectRatio minWidth={"485px"} width={"100%"} ratio={1920/1080} mb={5}>
-                <iframe title="From Simulated to Real Test Environments for Self Driving Cars" src="https://www.youtube.com/embed/7q2hwzWo7Cw" allowFullScreen/>
-            </AspectRatio>
+            <Center>
+              <AspectRatio minWidth={"485px"} width={"100%"} ratio={1920/1080} mb={5}>
+                  <iframe title="From Simulated to Real Test Environments for Self Driving Cars" src="https://www.youtube.com/embed/7q2hwzWo7Cw" allowFullScreen/>
+              </AspectRatio>
+            </Center>
           </Link>
         </StackItem>
         <StackItem mb={10}>
@@ -23,7 +25,9 @@ export default function Projects() {
             <Text fontSize={"2xl"} fontWeight={"bold"} textAlign={"center"}>
               StyleGAN2 Distillation
             </Text>
-            <Image src={"/imgs/projects/stylegan2-distillation.png"} alt={"StyleGAN Distillation"} maxW={"xl"} mb={5}/>
+            <Center>
+              <Image src={"/imgs/projects/stylegan2-distillation.png"} alt={"StyleGAN Distillation"} maxW={"xl"} mb={5}/>
+            </Center>
           </Link>
         </StackItem>
         <StackItem mb={10}>
@@ -31,7 +35,9 @@ export default function Projects() {
             <Text fontSize={"2xl"} fontWeight={"bold"} textAlign={"center"}>
               Machine Learning for disambiguation of scientific article authors
             </Text>
-            <Image src={"/imgs/projects/disambiguation.png"} alt={"Disambiguation"} maxW={"xl"} mb={5}/>
+            <Center>
+              <Image src={"/imgs/projects/disambiguation.png"} alt={"Disambiguation"} maxW={"xl"} mb={5}/>
+            </Center>
           </Link>
         </StackItem>
       </Stack>
