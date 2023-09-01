@@ -53,7 +53,7 @@ export default function Navbar() {
       <SimpleGrid justifyContent="space-between" columns={nPaths + 1}>
         {pageLinks}
 
-        <GridItem textAlign={"right"}>
+        <GridItem textAlign={"center"}>
           <IconButton
             aria-label="Toggle color mode"
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
