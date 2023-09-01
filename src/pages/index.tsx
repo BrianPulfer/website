@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Image, Text, Box, Link } from '@chakra-ui/react'
+import { Center, Image, Text, Box, Link } from '@chakra-ui/react'
 
 import News from '@/components/News'
 
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Head><title>Brian - Home</title></Head>
       
-      <Image src="/imgs/home/avatar.png" alt="Brian" />
+      <Image src="/imgs/home/avatar.png" alt="Brian"/>
       
       <Text fontSize={"6xl"} bgGradient={"linear(to-b, gray.100, gray.900)"} className={"bg-clip-text text-transparent"}>Brian Pulfer</Text>
       

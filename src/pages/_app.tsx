@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Navbar />
       <Container
         maxW={"container.lg"}
-        className={`flex flex-col items-center justify-between m-0 max-h-0 ${inter.className}`}
+        className={`flex flex-col items-center justify-between m-0 ${inter.className}`}
       >
         <Component {...pageProps} />
       </Container>
