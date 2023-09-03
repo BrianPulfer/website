@@ -254,8 +254,8 @@ return vars(parser.parse_args())
             <Text mb={5}>
                 Notice that, by default, the parameters are set as described in the paper. Ideally, our code should run on GPU if possible, so we create a simple utility function.
             </Text>
-            <CodeBlock language="python">{`
-def get_device():
+            <CodeBlock language="python">{
+`def get_device():
     """Gets the device (GPU if any) and logs the type"""
     if torch.cuda.is_available():
         device = torch.device("cuda")
@@ -314,8 +314,8 @@ def run_timestamps(env, model, timestamps=128, render=False, device="cpu"):
             <Text mb={5}>
                 Ideally, we would like our <b>main</b> function to look something like this:
             </Text>
-            <CodeBlock language="python">{`
-def main():
+            <CodeBlock language="python">{
+`def main():
     # Parsing program arguments
     args = parse_args()
     print(args)
@@ -347,8 +347,8 @@ def main():
             <Text mb={5}>
                 Thus, we can create a MyPPO class that contains actor and critic models. Optionally, we may decide that part of the architecture between the two is shared. When running the forward method for some states, we return the sampled actions by the actor, the relative probabilities for each possible action (logits), and the critic’s estimated values for each state.
             </Text>
-            <CodeBlock language="python">{`
-class MyPPO(nn.Module):
+            <CodeBlock language="python">{
+`class MyPPO(nn.Module):
 """Implementation of a PPO model. The same backbone is used to get actor and critic values."""
 
     def __init__(self, in_shape, n_actions, hidden_d=100, share_backbone=False):
@@ -404,8 +404,8 @@ class MyPPO(nn.Module):
             </Text>
 
             <Text mb={5}>Finally, we can take care of the actual algorithm in the training_loop function. As we know from the paper, the actual signature of the function should look something like this:</Text>
-            <CodeBlock language="python">{`
-def training_loop(env, model, max_iterations, n_actors, horizon, gamma, 
+            <CodeBlock language="python">{
+`def training_loop(env, model, max_iterations, n_actors, horizon, gamma, 
     epsilon, n_epochs, batch_size, lr, c1, c2, device, env_name=""):
     # TODO...
 `}
@@ -419,8 +419,8 @@ def training_loop(env, model, max_iterations, n_actors, horizon, gamma,
             </Center>
             <Text mb={5}>The pseudo-code for PPO is relatively simple: we simply collect interactions with the environment by multiple copies of our policy model (called actors) and use the objective previously defined to optimize both actor and critic networks.</Text>
             <Text mb={5}>Since we need to measure the cumulative rewards that we really obtained, we create a function that, given a buffer, replaces rewards at each timestamp with the cumulative rewards:</Text>
-            <CodeBlock language="python">{`
-def compute_cumulative_rewards(buffer, gamma):
+            <CodeBlock language="python">{
+`def compute_cumulative_rewards(buffer, gamma):
     """Given a buffer with states, policy action logits, rewards and terminations,
     computes the cumulative rewards for each timestamp and substitutes them into the buffer."""
     curr_rew = 0.
@@ -450,8 +450,8 @@ def compute_cumulative_rewards(buffer, gamma):
             </CodeBlock>
             <Text mb={5}>Notice that, in the end, we normalize the cumulative rewards. This is a standard trick to make the optimization problem easier and the training smoother.</Text>
             <Text mb={5}>Now that we can obtain a buffer with states, actions taken, actions probabilities, and cumulative rewards, we can write a function that, given a buffer, computes the three loss terms for our final objective:</Text>
-            <CodeBlock language="python">{`
-def get_losses(model, batch, epsilon, annealing, device="cpu"):
+            <CodeBlock language="python">{
+`def get_losses(model, batch, epsilon, annealing, device="cpu"):
     """Returns the three loss terms for a given model and a given batch and additional parameters"""
     # Getting old data
     n = len(batch)
@@ -490,8 +490,8 @@ def get_losses(model, batch, epsilon, annealing, device="cpu"):
             </CodeBlock>
             <Text mb={5}>Notice that, in practice, we use an <Code>annealing</Code> parameter that is set to 1 and linearly decayed towards 0 throughout the training. The idea is that as training progresses, we want our policy to change less and less. Also notice that the <Code>advantages</Code> variable is a simple difference between tensors for which we are not tracking gradients, unlike <Code>new_logits</Code> and <Code>new_values</Code>.</Text>
             <Text mb={5}>Now that we have a way to interact with the environment and store buffers, compute the (true) cumulative rewards and obtain the loss terms, we can write the final training loop:</Text>
-            <CodeBlock language="python">{`
-def training_loop(env, model, max_iterations, n_actors, horizon, gamma, epsilon, n_epochs, batch_size, lr,
+            <CodeBlock language="python">{
+`def training_loop(env, model, max_iterations, n_actors, horizon, gamma, epsilon, n_epochs, batch_size, lr,
     c1, c2, device, env_name=""):
     """Train the model on the given environment using multiple actors acting up to n timestamps."""
 
@@ -579,16 +579,16 @@ def training_loop(env, model, max_iterations, n_actors, horizon, gamma, epsilon,
 `}
             </CodeBlock>
             <Text mb={5}>Finally, to see how the final model does, we use the following testing_loop function:</Text>
-            <CodeBlock language="python">{`
-def testing_loop(env, model, n_episodes, device):
+            <CodeBlock language="python">{
+`def testing_loop(env, model, n_episodes, device):
     """Runs the learned policy on the environment for n episodes"""
     for _ in range(n_episodes):
         run_timestamps(env, model, timestamps=128, render=True, device=device)
 `}
             </CodeBlock>
             <Text mb={5}>And our main program is simply:</Text>
-            <CodeBlock language="python">{`
-def main():
+            <CodeBlock language="python">{
+`def main():
     # Parsing program arguments
     args = parse_args()
     print(args)
