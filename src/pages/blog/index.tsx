@@ -1,3 +1,5 @@
+import AppLayout from '@/components/Layout/AppLayout';
+
 import { Center, Image, Link, Stack, StackItem, Text } from "@chakra-ui/react";
 
 export default function Projects() {
@@ -37,3 +39,11 @@ export default function Projects() {
       </>
     );
   }
+
+Projects.getLayout = function getLayout(page: React.ReactElement) {
+  return (
+    <AppLayout>
+      {page}
+    </AppLayout>
+  )
+}

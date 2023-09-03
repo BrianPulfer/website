@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Image, Text, Box, Link } from '@chakra-ui/react'
 
 import News from '@/components/News'
+import AppLayout from '@/components/Layout/AppLayout'
 
 export default function Home() {
   return (
@@ -102,5 +103,13 @@ export default function Home() {
       </Box>
 
   </>
+  )
+}
+
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return (
+    <AppLayout>
+      {page}
+    </AppLayout>
   )
 }

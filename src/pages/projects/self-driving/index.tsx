@@ -1,4 +1,4 @@
-import React from "react";
+import AppLayout from '@/components/Layout/AppLayout';
 import {AspectRatio, Link, Text} from "@chakra-ui/react";
 
 export default function SelfDriving(){
@@ -23,4 +23,12 @@ export default function SelfDriving(){
             </Text>
         </>
     );
+}
+
+SelfDriving.getLayout = function getLayout(page: React.ReactElement) {
+    return (
+        <AppLayout>
+            {page}
+        </AppLayout>
+    )
 }

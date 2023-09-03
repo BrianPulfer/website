@@ -1,3 +1,5 @@
+import AppLayout from '@/components/Layout/AppLayout';
+
 import {Link} from '@chakra-ui/react'
 
 import Publication from '../../components/Publication'
@@ -60,4 +62,12 @@ export default function Publications() {
           </Publication>
       </>
     );
+  }
+
+  Publications.getLayout = function getLayout(page: React.ReactElement) {
+    return (
+      <AppLayout>
+        {page}
+      </AppLayout>
+    )
   }

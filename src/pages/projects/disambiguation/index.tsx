@@ -1,4 +1,4 @@
-import React from "react";
+import AppLayout from '@/components/Layout/AppLayout';
 import {Image, Link, Text} from "@chakra-ui/react";
 
 export default function Disambiguation(){
@@ -20,4 +20,12 @@ export default function Disambiguation(){
             </Text>
         </>
     );
+}
+
+Disambiguation.getLayout = function getLayout(page: React.ReactElement) {
+    return (
+        <AppLayout>
+            {page}
+        </AppLayout>
+    )
 }
