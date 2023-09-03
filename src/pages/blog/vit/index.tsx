@@ -1,8 +1,10 @@
-import { Text } from "@chakra-ui/react"
+import { Image, Text} from "@chakra-ui/react"
 
-export default function ViTBlogPost(){
+export default function ViT(){
     return (
-        // TODO: Add content
-        <Text fontSize={"3xl"}>ViT</Text>
+        <>
+            <Text fontSize={"3xl"}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
+            <Image src="/imgs/blog/vit.png" />
+        </>
     )
 }
