@@ -6,7 +6,7 @@ export default function ViT(){
     return (
         <>
             <Text fontSize={"5xl"}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
-            <Image src="/imgs/blog/vit.png" />
+            <Image src="/imgs/blog/vit/vit.png" />
         </>
     )
 }

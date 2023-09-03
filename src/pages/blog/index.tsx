@@ -15,7 +15,7 @@ export default function Projects() {
               <Link href="/blog/ppo" textColor={"blue.500"}>
                 <Text fontWeight={"bold"} fontSize={"2xl"} textAlign={"center"}>PPO — Intuitive guide to state-of-the-art Reinforcement Learning</Text>
                 <Center>
-                  <Image src="/imgs/blog/ppo.gif"/>
+                  <Image src="/imgs/blog/ppo/ppo.gif"/>
                 </Center>
               </Link>
             </StackItem>
@@ -23,7 +23,7 @@ export default function Projects() {
               <Link href="/blog/ddpm" textColor={"blue.500"}>
                 <Text fontWeight={"bold"} fontSize={"2xl"} textAlign={"center"}>Generating images with DDPMs: A PyTorch Implementation</Text>
                 <Center>
-                  <Image src="/imgs/blog/ddpm.gif"/>
+                  <Image src="/imgs/blog/ddpm/ddpm.gif"/>
                 </Center>
               </Link>
             </StackItem>
@@ -31,7 +31,7 @@ export default function Projects() {
               <Link href="/blog/vit" textColor={"blue.500"}>
                 <Text fontWeight={"bold"} fontSize={"2xl"} textAlign={"center"}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
                 <Center>
-                  <Image src="/imgs/blog/vit.png"/>
+                  <Image src="/imgs/blog/vit/vit.png"/>
                 </Center>
               </Link>
             </StackItem>

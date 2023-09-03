@@ -9,7 +9,7 @@ export default function DDPM() {
         Generating images with DDPMs: A PyTorch Implementation
       </Text>
       <Center>
-        <Image src="/imgs/blog/ddpm.gif" />
+        <Image src="/imgs/blog/ddpm/ddpm.gif" />
       </Center>
     </>
   );
