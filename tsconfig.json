@@ -16,9 +16,11 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
+      "@components/Blog/*": ["./src/components/Blog/*"],
+      "@components/Layout/*": ["./src/components/Layout/*"],
       "@pages/*": ["./src/pages/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Blog/CodeBlock.js"],
   "exclude": ["node_modules"]
 }
