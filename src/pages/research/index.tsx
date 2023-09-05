@@ -10,10 +10,24 @@ export default function Publications() {
       <>
           <Publication>
               <PublicationTitle className={"mb-4"}>
+                <Link textColor={"blue.500"} href="https://proceedings.mlr.press/v220/gruca22a.html">Weather4cast at NeurIPS 2022: Super-Resolution Rain Movie Prediction under Spatio-temporal Shifts</Link> (Sep 23)
+              </PublicationTitle>
+              <PublicationAbstract>
+                Weather4cast again advanced modern algorithms in AI and machine learning through a highly topical interdisciplinary competition challenge: The prediction of hi-res rain radar movies from multi-band satellite sensors, requiring data fusion, multi-channel video frame prediction, and super-resolution. Accurate predictions of rain events are becoming ever more critical, with climate change increasing the frequency of unexpected rainfall. The resulting models will have a particular impact where costly weather radar is not available. We here present highlights and insights emerging from the thirty teams participating from over a dozen countries. To extract relevant patterns, models were challenged by spatio-temporal shifts. Geometric data augmentation and test-time ensemble models with a suitable smoother loss helped this transfer learning. Even though, in ablation, static information like geographical location and elevation was not linked to performance, the general success of models incorporating physics in this competition suggests that approaches combining machine learning with application domain knowledge seem a promising avenue for future research. Weather4cast will continue to explore the powerful benchmark reference data set introduced here, advancing competition tasks to quantitative predictions, and exploring the effects of metric choice on model performance and qualitative prediction properties.
+              </PublicationAbstract>
+              <PublicationVenue className={"mt-2"}>
+                Proceedings of Machine Learning Research (PMLR), 2023
+              </PublicationVenue>
+              <PublicationCitation>
+                Gruca, A., Serva, F., Lliso, L., Rípodas, P., Calbet, X., Herruzo, P., Pihrt, J., Raevskyi, R., Šimánek, P., Choma, M., Li, Y., Dong, H., Belousov, Y., Polezhaev, S., Pulfer, B., Seo, M., Kim, D., Shin, S., Kim, E., … Kreil, D. P. (2022). Weather4cast at NeurIPS 2022: Super-Resolution Rain Movie Prediction under Spatio-temporal Shifts. In M. Ciccone, G. Stolovitzky, & J. Albrecht (Eds.), Proceedings of the NeurIPS 2022 Competitions Track (Vol. 220, pp. 292–313). PMLR. https://proceedings.mlr.press/v220/gruca22a.html
+              </PublicationCitation>
+          </Publication>
+          <Publication>
+              <PublicationTitle className={"mb-4"}>
                 <Link textColor={"blue.500"} href="https://arxiv.org/abs/2212.02456">Solving the Weather4cast Challenge via Visual Transformers for 3D Images</Link> (Dec 22)
               </PublicationTitle>
               <PublicationAbstract>
-              Accurately forecasting the weather is an important task, as many real-world processes and decisions depend on future meteorological conditions. The NeurIPS 2022 challenge entitled Weather4cast poses the problem of predicting rainfall events for the next eight hours given the preceding hour of satellite observations as a context. Motivated by the recent success of transformer-based architectures in computer vision, we implement and propose two methodologies based on this architecture to tackle this challenge. We find that ensembling different transformers with some baseline models achieves the best performance we could measure on the unseen test data. Our approach has been ranked 3rd in the competition.
+                Accurately forecasting the weather is an important task, as many real-world processes and decisions depend on future meteorological conditions. The NeurIPS 2022 challenge entitled Weather4cast poses the problem of predicting rainfall events for the next eight hours given the preceding hour of satellite observations as a context. Motivated by the recent success of transformer-based architectures in computer vision, we implement and propose two methodologies based on this architecture to tackle this challenge. We find that ensembling different transformers with some baseline models achieves the best performance we could measure on the unseen test data. Our approach has been ranked 3rd in the competition.
               </PublicationAbstract>
               <PublicationVenue className={"mt-2"}>
                 ArXiv (NeurIPS 2022 challenge), 2022

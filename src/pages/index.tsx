@@ -41,6 +41,9 @@ export default function Home() {
         News 🗞️
       </Text>
       <Box className='flex flex-col space-y-4'>
+        <News title={"September 2023"}>
+          📃 Our work <Link textColor={"blue.500"} href={"https://proceedings.mlr.press/v220/gruca22a.html"}>Weather4cast at NeurIPS 2022: Super-Resolution Rain Movie Prediction under Spatio-temporal Shifts</Link> has been accepted for publication in <Link textColor={"blue.500"} href={"https://proceedings.mlr.press/"}>Proceedings of Machine Learning Research</Link>.
+        </News>
         <News title={"January 2023"}>
           📃 Our work <Link textColor={"blue.500"} href={"https://link.springer.com/article/10.1007/s10664-023-10306-x"}>Model vs System Level Testing of Autonomous Driving Systems: A Replication and Extension Study</Link> has been accepted for publication in <Link textColor={"blue.500"} href={"https://www.springer.com/journal/10664"}>Empirical Software Engineering</Link>.
         </News>
