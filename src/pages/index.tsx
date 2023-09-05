@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import { Image, Text, Box, Link } from '@chakra-ui/react'
 import { SocialIcon } from 'react-social-icons'
+
+import { Image, Text, Box, Link } from '@chakra-ui/react'
 
 import News from '@/components/News'
 import AppLayout from '@/components/Layout/AppLayout'
@@ -16,17 +17,9 @@ export default function Home() {
       <Text fontSize={"6xl"} bgGradient={"linear(to-b, gray.100, gray.900)"} className={"bg-clip-text text-transparent"}>Brian Pulfer</Text>
       
       <Box>
-        <Link href={"https://www.github.com/BrianPulfer"}>
-          <SocialIcon url='https://github.com' />
-        </Link>
-
-        <Link href={"https://www.linkedin.com/in/brianpulfer/"}>
-          <SocialIcon url='https://www.linkedin.com' />
-        </Link>
-
-        <Link href={"https://www.x.com/PulferBrian21"}>
-          <SocialIcon url='https://x.com' />
-        </Link>
+          <SocialIcon url="www.github.com" href="https://www.github.com/BrianPulfer"/>
+          <SocialIcon url="www.linkedin.com" href="https://www.linkedin.com/in/brianpulfer/"/>
+          <SocialIcon url="www.x.com" href="https://www.x.com/PulferBrian21"/>
       </Box>
 
       <Text textAlign={"center"} fontWeight={"bold"} className={'mt-10'} fontSize={"xl"}>
