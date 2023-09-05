@@ -10,12 +10,13 @@ import {
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
+// TODO: Collapse navbar past a certain width
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const paths = {
     "/": "Brian Pulfer",
-    "/publications": "Publications",
+    "/research": "Research",
     "/projects": "Projects",
     "/blog": "Blog",
   };

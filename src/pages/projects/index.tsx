@@ -16,7 +16,7 @@ export default function Projects() {
               From Simulated to Real Test Environments for Self Driving Cars
             </Text>
             <Center>
-              <AspectRatio minWidth={"485px"} width={"100%"} ratio={1920/1080} mb={5}>
+              <AspectRatio width={"100%"} maxWidth={"700px"} ratio={1920/1080} mb={5}>
                   <iframe title="From Simulated to Real Test Environments for Self Driving Cars" src="https://www.youtube.com/embed/7q2hwzWo7Cw" allowFullScreen/>
               </AspectRatio>
             </Center>
@@ -28,7 +28,9 @@ export default function Projects() {
               StyleGAN2 Distillation
             </Text>
             <Center>
-              <Image src={"/imgs/projects/stylegan2-distillation.png"} alt={"StyleGAN Distillation"} maxW={"xl"} mb={5}/>
+              <AspectRatio width={"100%"} maxWidth={"700px"} ratio={1} mb={5}>
+                <Image src={"/imgs/projects/stylegan2-distillation.png"} alt={"StyleGAN Distillation"} mb={5}/>
+              </AspectRatio>
             </Center>
           </Link>
         </StackItem>
@@ -38,7 +40,9 @@ export default function Projects() {
               Machine Learning for disambiguation of scientific article authors
             </Text>
             <Center>
-              <Image src={"/imgs/projects/disambiguation.png"} alt={"Disambiguation"} maxW={"xl"} mb={5}/>
+              <AspectRatio width={"100%"} maxWidth={"700px"} ratio={9/5} mb={5}>
+                <Image src={"/imgs/projects/disambiguation.png"} alt={"Disambiguation"}  mb={5}/>
+              </AspectRatio>
             </Center>
           </Link>
         </StackItem>
