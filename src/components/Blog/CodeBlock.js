@@ -7,8 +7,8 @@ import { useColorModeValue } from '@chakra-ui/react';
 export default function CodeBlock({ language, children }) {
 
     return (
-        <Box my={4}>
-          <SyntaxHighlighter language={language} >
+        <Box my={4} >
+          <SyntaxHighlighter language={language} showLineNumbers={true} showInlineLineNumbers={true}>
             {children}
           </SyntaxHighlighter>
         </Box>
