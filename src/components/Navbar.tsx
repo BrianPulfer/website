@@ -1,17 +1,18 @@
+import { useState } from "react";
 import Link from "next/link";
 import {
   Box,
   Text,
-  GridItem,
-  SimpleGrid,
+  Flex,
   IconButton,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 // TODO: Collapse navbar past a certain width
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
 
   const paths = {
@@ -26,8 +27,8 @@ export default function Navbar() {
   let pageLinks = [];
   for (const [path, title] of Object.entries(paths)) {
     pageLinks.push(
-      <GridItem key={path} textAlign={"center"}>
-        <Link href={path}>
+      <Box key={path} textAlign={"center"}>
+        <Link href={path} onClick={() => setIsOpen(false)}>
           <Text
             fontSize="xl"
             fontWeight="bold"
@@ -36,7 +37,7 @@ export default function Navbar() {
             {title}
           </Text>
         </Link>
-      </GridItem>
+      </Box>
     );
   }
 
@@ -51,17 +52,33 @@ export default function Navbar() {
       bgColor={useColorModeValue("#EEE", "#111")}
       className={"mb-10"}
     >
-      <SimpleGrid justifyContent="space-between" columns={nPaths + 1}>
+      <Box
+        display={{ base: "block", md: "none" }}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? (
+          <CloseIcon boxSize={5} _hover={{ color: "gray.500" }} />
+        ) : (
+          <HamburgerIcon boxSize={6} _hover={{ color: "gray.500" }} />
+        )}
+      </Box>
+      <Flex
+        display={{ base: isOpen ? "flex" : "none", md: "flex" }}
+        justifyContent="space-between"
+        flexBasis={{ base: "100%", md: "auto" }}
+        flexDir={{ base: "column", md: "row" }}
+        alignItems="center"
+      >
         {pageLinks}
 
-        <GridItem textAlign={"center"}>
+        <Box textAlign={"center"}>
           <IconButton
             aria-label="Toggle color mode"
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             onClick={toggleColorMode}
           />
-        </GridItem>
-      </SimpleGrid>
+        </Box>
+      </Flex>
     </Box>
   );
 }
