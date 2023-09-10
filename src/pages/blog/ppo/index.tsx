@@ -32,7 +32,7 @@ export default function PPO(){
                 The classical picture that is first shown to people approaching RL is the following:
             </Text>
             <Center mb={5} className="flex flex-col">
-                <Image src="/imgs/blog/ppo/chatgpt.png" />
+                <Image src="/imgs/blog/ppo/chatgpt.png" alt="ChatGPT explains RL"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     ChatGPT’s answer to the prompt: “Give an overview on the field of Reinforcement Learning”. While I asked help to ChatGPT for the introduction to the field of RL which was used to train ChatGPT itself (quite meta), I promise that everything in this article apart from this picture is written by me.
                 </Text>
@@ -42,7 +42,7 @@ export default function PPO(){
                 The classical picture that is first shown to people approaching RL is the following:
             </Text>
             <Center mb={5} className="flex flex-col">
-                <Image src="/imgs/blog/ppo/rl.png" />
+                <Image src="/imgs/blog/ppo/rl.png" alt="Reinforcement learning setting"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Reinforcement Learning framework. Image from <Link href="https://neptune.ai/blog/reinforcement-learning-agents-training-debug">neptune.ai</Link>
                 </Text>
@@ -55,7 +55,7 @@ export default function PPO(){
                 Our goal is to create an agent that can maximize the obtained rewards. In particular, we are typically interested in maximizing the sum of discounted rewards
             </Text>
             <Center mb={5}>
-                <Image src="/imgs/blog/ppo/reward.png" />
+                <Image src="/imgs/blog/ppo/reward.png" alt="Cumulative reward function"/>
             </Center>
             <Text mb={5}>
                 Where γ is a discount factor typically in the range [0.95, 0.99], and r_t is the reward for timestamp t.
@@ -67,7 +67,7 @@ export default function PPO(){
                 So how do we solve an RL problem? There are multiple algorithms, but they can be divided (for Markov Decision Processes or MDPs) into two categories: <b>model-based</b> (create a model of the environment) and <b>model-free</b> (just learn what to do given a state).
             </Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/taxonomy.png" />
+                <Image src="/imgs/blog/ppo/taxonomy.png" alt="Taxonomy of RL methods"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                 Taxonomy of Reinforcement Learning algorithms (from <Link href="https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html">OpenAI spinning up</Link>)
             </Text>
@@ -92,7 +92,7 @@ export default function PPO(){
             </Text>
 
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/grads.png" />
+                <Image src="/imgs/blog/ppo/grads.png" alt="Gradient-based RL methods"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Objective to be maximized with PO algorithms. Image from <Link href="https://lilianweng.github.io/posts/2018-04-08-policy-gradient/">Lil’Log’s blog</Link>.
                 </Text>
@@ -121,7 +121,7 @@ export default function PPO(){
                 The final objective is the following:
             </Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/loss1.png" />
+                <Image src="/imgs/blog/ppo/loss1.png" alt="PPO loss function"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     The loss function of PPO to be maximized.
                 </Text>
@@ -136,14 +136,14 @@ export default function PPO(){
                 The loss function motivates, as we said, the maximization of the probability of actions that resulted in an advantage (or minimization of the probability if the actions resulted in a negative advantage):
             </Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/loss2.png" />
+                <Image src="/imgs/blog/ppo/loss2.png" alt="PPO loss: first term"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     First loss term. We maximize the expected advantage while not moving the policy too much.
                 </Text>
             </Center>
             <Text mb={5}>Where:</Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/ratio.png" />
+                <Image src="/imgs/blog/ppo/ratio.png" alt="PPO loss ratio term"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Coefficient rt(θ). This is the term that gradients are going to go through.
                 </Text>
@@ -155,7 +155,7 @@ export default function PPO(){
             The advantage is computed as:
             </Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/advantage.png" />
+                <Image src="/imgs/blog/ppo/advantage.png" alt="Advantage function"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Advantage estimate. We simply take a difference between what we estimated the cumulative reward would have been given the initial state and the real cumulative reward observed up to a step t plus the estimate from that state onward. We apply a stop-gradient operator to this term in the CLIP loss.
                 </Text>
@@ -173,7 +173,7 @@ export default function PPO(){
             To have a good estimate of the advantage, however, we need a critic that can predict the value of a given state. This model is learned in a supervised fashion with a simple MSE loss:
             </Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/loss3.png" />
+                <Image src="/imgs/blog/ppo/loss3.png" alt="Loss term of the critic"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                 The loss function for our critic is simply the Mean-Squared-Error between its predicted expected reward and the observed cumulative reward. We apply a stop-gradient operator only to the observed reward in this case and optimize the critic.
                 </Text>
@@ -188,7 +188,7 @@ export default function PPO(){
                 Finally, we encourage exploration with a small bonus on the entropy of the output distribution of the policy. We consider the standard entropy:
             </Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/entropy.png" />
+                <Image src="/imgs/blog/ppo/entropy.png" alt="Entropy term in the loss of PPO"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Entropy formula for the output distribution given by the policy model.
                 </Text>
@@ -410,9 +410,9 @@ def run_timestamps(env, model, timestamps=128, render=False, device="cpu"):
     # TODO...
 `}
             </CodeBlock>
-            <Text mb={5}>Here’s the pseudo-code provided in the paper for the PPO training procedure:</Text>
+            <Text mb={5}>{"Here’s"} the pseudo-code provided in the paper for the PPO training procedure:</Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/pseudocode.png" />
+                <Image src="/imgs/blog/ppo/pseudocode.png" alt="Pseudocode for PPO"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Pseudo code for PPO training provided in the <Link href="https://arxiv.org/abs/1707.06347">original paper</Link>.
                 </Text>
@@ -626,13 +626,13 @@ def run_timestamps(env, model, timestamps=128, render=False, device="cpu"):
             <Text mb={5} fontSize={"3xl"} fontWeight={"bold"}>Results</Text>
             <Text mb={5}>The Weights & Biases logs allow us to visualize the logged metrics and losses. In particular, we have access to plots of the loss and its terms and the average reward per iteration.</Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/lossess.png" />
+                <Image src="/imgs/blog/ppo/lossess.png" alt="Total loss"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Training losses through training iterations. The total loss (blue) is the sum of L_CLIP (orange) minus the L_VF (pink) plus a small constant times the entropy bonus (green)
                 </Text>
             </Center>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/avgreward.png" />
+                <Image src="/imgs/blog/ppo/avgreward.png" alt="Average reward"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Average reward through iterations. PPO quickly learns to maximize the cumulative reward.
                 </Text>
@@ -640,7 +640,7 @@ def run_timestamps(env, model, timestamps=128, render=False, device="cpu"):
             <Text mb={5}>As the cart pole environment is not extremely challenging, our algorithm quickly finds a solution to the problem, maximizing the average reward after just ~20 steps. Also, since the environment only has 2 possible actions, the entropy term remains basically fixed.</Text>
             <Text mb={5}>Finally, here’s what we get if we render the final policy in action!</Text>
             <Center className="flex flex-col" mb={5}>
-                <Image src="/imgs/blog/ppo/ppo.gif" />
+                <Image src="/imgs/blog/ppo/ppo.gif" alt="Balancing cart-pole with PPO"/>
                 <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
                     Trained PPO model balancing the cart pole
                 </Text>

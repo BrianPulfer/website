@@ -26,7 +26,7 @@ export default function Home() {
         Hey there, this is Brian! 👋
       </Text>
       <Text fontSize={"l"} maxW={"container.md"}>
-        I am a Machine Learning practitioner and enthusiast. I am currently a Ph.D. student in Machine Learning, with a focus on anomaly detection and adversarial attacks, at the University of Geneva, Switzerland 🇨🇭. <Link textColor={"blue.500"} href='cv/BrianPulfer_CV.pdf'>Here's my CV</Link>.
+        I am a Machine Learning practitioner and enthusiast. I am currently a Ph.D. student in Machine Learning, with a focus on anomaly detection and adversarial attacks, at the University of Geneva, Switzerland 🇨🇭. <Link textColor={"blue.500"} href='cv/BrianPulfer_CV.pdf'>{"Here's my CV"}</Link>.
         This is my personal portfolio, where I publish updates on my career, projects, publications and more. Hope you enjoy it!
       </Text>
 

@@ -13,15 +13,15 @@ export default function ViT(){
             <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Introduction</Text>
             <Text mb={5}>Vision Transformers (ViT), since their introduction by <Link textColor={"blue.500"} href="https://arxiv.org/abs/2010.11929">Dosovitskiy et. al.</Link> in 2020, have dominated the field of Computer Vision, obtaining state-of-the-art performance in image classification first, and later on in other tasks as well.</Text>
             <Text mb={5}>However, unlike other architectures, they are a bit harder to grasp, particularly if you are not already familiar with the Transformer model used in Natural Language Processing (NLP).</Text>
-            <Text mb={5}>If you are into Computer Vision (CV) and are still unfamiliar with the ViT model, don’t worry! So was I!</Text>
+            <Text mb={5}>If you are into Computer Vision (CV) and are still unfamiliar with the ViT model, {"don't"} worry! So was I!</Text>
             <Text mb={5}>In this brief piece of text, I will show you how I implemented my first ViT from scratch (using PyTorch), and I will guide you through some debugging that will help you better visualize what exactly happens in a ViT.</Text>
             <Text mb={5}>While this article is specific to ViT, the concepts you will find here, such as the Multi-headed Self Attention (MSA) block, are present and currently very relevant in various sub-fields of AI, such as CV, NLP, etc…</Text>
             
 
             <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Defining the task</Text>
             <Text mb={5}>Since the goal is just learning more about the ViT architecture, it is wise to pick an easy and well-known task and dataset. In our case, the task is the image classification for the popular MNIST dataset by the great <Link textColor={"blue.500"} href="https://yann.lecun.com/exdb/mnist/">LeCun et. al.</Link></Text>
-            <Text mb={5}>If you didn’t already know, MNIST is a dataset of hand-written digits ([0–9]) all contained in 28x28 binary pixels images. The task is referred to as trivial for today's algorithms, so we can expect that a correct implementation will perform well.</Text>
-            <Text mb={5}>Let’s start with the imports then:</Text>
+            <Text mb={5}>{"If you didn’t already know, MNIST is a dataset of hand-written digits ([0–9]) all contained in 28x28 binary pixels images. The task is referred to as trivial for today's algorithms, so we can expect that a correct implementation will perform well."}</Text>
+            <Text mb={5}>{"Let’s start with the imports then:"}</Text>
             <CodeBlock language={"python"}>
 {`import numpy as np
 
@@ -111,7 +111,7 @@ torch.manual_seed(0)
             <Text mb={5}>As Pytorch, as well as most DL frameworks, provides autograd computations, we are only concerned with implementing the forward pass of the ViT model. Since we have defined the optimizer of the model already, the framework will take care of back-propagating gradients and training the model’s parameters.</Text>
             <Text mb={5}>While implementing a new model, I like to keep a picture of the architecture on some tab. Here’s our reference picture for the ViT from <Link textColor={"blue.500"} href="https://www.researchgate.net/publication/348947034_Vision_Transformers_for_Remote_Sensing_Image_Classification">Bazi et. al (2021)</Link>:</Text>
             <Center mb={5} className="flex flex-col">
-                <Image src="/imgs/blog/vit/arch.png" />
+                <Image src="/imgs/blog/vit/arch.png" alt="ViT architecture"/>
                 <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>The architecture of the ViT with specific details on the transformer encoder and the MSA block. Keep this picture in mind. Picture from <Link href="https://www.researchgate.net/publication/348947034_Vision_Transformers_for_Remote_Sensing_Image_Classification">Bazi et. al.</Link></Text>
             </Center>
             <Text mb={5}>By the picture, we see that the input image (a) is “cut” into sub-images equally sized.</Text>
@@ -127,7 +127,7 @@ torch.manual_seed(0)
             <Text mb={5}>Thus, we reshape input <Code>(N, 1, 28, 28)</Code> to <Code>(N, PxP, HxC/P x WxC/P) = (N, 49, 16)</Code></Text>
             <Text mb={5}>Notice that, while each patch is a picture of size 1x4x4, we flatten it to a 16-dimensional vector. Also, in this case, we only had a single color channel. If we had multiple color channels, those would also have been flattened into the vector.</Text>
             <Center mb={5} className="flex flex-col">
-                <Image src="/imgs/blog/vit/patching.png" />
+                <Image src="/imgs/blog/vit/patching.png" alt="ViT patching strategy"/>
                 <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>Raffiguration of how an image is split into patches. The 1x28x28 image is split into 49 (7x7) patches, each of size 16 (4x4x1)</Text>
             </Center>
             <Text mb={5}>We modify our <Code>MyViT</Code> class to implement the patchifying only. We create a method that does the operation from scratch. Notice that this is an inefficient way to carry out the operation, but the code is intuitive for learning about the core concept.</Text>
@@ -251,7 +251,7 @@ torch.manual_seed(0)
             <Text mb={5}>In particular, positional encoding adds low-frequency values to the first dimensions and higher-frequency values to the latter dimensions.</Text>
             <Text mb={5}>In each sequence, for token i we add to its j-th coordinate the following value:</Text>
             <Center mb={5} className="flex flex-col">
-                <Image src="/imgs/blog/vit/embedding.png" />
+                <Image src="/imgs/blog/vit/embedding.png" alt="ViT embedding"/>
                 <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>Value to be added to the i-th tensor in its j-th coordinate. <Link href="https://blogs.oracle.com/ai-and-datascience/post/multi-head-self-attention-in-nlp">Image source</Link>.</Text>
             </Center>
             <Text mb={5}>This positional embedding is a function of the number of elements in the sequence and the dimensionality of each element. Thus, it is always a 2-dimensional tensor or “rectangle”.</Text>
@@ -272,7 +272,7 @@ if __name__ == "__main__":
 `}
             </CodeBlock>
             <Center mb={5} className="flex flex-col">
-                <Image src="/imgs/blog/vit/embedding_matrix.png" />
+                <Image src="/imgs/blog/vit/embedding_matrix.png" alt="Embedding matrix"/>
                 <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>Heatmap of Positional embeddings for one hundred 300-dimensional samples. Samples are on the y-axis, whereas the dimensions are on the x-axis. Darker regions show higher values.</Text>
             </Center>
             <Text mb={5}>From the heatmap we have plotted, we see that all ‘horizontal lines’ are all different from each other, and thus samples can be distinguished.</Text>
@@ -323,7 +323,7 @@ if __name__ == "__main__":
             <Text mb={5}>Layer normalization is a popular block that, given an input, subtracts its mean and divides by the standard deviation.</Text>
             <Text mb={5}>However, we commonly apply layer normalization to an <Code>(N, d)</Code> input, where d is the dimensionality. Luckily, also the Layer Normalization module generalizes to multiple dimensions, check this:</Text>
             <Center mb={5} className="flex flex-col">
-                <Image src="/imgs/blog/vit/layernorm.png" />
+                <Image src="/imgs/blog/vit/layernorm.png" alt="Layer normalization"/>
                 <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}><Code>nn.LayerNorm</Code> can be applied in multiple dimensions. We can normalize fifty 8-dimensional vectors, but we can also normalize sixteen by fifty 8-dimensional vectors.</Text>
             </Center>
             <Text mb={5}>Layer normalization is applied to the last dimension only. We can thus make each of our 50x8 matrices (representing a single sequence) have mean 0 and std 1. After we run our <Code>(N, 50, 8)</Code> tensor through LN, we still get the same dimensionality.</Text>
@@ -561,7 +561,7 @@ if __name__ == "__main__":
             </CodeBlock>
             <Text mb={5}>We now just need to run the training and test loops and see how our model performs. If you’ve set torch seed manually (to 0), you should get this printed:</Text>
             <Center mb={5} className="flex flex-col">
-                <Image src="/imgs/blog/vit/results.png" />
+                <Image src="/imgs/blog/vit/results.png" alt="ViT results"/>
                 <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>Training losses, test loss, and test accuracy obtained.</Text>
             </Center>
             <Text mb={5}>And that’s it! We have now created a ViT from scratch. Our model achieves <b>~80% accuracy in just 5 epochs</b> and with few parameters.</Text>

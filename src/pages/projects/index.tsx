@@ -7,7 +7,7 @@ export default function Projects() {
     <>
       <Text fontSize={"3xl"}>Projects</Text>
       <Text fontSize={"xl"}>
-        Here's a few projects that I have worked or am currently working on.
+        {"Here's"} a few projects that I have worked or am currently working on.
       </Text>
       <Stack mt={100} alignContent={"center"}>
         <StackItem mb={10}>

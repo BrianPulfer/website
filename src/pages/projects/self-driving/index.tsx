@@ -19,7 +19,7 @@ export default function SelfDriving(){
             </Text>
             <Text fontSize={"xl"} mb={5} textAlign={"center"} fontWeight={"bold"}>
                 My master thesis can be downloaded at this <Link textColor={"blue.500"} href="/docs/Brian Pulfer - From Simulated to Real Test Environments for Self Driving Cars.pdf">link</Link>.<br/>
-                Here's the links to the <Link textColor={"blue.500"} href="https://formulausi.si.usi.ch/2021/">FormulaUSI competition website</Link> and <Link textColor={"blue.500"} href="https://www.youtube.com/watch?v=PDeCb4vBEC4&amp;ab_channel=SoftwareInstitute">highlights</Link>.
+                {"Here's"} the links to the <Link textColor={"blue.500"} href="https://formulausi.si.usi.ch/2021/">FormulaUSI competition website</Link> and <Link textColor={"blue.500"} href="https://www.youtube.com/watch?v=PDeCb4vBEC4&amp;ab_channel=SoftwareInstitute">highlights</Link>.
             </Text>
         </>
     );

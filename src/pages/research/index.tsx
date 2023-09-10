@@ -47,7 +47,7 @@ export default function Publications() {
                 IEEE International Workshop on Information Forensics and Security (WIFS), 2022
               </PublicationVenue>
               <PublicationCitation>
-                Pulfer, B., Belousov, Y., Tutt, J., Chaban, R., Taran, O., Holotyak, T., & Voloshynovskiy, S.. (2022). "Anomaly localization for copy detection patterns through print estimations," in IEEE International Workshop on Information Forensics and Security (WIFS), 2022.
+                {'Pulfer, B., Belousov, Y., Tutt, J., Chaban, R., Taran, O., Holotyak, T., & Voloshynovskiy, S.. (2022). "Anomaly localization for copy detection patterns through print estimations," in IEEE International Workshop on Information Forensics and Security (WIFS), 2022.'}
               </PublicationCitation>
           </Publication>
           <Publication>
@@ -72,7 +72,7 @@ export default function Publications() {
               </PublicationTitle>
               <PublicationAbstract>Safe deployment of self-driving cars (SDC) necessitates thorough simulated and in-field testing. Most testing techniques consider virtualized SDCs within a simulation environment, whereas less effort has been directed towards assessing whether such techniques transfer to and are effective with a physical real-world vehicle. In this paper, we leverage the Donkey Car open-source framework to empirically compare testing of SDCs when deployed on a physical small-scale vehicle vs its virtual simulated counterpart. In our empirical study, we investigate transferability of behavior and failure exposure between virtual and real-world environments on a vast set of corrupted and adversarial settings. While a large number of testing results do transfer between virtual and physical environments, we also identified critical shortcomings that contribute to the reality gap between the virtual and physical world, threatening the potential of existing testing solutions when applied to physical SDCs</PublicationAbstract>
               <PublicationVenue className={"mt-2"}>IEEE Transactions on Software Engineering</PublicationVenue>
-              <PublicationCitation>A. Stocco, B. Pulfer and P. Tonella, "Mind the Gap! A Study on the Transferability of Virtual vs Physical-world Testing of Autonomous Driving Systems," in IEEE Transactions on Software Engineering, 2022, doi: 10.1109/TSE.2022.3202311.</PublicationCitation>
+              <PublicationCitation>{'A. Stocco, B. Pulfer and P. Tonella, "Mind the Gap! A Study on the Transferability of Virtual vs Physical-world Testing of Autonomous Driving Systems," in IEEE Transactions on Software Engineering, 2022, doi: 10.1109/TSE.2022.3202311.'}</PublicationCitation>
           </Publication>
       </>
     );
