@@ -7,7 +7,7 @@ import { Center, Code, Image, Link, Text } from "@chakra-ui/react"
 export default function PPO(){
     return (
         <>
-            <Text fontSize={"5xl"}>PPO — Intuitive guide to state-of-the-art Reinforcement Learning</Text>
+            <Text fontSize={"5xl"} textAlign={"center"}>PPO — Intuitive guide to state-of-the-art Reinforcement Learning</Text>
             <Center>
                 <Link target="_blank" href="https://colab.research.google.com/drive/1u7YTohPaQFJPud8289pV6H65f9ZqSKWp?usp=sharing">
                     <Image src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>

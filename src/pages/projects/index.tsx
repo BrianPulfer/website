@@ -5,7 +5,7 @@ import { AspectRatio, Center, Image, Link, Stack, StackItem, Text } from "@chakr
 export default function Projects() {
   return (
     <>
-      <Text fontSize={"3xl"}>Projects</Text>
+      <Text fontSize={"4xl"} textAlign={"center"}>Projects</Text>
       <Text fontSize={"xl"}>
         {"Here's"} a few projects that I have worked or am currently working on.
       </Text>

@@ -6,7 +6,7 @@ import { Center, Code, Image, Link, Text} from "@chakra-ui/react"
 export default function ViT(){
     return (
         <>
-            <Text fontSize={"5xl"}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
+            <Text fontSize={"5xl"} textAlign={"center"}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
 
 
 

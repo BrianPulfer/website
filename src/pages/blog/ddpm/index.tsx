@@ -6,7 +6,7 @@ import CodeBlock from "@/components/Blog/CodeBlock";
 export default function DDPM() {
   return (
     <>
-      <Text fontSize={"5xl"}>
+      <Text fontSize={"5xl"} textAlign={"center"}>
         Generating images with DDPMs: A PyTorch Implementation
       </Text>
       <Center>
