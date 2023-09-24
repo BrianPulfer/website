@@ -35,6 +35,9 @@ export default function Home() {
       </Text>
       <Box className='flex flex-col space-y-4'>
         <News title={"September 2023"}>
+          🥇 My team and I won the Migros workshop at the <Link textColor={"blue.500"} href={"https://hackzurich.com/"}>HackZurich 2023</Link> hackathon.<Link textColor={"blue.500"} href={"/blog/hackzurich23"}>Read the blog post</Link>.
+        </News>
+        <News title={"September 2023"}>
           📃 Our work <Link textColor={"blue.500"} href={"https://proceedings.mlr.press/v220/gruca22a.html"}>Weather4cast at NeurIPS 2022: Super-Resolution Rain Movie Prediction under Spatio-temporal Shifts</Link> has been accepted for publication in <Link textColor={"blue.500"} href={"https://proceedings.mlr.press/"}>Proceedings of Machine Learning Research</Link>.
         </News>
         <News title={"January 2023"}>
