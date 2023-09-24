@@ -12,7 +12,7 @@ export default function Disambiguation(){
             The final classifier (Random Forest) used 15 features and had an accuracy of 87% with a 10-fold cross-validation. Further studies on the datasets revealed that for some combinations of last names and initial of first names (namespaces), over {"100'000"} articles could be found. This study explains the need for a classifier able to distinguish between these authors.<br/><br/>
             The project was my bachelor thesis job commissioned by Hoffmann-La Roche A.G.
             </Text>
-            <Image src={"/imgs/projects/disambiguation.png"} alt={"Scientific disambiguation"} maxW={"xl"} mb={5}/>
+            <Image src={"/imgs/projects/disambiguation.png"} alt={"Scientific disambiguation"} mb={5}/>
             <Text fontSize={"xl"} mb={5} textAlign={"center"} fontWeight={"bold"}>
                 You can visit the {"project's"} repository at the following <Link textColor={"blue.500"} href="https://github.com/BrianPulfer/AuthorNameDisambiguation">link</Link>.<br/>
                 You can also visit the study on the Pubmed dataset at the following <Link textColor={"blue.500"} href="https://github.com/BrianPulfer/PubMed-Namespacer">link</Link>.<br/>
