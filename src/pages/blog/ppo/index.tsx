@@ -1,41 +1,39 @@
-import AppLayout from "@/components/Layout/AppLayout"
-import CodeBlock from "@/components/Blog/CodeBlock"
+import AppLayout from '@/components/Layout/AppLayout'
+import CodeBlock from '@/components/Blog/CodeBlock'
 
-import Head from "next/head"
-import BlogLayout from "../layout"
-import { Center, Code, Image, Link, Text } from "@chakra-ui/react"
+import Head from 'next/head'
+import BlogLayout from '../layout'
+import { Center, Code, Image, Link, Text } from '@chakra-ui/react'
 
-export default function PPO(){
-    return (
+export default function PPO () {
+  return (
         <>
             <Head><title>Blog - PPO</title></Head>
-            <Text fontSize={"5xl"} textAlign={"center"}>PPO — Intuitive guide to state-of-the-art Reinforcement Learning</Text>
+            <Text fontSize={'5xl'} textAlign={'center'}>PPO — Intuitive guide to state-of-the-art Reinforcement Learning</Text>
             <Center>
                 <Link target="_blank" href="https://colab.research.google.com/drive/1u7YTohPaQFJPud8289pV6H65f9ZqSKWp?usp=sharing">
                     <Image src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
                 </Link>
             </Center>
 
-
-            <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Introduction</Text>
+            <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Introduction</Text>
             <Text mb={5}>
-                Proximal Policy Optimization (PPO) has been a state-of-the-art Reinforcement Learning (RL) algorithm since its proposal in the paper <Link href="https://arxiv.org/abs/1707.06347" textColor={"blue.500"}>Proximal Policy Optimization Algorithms (Schulman et. al., 2017)</Link>. This elegant algorithm can be and has been used for various tasks. Recently, it has also been used in the training of ChatGPT, the hottest machine-learning model at the moment.
+                Proximal Policy Optimization (PPO) has been a state-of-the-art Reinforcement Learning (RL) algorithm since its proposal in the paper <Link href="https://arxiv.org/abs/1707.06347" textColor={'blue.500'}>Proximal Policy Optimization Algorithms (Schulman et. al., 2017)</Link>. This elegant algorithm can be and has been used for various tasks. Recently, it has also been used in the training of ChatGPT, the hottest machine-learning model at the moment.
             </Text>
             <Text mb={5}>
                 PPO is not just widely used within the RL community, but it is also an excellent introduction to tackling RL through Deep Learning (DL) models.
             </Text>
             <Text mb={5}>
-                In this article, I give a quick overview of the field of Reinforcement Learning, the taxonomy of algorithms to solve RL problems, and a review of the PPO algorithm proposed in the <Link href="https://arxiv.org/abs/1707.06347" textColor={"blue.500"}>paper</Link>. Finally, I share <Link href="https://colab.research.google.com/drive/1u7YTohPaQFJPud8289pV6H65f9ZqSKWp?usp=sharing" textColor={"blue.500"}>my own implementation</Link> of the PPO algorithm in PyTorch, comment on the obtained results and finish with a conclusion.
+                In this article, I give a quick overview of the field of Reinforcement Learning, the taxonomy of algorithms to solve RL problems, and a review of the PPO algorithm proposed in the <Link href="https://arxiv.org/abs/1707.06347" textColor={'blue.500'}>paper</Link>. Finally, I share <Link href="https://colab.research.google.com/drive/1u7YTohPaQFJPud8289pV6H65f9ZqSKWp?usp=sharing" textColor={'blue.500'}>my own implementation</Link> of the PPO algorithm in PyTorch, comment on the obtained results and finish with a conclusion.
             </Text>
 
-
-            <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Reinforcement Learning</Text>
+            <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Reinforcement Learning</Text>
             <Text mb={5}>
                 The classical picture that is first shown to people approaching RL is the following:
             </Text>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/ppo/chatgpt.png" alt="ChatGPT explains RL"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     ChatGPT’s answer to the prompt: “Give an overview on the field of Reinforcement Learning”. While I asked help to ChatGPT for the introduction to the field of RL which was used to train ChatGPT itself (quite meta), I promise that everything in this article apart from this picture is written by me.
                 </Text>
             </Center>
@@ -45,7 +43,7 @@ export default function PPO(){
             </Text>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/ppo/rl.png" alt="Reinforcement learning setting"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Reinforcement Learning framework. Image from <Link href="https://neptune.ai/blog/reinforcement-learning-agents-training-debug">neptune.ai</Link>
                 </Text>
             </Center>
@@ -63,14 +61,13 @@ export default function PPO(){
                 Where γ is a discount factor typically in the range [0.95, 0.99], and r_t is the reward for timestamp t.
             </Text>
 
-
-            <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Algorithms</Text>
+            <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Algorithms</Text>
             <Text mb={5}>
                 So how do we solve an RL problem? There are multiple algorithms, but they can be divided (for Markov Decision Processes or MDPs) into two categories: <b>model-based</b> (create a model of the environment) and <b>model-free</b> (just learn what to do given a state).
             </Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/taxonomy.png" alt="Taxonomy of RL methods"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                 Taxonomy of Reinforcement Learning algorithms (from <Link href="https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html">OpenAI spinning up</Link>)
             </Text>
             </Center>
@@ -83,7 +80,7 @@ export default function PPO(){
             <Text mb={5}>
                 <b>PPO</b> falls in the PO family of algorithms. We do not thus need a model of the environment to learn with the PPO algorithm. The main difference between PO and Q-Learning algorithms is that PO algorithms can be used in environments with continuous action space (i.e. where our actions have real values) and can find the optimal policy even if that policy is a stochastic one (i.e. acts probabilistically), whereas the Q-Learning algorithms cannot do either of those things. That’s one more reason to prefer PO algorithms. On the other hand, Q-Learning algorithms tend to be simpler, more intuitive, and nicer to train.
             </Text>
-            <Text mb={5} fontSize={"xl"} fontWeight={"bold"}>
+            <Text mb={5} fontSize={'xl'} fontWeight={'bold'}>
                 Policy Optimization (Gradient-Based)
             </Text>
             <Text mb={5}>
@@ -95,7 +92,7 @@ export default function PPO(){
 
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/grads.png" alt="Gradient-based RL methods"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Objective to be maximized with PO algorithms. Image from <Link href="https://lilianweng.github.io/posts/2018-04-08-policy-gradient/">Lil’Log’s blog</Link>.
                 </Text>
             </Center>
@@ -103,8 +100,7 @@ export default function PPO(){
                 Notice that there are multiple ways to estimate the gradient. Here we find listed 6 different values that we could pick as our maximization objective: the total reward, the reward following one action, the reward minus a baseline version, the state-action value function, the advantage function (used in the original PPO paper) and the temporal difference (TD) residual. In principle, they all provide an estimate of the real gradient we are interested in.
             </Text>
 
-
-            <Text mb={5} fontSize={"xl"} fontWeight={"bold"}>
+            <Text mb={5} fontSize={'xl'} fontWeight={'bold'}>
                 PPO
             </Text>
             <Text mb={5}>
@@ -124,14 +120,14 @@ export default function PPO(){
             </Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/loss1.png" alt="PPO loss function"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     The loss function of PPO to be maximized.
                 </Text>
             </Center>
             <Text mb={5}>
                 Where c1 and c2 are hyper-parameters that weigh the importance of the accuracy of the critic and exploration capabilities of the policy respectively.
             </Text>
-            <Text mb={5} fontSize={"l"} fontWeight={"bold"}>
+            <Text mb={5} fontSize={'l'} fontWeight={'bold'}>
                 CLIP Term
             </Text>
             <Text mb={5}>
@@ -139,14 +135,14 @@ export default function PPO(){
             </Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/loss2.png" alt="PPO loss: first term"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     First loss term. We maximize the expected advantage while not moving the policy too much.
                 </Text>
             </Center>
             <Text mb={5}>Where:</Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/ratio.png" alt="PPO loss ratio term"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Coefficient rt(θ). This is the term that gradients are going to go through.
                 </Text>
             </Center>
@@ -158,7 +154,7 @@ export default function PPO(){
             </Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/advantage.png" alt="Advantage function"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Advantage estimate. We simply take a difference between what we estimated the cumulative reward would have been given the initial state and the real cumulative reward observed up to a step t plus the estimate from that state onward. We apply a stop-gradient operator to this term in the CLIP loss.
                 </Text>
             </Center>
@@ -168,7 +164,7 @@ export default function PPO(){
             <Text mb={5}>
             Notice that if we go all the way down to a state sT that was terminal, we do not need to rely on the critic itself and we can simply compare the critic with the actual cumulative reward. In that case, the estimate of the advantage is the true advantage. This is what we are going to do in our implementation of the cart-pole problem.
             </Text>
-            <Text mb={5} fontSize={"l"} fontWeight={"bold"}>
+            <Text mb={5} fontSize={'l'} fontWeight={'bold'}>
                 Value Function term
             </Text>
             <Text mb={5}>
@@ -176,14 +172,14 @@ export default function PPO(){
             </Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/loss3.png" alt="Loss term of the critic"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                 The loss function for our critic is simply the Mean-Squared-Error between its predicted expected reward and the observed cumulative reward. We apply a stop-gradient operator only to the observed reward in this case and optimize the critic.
                 </Text>
             </Center>
             <Text mb={5}>
                 At each iteration, we update the critic too such that it will give us more and more accurate values for states as training progresses.
             </Text>
-            <Text mb={5} fontSize={"l"} fontWeight={"bold"}>
+            <Text mb={5} fontSize={'l'} fontWeight={'bold'}>
                 Entropy term
             </Text>
             <Text mb={5}>
@@ -191,20 +187,18 @@ export default function PPO(){
             </Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/entropy.png" alt="Entropy term in the loss of PPO"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Entropy formula for the output distribution given by the policy model.
                 </Text>
             </Center>
 
-
-
-            <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>
+            <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>
                 Implementation
             </Text>
             <Text mb={5}>
                 Don’t worry if the theory still seems a bit shady. The implementation will hopefully make everything clear.
             </Text>
-            <Text mb={5} fontSize={"xl"} fontWeight={"bold"}>
+            <Text mb={5} fontSize={'xl'} fontWeight={'bold'}>
                 PPO-independent Code
             </Text>
             <Text mb={5}>
@@ -306,8 +300,7 @@ def run_timestamps(env, model, timestamps=128, render=False, device="cpu"):
                 The output of the function (when not rendering) is a buffer containing states, taken actions, action probabilities (logits), estimated critic’s values, rewards, and the termination state for the provided policy for each timestamp. Notice that the function uses the decorator <b>@torch.no_grad()</b>, so we will not need to store gradients for the actions taken during the interactions with the environment.
             </Text>
 
-
-            <Text mb={5} fontSize={"xl"} fontWeight={"bold"}>
+            <Text mb={5} fontSize={'xl'} fontWeight={'bold'}>
                 Code for PPO
             </Text>
             <Text mb={5}>
@@ -412,10 +405,10 @@ def run_timestamps(env, model, timestamps=128, render=False, device="cpu"):
     # TODO...
 `}
             </CodeBlock>
-            <Text mb={5}>{"Here’s"} the pseudo-code provided in the paper for the PPO training procedure:</Text>
+            <Text mb={5}>{'Here’s'} the pseudo-code provided in the paper for the PPO training procedure:</Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/pseudocode.png" alt="Pseudocode for PPO"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Pseudo code for PPO training provided in the <Link href="https://arxiv.org/abs/1707.06347">original paper</Link>.
                 </Text>
             </Center>
@@ -623,19 +616,18 @@ def run_timestamps(env, model, timestamps=128, render=False, device="cpu"):
 `}
             </CodeBlock>
             <Text mb={5}>And that’s all for the implementation! If you made it this far, congratulations. You pro now know how to implement the PPO algorithm.</Text>
-            
-            
-            <Text mb={5} fontSize={"3xl"} fontWeight={"bold"}>Results</Text>
+
+            <Text mb={5} fontSize={'3xl'} fontWeight={'bold'}>Results</Text>
             <Text mb={5}>The Weights & Biases logs allow us to visualize the logged metrics and losses. In particular, we have access to plots of the loss and its terms and the average reward per iteration.</Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/lossess.png" alt="Total loss"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Training losses through training iterations. The total loss (blue) is the sum of L_CLIP (orange) minus the L_VF (pink) plus a small constant times the entropy bonus (green)
                 </Text>
             </Center>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/avgreward.png" alt="Average reward"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Average reward through iterations. PPO quickly learns to maximize the cumulative reward.
                 </Text>
             </Center>
@@ -643,27 +635,25 @@ def run_timestamps(env, model, timestamps=128, render=False, device="cpu"):
             <Text mb={5}>Finally, here’s what we get if we render the final policy in action!</Text>
             <Center className="flex flex-col" mb={5}>
                 <Image src="/imgs/blog/ppo/ppo.gif" alt="Balancing cart-pole with PPO"/>
-                <Text textAlign={"center"} textColor={"gray.500"} fontSize={"sm"}>
+                <Text textAlign={'center'} textColor={'gray.500'} fontSize={'sm'}>
                     Trained PPO model balancing the cart pole
                 </Text>
             </Center>
 
-
-            <Text mb={5} fontSize={"3xl"} fontWeight={"bold"}>Conclusions</Text>
+            <Text mb={5} fontSize={'3xl'} fontWeight={'bold'}>Conclusions</Text>
             <Text mb={5}>PPO is a state-of-the-art RL policy optimization (thus model-free) algorithm and as such, it can be virtually used in any environment. Also, PPO has a relatively simple objective function and relatively few hyper-parameters to be tuned.</Text>
-            <Text mb={5}>If you would like to play with the algorithm on the fly, here’s a link to the <Link textColor={"blue.500"} href="https://colab.research.google.com/drive/1u7YTohPaQFJPud8289pV6H65f9ZqSKWp?usp=sharing">Colab Notebook</Link>. You can find my personal up-to-date re-implementation of the PPO algorithm (as a .py file) under the <Link textColor={"blue.500"} href="https://github.com/BrianPulfer/PapersReimplementations">GitHub repository</Link>. Feel free to play around with it or adapt it to your own project!</Text>
+            <Text mb={5}>If you would like to play with the algorithm on the fly, here’s a link to the <Link textColor={'blue.500'} href="https://colab.research.google.com/drive/1u7YTohPaQFJPud8289pV6H65f9ZqSKWp?usp=sharing">Colab Notebook</Link>. You can find my personal up-to-date re-implementation of the PPO algorithm (as a .py file) under the <Link textColor={'blue.500'} href="https://github.com/BrianPulfer/PapersReimplementations">GitHub repository</Link>. Feel free to play around with it or adapt it to your own project!</Text>
             <Text mb={5}>If you enjoyed this story, let me know! Feel free to reach out for further discussions. Wish you happy hacking with PPO ✌️</Text>
         </>
-    )
+  )
 }
 
-
-PPO.getLayout = function getLayout(page: React.ReactElement) {
-    return (
+PPO.getLayout = function getLayout (page: React.ReactElement) {
+  return (
         <AppLayout>
             <BlogLayout>
                 {page}
             </BlogLayout>
         </AppLayout>
-    )
+  )
 }

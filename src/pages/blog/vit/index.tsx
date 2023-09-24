@@ -1,30 +1,27 @@
-import AppLayout from "@/components/Layout/AppLayout"
-import BlogLayout from "../layout"
-import CodeBlock from "@/components/Blog/CodeBlock"
-import Head from "next/head"
-import { Center, Code, Image, Link, Text} from "@chakra-ui/react"
+import AppLayout from '@/components/Layout/AppLayout'
+import BlogLayout from '../layout'
+import CodeBlock from '@/components/Blog/CodeBlock'
+import Head from 'next/head'
+import { Center, Code, Image, Link, Text } from '@chakra-ui/react'
 
-export default function ViT(){
-    return (
+export default function ViT () {
+  return (
         <>
             <Head><title>Blog - ViT</title></Head>
-            <Text fontSize={"5xl"} textAlign={"center"}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
+            <Text fontSize={'5xl'} textAlign={'center'}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
 
-
-
-            <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Introduction</Text>
-            <Text mb={5}>Vision Transformers (ViT), since their introduction by <Link textColor={"blue.500"} href="https://arxiv.org/abs/2010.11929">Dosovitskiy et. al.</Link> in 2020, have dominated the field of Computer Vision, obtaining state-of-the-art performance in image classification first, and later on in other tasks as well.</Text>
+            <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Introduction</Text>
+            <Text mb={5}>Vision Transformers (ViT), since their introduction by <Link textColor={'blue.500'} href="https://arxiv.org/abs/2010.11929">Dosovitskiy et. al.</Link> in 2020, have dominated the field of Computer Vision, obtaining state-of-the-art performance in image classification first, and later on in other tasks as well.</Text>
             <Text mb={5}>However, unlike other architectures, they are a bit harder to grasp, particularly if you are not already familiar with the Transformer model used in Natural Language Processing (NLP).</Text>
             <Text mb={5}>If you are into Computer Vision (CV) and are still unfamiliar with the ViT model, {"don't"} worry! So was I!</Text>
             <Text mb={5}>In this brief piece of text, I will show you how I implemented my first ViT from scratch (using PyTorch), and I will guide you through some debugging that will help you better visualize what exactly happens in a ViT.</Text>
             <Text mb={5}>While this article is specific to ViT, the concepts you will find here, such as the Multi-headed Self Attention (MSA) block, are present and currently very relevant in various sub-fields of AI, such as CV, NLP, etc…</Text>
-            
 
-            <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Defining the task</Text>
-            <Text mb={5}>Since the goal is just learning more about the ViT architecture, it is wise to pick an easy and well-known task and dataset. In our case, the task is the image classification for the popular MNIST dataset by the great <Link textColor={"blue.500"} href="https://yann.lecun.com/exdb/mnist/">LeCun et. al.</Link></Text>
+            <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Defining the task</Text>
+            <Text mb={5}>Since the goal is just learning more about the ViT architecture, it is wise to pick an easy and well-known task and dataset. In our case, the task is the image classification for the popular MNIST dataset by the great <Link textColor={'blue.500'} href="https://yann.lecun.com/exdb/mnist/">LeCun et. al.</Link></Text>
             <Text mb={5}>{"If you didn’t already know, MNIST is a dataset of hand-written digits ([0–9]) all contained in 28x28 binary pixels images. The task is referred to as trivial for today's algorithms, so we can expect that a correct implementation will perform well."}</Text>
-            <Text mb={5}>{"Let’s start with the imports then:"}</Text>
-            <CodeBlock language={"python"}>
+            <Text mb={5}>{'Let’s start with the imports then:'}</Text>
+            <CodeBlock language={'python'}>
 {`import numpy as np
 
 from tqdm import tqdm, trange
@@ -43,7 +40,7 @@ torch.manual_seed(0)
 `}
             </CodeBlock>
             <Text mb={5}>Let’s create a <b>main function</b> that prepares the MNIST dataset, instantiates a model, and trains it for 5 epochs. After that, the loss and accuracy are measured on the test set.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`def main():
     # Loading data
     transform = ToTensor()
@@ -99,7 +96,7 @@ torch.manual_seed(0)
             </CodeBlock>
             <Text mb={5}>Now that we have this template, from now on, we can just focus on the model (ViT) that will have to classify the images with shape <Code>(N x 1 x 28 x 28)</Code>.</Text>
             <Text mb={5}>Let’s start by defining an empty <Code>nn.Module</Code>. We will then fill this class step by step.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViT(nn.Module):
     def __init__(self):
         # Super constructor
@@ -109,12 +106,12 @@ torch.manual_seed(0)
         pass
 `}
             </CodeBlock>
-            <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Forward pass</Text>
+            <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Forward pass</Text>
             <Text mb={5}>As Pytorch, as well as most DL frameworks, provides autograd computations, we are only concerned with implementing the forward pass of the ViT model. Since we have defined the optimizer of the model already, the framework will take care of back-propagating gradients and training the model’s parameters.</Text>
-            <Text mb={5}>While implementing a new model, I like to keep a picture of the architecture on some tab. Here’s our reference picture for the ViT from <Link textColor={"blue.500"} href="https://www.researchgate.net/publication/348947034_Vision_Transformers_for_Remote_Sensing_Image_Classification">Bazi et. al (2021)</Link>:</Text>
+            <Text mb={5}>While implementing a new model, I like to keep a picture of the architecture on some tab. Here’s our reference picture for the ViT from <Link textColor={'blue.500'} href="https://www.researchgate.net/publication/348947034_Vision_Transformers_for_Remote_Sensing_Image_Classification">Bazi et. al (2021)</Link>:</Text>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/vit/arch.png" alt="ViT architecture"/>
-                <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>The architecture of the ViT with specific details on the transformer encoder and the MSA block. Keep this picture in mind. Picture from <Link href="https://www.researchgate.net/publication/348947034_Vision_Transformers_for_Remote_Sensing_Image_Classification">Bazi et. al.</Link></Text>
+                <Text textColor={'gray.500'} fontSize={'sm'} textAlign={'center'}>The architecture of the ViT with specific details on the transformer encoder and the MSA block. Keep this picture in mind. Picture from <Link href="https://www.researchgate.net/publication/348947034_Vision_Transformers_for_Remote_Sensing_Image_Classification">Bazi et. al.</Link></Text>
             </Center>
             <Text mb={5}>By the picture, we see that the input image (a) is “cut” into sub-images equally sized.</Text>
             <Text mb={5}>Each such sub-image goes through a linear embedding. From then on, each sub-image is just a one-dimensional vector.</Text>
@@ -122,7 +119,7 @@ torch.manual_seed(0)
             <Text mb={5}>These tokens are then passed, together with a special classification token, to the transformer encoders blocks, were each is composed of : A Layer Normalization (LN), followed by a Multi-head Self Attention (MSA) and a residual connection. Then a second LN, a Multi-Layer Perceptron (MLP), and again a residual connection. These blocks are connected back-to-back.</Text>
             <Text mb={5}>Finally, a classification MLP block is used for the final classification only on the special classification token, which by the end of this process has global information about the picture.</Text>
             <Text mb={5}>Let’s build the ViT in <b>6 main steps</b>.</Text>
-            <Text fontSize={"xl"} fontWeight={"bold"} mb={5}>Step 1: Patchifying and the linear mapping</Text>
+            <Text fontSize={'xl'} fontWeight={'bold'} mb={5}>Step 1: Patchifying and the linear mapping</Text>
             <Text mb={5}>The transformer encoder was developed with sequence data in mind, such as English sentences. However, an image is not a sequence. It is just, uhm… an image… So how do we “sequencify” an image? We break it into multiple sub-images and map each sub-image to a vector!</Text>
             <Text mb={5}>We do so by simply reshaping our input, which has size <Code>(N, C, H, W)</Code> (in our example <Code>(N, 1, 28, 28)</Code>), to size <Code>(N, #Patches, Patch dimensionality)</Code>, where the dimensionality of a patch is adjusted accordingly.</Text>
             <Text mb={5}>In this example, we break each <Code>(1, 28, 28)</Code> into 7x7 patches (hence, each of size 4x4). That is, we are going to obtain 7x7=49 sub-images out of a single image.</Text>
@@ -130,10 +127,10 @@ torch.manual_seed(0)
             <Text mb={5}>Notice that, while each patch is a picture of size 1x4x4, we flatten it to a 16-dimensional vector. Also, in this case, we only had a single color channel. If we had multiple color channels, those would also have been flattened into the vector.</Text>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/vit/patching.png" alt="ViT patching strategy"/>
-                <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>Raffiguration of how an image is split into patches. The 1x28x28 image is split into 49 (7x7) patches, each of size 16 (4x4x1)</Text>
+                <Text textColor={'gray.500'} fontSize={'sm'} textAlign={'center'}>Raffiguration of how an image is split into patches. The 1x28x28 image is split into 49 (7x7) patches, each of size 16 (4x4x1)</Text>
             </Center>
             <Text mb={5}>We modify our <Code>MyViT</Code> class to implement the patchifying only. We create a method that does the operation from scratch. Notice that this is an inefficient way to carry out the operation, but the code is intuitive for learning about the core concept.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`def patchify(images, n_patches):
     n, c, h, w = images.shape
 
@@ -150,7 +147,7 @@ torch.manual_seed(0)
     return patches
 `}
             </CodeBlock>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViT(nn.Module):
     def __init__(self, chw=(1, 28, 28), n_patches=7):
         # Super constructor
@@ -170,7 +167,7 @@ torch.manual_seed(0)
             </CodeBlock>
             <Text mb={5}>The class constructor now lets the class know the size of our input images (number of channels, height and width). Note that in this implementation, the n_patches variable is the number of patches that we will find both in width and height (in our case it’s 7 because we break the image into 7x7 patches).</Text>
             <Text mb={5}>We can test the functioning of our class with a simple main program:</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`if __name__ == '__main__':
     # Current model
     model = MyViT(
@@ -185,7 +182,7 @@ torch.manual_seed(0)
             <Text mb={5}>Now that we have our flattened patches, we can map each of them through a Linear mapping. While each patch was a 4x4=16 dimensional vector, the linear mapping can map to any arbitrary vector size. Thus, we add a parameter to our class constructor, called <Code>hidden_d</Code> for ‘hidden dimension’.</Text>
             <Text mb={5}>In this example, we will use a hidden dimension of 8, but in principle, any number can be put here. We will thus be mapping each 16-dimensional patch to an 8-dimensional patch.</Text>
             <Text mb={5}>We simply create a <Code>nn.Linear</Code> layer and call it in our forward function.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViT(nn.Module):
     def __init__(self, chw=(1, 28, 28), n_patches=7):
         # Super constructor
@@ -211,12 +208,12 @@ torch.manual_seed(0)
             </CodeBlock>
             <Text mb={5}>Notice that we run an <Code>(N, 49, 16)</Code> tensor through a (16, 8) linear mapper (or matrix). The linear operation only happens on the last dimension.</Text>
 
-            <Text fontSize={"xl"} fontWeight={"bold"} mb={5}>Step 2: Adding the classification token</Text>
+            <Text fontSize={'xl'} fontWeight={'bold'} mb={5}>Step 2: Adding the classification token</Text>
             <Text mb={5}>If you look closely at the architecture picture, you will notice that also a <Code>v_class</Code> token is passed to the Transformer Encoder. What’s this?</Text>
             <Text mb={5}>Simply put, this is a special token that we add to our model that has the role of capturing information about the other tokens. This will happen with the MSA block (later on). When information about all other tokens will be present here, we will be able to classify the image using only this special token. The initial value of the special token (the one fed to the transformer encoder) is a parameter of the model that needs to be learned.</Text>
             <Text mb={5}>This is a cool concept of transformers! If we wanted to do another downstream task, we would just need to add another special token for the other downstream task (for example, classifying a digit as higher than 5 or lower) and a classifier that takes as input this new token. Clever, right?</Text>
             <Text mb={5}>We can now add a parameter to our model and convert our <Code>(N, 49, 8)</Code> tokens tensor to an <Code>(N, 50, 8)</Code> tensor (we add the special token to each sequence).</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViT(nn.Module):
     def __init__(self, chw=(1, 28, 28), n_patches=7):
         # Super constructor
@@ -247,18 +244,18 @@ torch.manual_seed(0)
 `}
             </CodeBlock>
             <Text mb={5}>Notice that the classification token is put as the first token of each sequence. This will be important to keep in mind when we will then retrieve the classification token to feed to the final MLP.</Text>
-            
-            <Text fontSize={"xl"} fontWeight={"bold"} mb={5}>Step 3: Positional encoding</Text>
-            <Text mb={5}>As anticipated, positional encoding allows the model to understand where each patch would be placed in the original image. While it is theoretically possible to learn such positional embeddings, previous work by <Link textColor={"blue.500"} href="https://arxiv.org/abs/1706.03762">Vaswani et. al.</Link> suggests that we can just add sines and cosines waves.</Text>
+
+            <Text fontSize={'xl'} fontWeight={'bold'} mb={5}>Step 3: Positional encoding</Text>
+            <Text mb={5}>As anticipated, positional encoding allows the model to understand where each patch would be placed in the original image. While it is theoretically possible to learn such positional embeddings, previous work by <Link textColor={'blue.500'} href="https://arxiv.org/abs/1706.03762">Vaswani et. al.</Link> suggests that we can just add sines and cosines waves.</Text>
             <Text mb={5}>In particular, positional encoding adds low-frequency values to the first dimensions and higher-frequency values to the latter dimensions.</Text>
             <Text mb={5}>In each sequence, for token i we add to its j-th coordinate the following value:</Text>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/vit/embedding.png" alt="ViT embedding"/>
-                <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>Value to be added to the i-th tensor in its j-th coordinate. <Link href="https://blogs.oracle.com/ai-and-datascience/post/multi-head-self-attention-in-nlp">Image source</Link>.</Text>
+                <Text textColor={'gray.500'} fontSize={'sm'} textAlign={'center'}>Value to be added to the i-th tensor in its j-th coordinate. <Link href="https://blogs.oracle.com/ai-and-datascience/post/multi-head-self-attention-in-nlp">Image source</Link>.</Text>
             </Center>
             <Text mb={5}>This positional embedding is a function of the number of elements in the sequence and the dimensionality of each element. Thus, it is always a 2-dimensional tensor or “rectangle”.</Text>
             <Text mb={5}>Here’s a simple function that, given the number of tokens and the dimensionality of each of them, outputs a matrix where each coordinate <Code>(i,j)</Code> is the value to be added to token <Code>i</Code> in dimension <Code>j</Code>.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`def get_positional_embeddings(sequence_length, d):
     result = torch.ones(sequence_length, d)
     for i in range(sequence_length):
@@ -275,11 +272,11 @@ if __name__ == "__main__":
             </CodeBlock>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/vit/embedding_matrix.png" alt="Embedding matrix"/>
-                <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>Heatmap of Positional embeddings for one hundred 300-dimensional samples. Samples are on the y-axis, whereas the dimensions are on the x-axis. Darker regions show higher values.</Text>
+                <Text textColor={'gray.500'} fontSize={'sm'} textAlign={'center'}>Heatmap of Positional embeddings for one hundred 300-dimensional samples. Samples are on the y-axis, whereas the dimensions are on the x-axis. Darker regions show higher values.</Text>
             </Center>
             <Text mb={5}>From the heatmap we have plotted, we see that all ‘horizontal lines’ are all different from each other, and thus samples can be distinguished.</Text>
             <Text mb={5}>We can now add this positional encoding to our model after the linear mapping and the addition of the class token.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViT(nn.Module):
     def __init__(self, chw=(1, 28, 28), n_patches=7):
         # Super constructor
@@ -318,26 +315,26 @@ if __name__ == "__main__":
 `}
             </CodeBlock>
             <Text mb={5}>We define the positional embedding to be a parameter of our model (that we won’t update by setting its <Code>requires_grad</Code> to <Code>False</Code>). Note that in the forward method, since tokens have size <Code>(N, 50, 8)</Code>, we have to repeat the <Code>(50, 8)</Code> positional encoding matrix <Code>N</Code> times.</Text>
-            <Text fontSize={"xl"} fontWeight={"bold"} mb={5}>Step 4: The encoder block (Part 1/2)</Text>
+            <Text fontSize={'xl'} fontWeight={'bold'} mb={5}>Step 4: The encoder block (Part 1/2)</Text>
             <Text mb={5}>This is possibly the hardest step of all. An encoder block takes as input our current tensor <Code>(N, S, D)</Code> and outputs a tensor of the same dimensionality.</Text>
             <Text mb={5}>The first part of the encoder block applies Layer Normalization to our tokens, then a Multi-head Self Attention, and finally adds a residual connection.</Text>
-            <Text fontSize={"l"} fontWeight={"bold"} mb={5}>Layer Normalization</Text>
+            <Text fontSize={'l'} fontWeight={'bold'} mb={5}>Layer Normalization</Text>
             <Text mb={5}>Layer normalization is a popular block that, given an input, subtracts its mean and divides by the standard deviation.</Text>
             <Text mb={5}>However, we commonly apply layer normalization to an <Code>(N, d)</Code> input, where d is the dimensionality. Luckily, also the Layer Normalization module generalizes to multiple dimensions, check this:</Text>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/vit/layernorm.png" alt="Layer normalization"/>
-                <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}><Code>nn.LayerNorm</Code> can be applied in multiple dimensions. We can normalize fifty 8-dimensional vectors, but we can also normalize sixteen by fifty 8-dimensional vectors.</Text>
+                <Text textColor={'gray.500'} fontSize={'sm'} textAlign={'center'}><Code>nn.LayerNorm</Code> can be applied in multiple dimensions. We can normalize fifty 8-dimensional vectors, but we can also normalize sixteen by fifty 8-dimensional vectors.</Text>
             </Center>
             <Text mb={5}>Layer normalization is applied to the last dimension only. We can thus make each of our 50x8 matrices (representing a single sequence) have mean 0 and std 1. After we run our <Code>(N, 50, 8)</Code> tensor through LN, we still get the same dimensionality.</Text>
-            <Text fontSize={"l"} fontWeight={"bold"} mb={5}>Multi-Head Self-Attention</Text>
+            <Text fontSize={'l'} fontWeight={'bold'} mb={5}>Multi-Head Self-Attention</Text>
             <Text mb={5}>We now need to implement sub-figure c of the architecture picture. What’s happening there?</Text>
             <Text mb={5}>Simply put: we want, for a single image, each patch to get updated based on some similarity measure with the other patches. We do so by linearly mapping each patch (that is now an 8-dimensional vector in our example) to 3 distinct vectors: <b>q</b>, <b>k</b>, and <b>v</b> (query, key, value).</Text>
             <Text mb={5}>Then, for a single patch, we are going to compute the dot product between its <b>q</b> vector with all of the <b>k</b> vectors, divide by the square root of the dimensionality of these vectors (sqrt(8)), softmax these so-called attention cues, and finally multiply each attention cue with the <b>v</b> vectors associated with the different <b>k</b> vectors and sum all up.</Text>
-            <Text mb={5}>In this way, each patch assumes a new value that is based on its similarity (after the linear mapping to <b>q</b>, <b>k</b>, and <b>v</b>) with other patches. This whole procedure, however, is carried out <b>H</b> times on <b>H</b> sub-vectors of our current 8-dimensional patches, where <b>H</b> is the number of Heads. If you’re unfamiliar with the attention and multi-head attention mechanisms, I suggest you read this <Link textColor={"blue.500"} href="https://data-science-blog.com/blog/2021/04/07/multi-head-attention-mechanism/">nice post</Link> by <Link textColor={"blue.500"} href="https://data-science-blog.com/blog/author/yasuto/">Yasuto Tamura</Link>.</Text>
+            <Text mb={5}>In this way, each patch assumes a new value that is based on its similarity (after the linear mapping to <b>q</b>, <b>k</b>, and <b>v</b>) with other patches. This whole procedure, however, is carried out <b>H</b> times on <b>H</b> sub-vectors of our current 8-dimensional patches, where <b>H</b> is the number of Heads. If you’re unfamiliar with the attention and multi-head attention mechanisms, I suggest you read this <Link textColor={'blue.500'} href="https://data-science-blog.com/blog/2021/04/07/multi-head-attention-mechanism/">nice post</Link> by <Link textColor={'blue.500'} href="https://data-science-blog.com/blog/author/yasuto/">Yasuto Tamura</Link>.</Text>
             <Text mb={5}>Once all results are obtained, they are concatenated together. Finally, the result is passed through a linear layer (for good measure).</Text>
             <Text mb={5}>The intuitive idea behind attention is that it allows modeling the relationship between the inputs. What makes a ‘0’ a zero are not the individual pixel values, but how they relate to each other.</Text>
             <Text mb={5}>Since quite some computations are carried out, it is worth creating a new class for MSA:</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyMSA(nn.Module):
     def __init__(self, d, n_heads=2):
         super(MyMSA, self).__init__()
@@ -377,10 +374,10 @@ if __name__ == "__main__":
             <Text mb={5}>Notice that, for each head, we create distinct Q, K, and V mapping functions (square matrices of size 4x4 in our example).</Text>
             <Text mb={5}>Since our inputs will be sequences of size <Code>(N, 50, 8)</Code>, and we only use 2 heads, we will at some point have an <Code>(N, 50, 2, 4)</Code> tensor, use a <Code>nn.Linear(4, 4)</Code> module on it, and then come back, after concatenation, to an <Code>(N, 50, 8)</Code> tensor.</Text>
             <Text mb={5}>Also notice that using loops is not the most efficient way to compute the multi-head self-attention, but it makes the code much clearer for learning.</Text>
-            <Text fontSize={"l"} fontWeight={"bold"} mb={5}>Residual connection</Text>
+            <Text fontSize={'l'} fontWeight={'bold'} mb={5}>Residual connection</Text>
             <Text mb={5}>A residual connection consists in just adding the original input to the result of some computation. This, intuitively, allows a network to become more powerful while also preserving the set of possible functions that the model can approximate.</Text>
             <Text mb={5}>We will add a residual connection that will add our original <Code>(N, 50, 8)</Code> tensor to the <Code>(N, 50, 8)</Code> obtained after LN and MSA. It’s time to create the transformer encoder block class, which will be a component of the <Code>MyViT</Code> class:</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViTBlock(nn.Module):
     def __init__(self, hidden_d, n_heads, mlp_ratio=4):
         super(MyViTBlock, self).__init__()
@@ -397,10 +394,10 @@ if __name__ == "__main__":
             </CodeBlock>
             <Text mb={5}>Phew, that was quite some work! But I promise this was the hardest part. From now on, it’s all downhill.</Text>
             <Text mb={5}>With this self-attention mechanism, the class token (first token of each of the N sequences) now has information regarding all other tokens!</Text>
-            
-            <Text fontSize={"xl"} fontWeight={"bold"} mb={5}>Step 5: The encoder block (Part 2/2)</Text>
+
+            <Text fontSize={'xl'} fontWeight={'bold'} mb={5}>Step 5: The encoder block (Part 2/2)</Text>
             <Text mb={5}>All that is left to the transformer encoder is just a simple residual connection between what we already have and what we get after passing the current tensor through another LN and an MLP. The MLP is composed of two layers, where the hidden layer typically is four times as big (this is a parameter)</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViTBlock(nn.Module):
     def __init__(self, hidden_d, n_heads, mlp_ratio=4):
         super(MyViTBlock, self).__init__()
@@ -423,7 +420,7 @@ if __name__ == "__main__":
 `}
             </CodeBlock>
             <Text mb={5}>We can indeed see that the Encoder block outputs a tensor of the same dimensionality:</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`if __name__ == '__main__':
     model = MyVitBlock(hidden_d=8, n_heads=2)
 
@@ -433,7 +430,7 @@ if __name__ == "__main__":
             </CodeBlock>
             <Text mb={5}>Now that the encoder block is ready, we just need to insert it in our bigger ViT model which is responsible for patchifying before the transformer blocks, and carrying out the classification after.</Text>
             <Text mb={5}>We could have an arbitrary number of transformer blocks. In this example, to keep it simple, I will use only 2. We also add a parameter to know how many heads does each encoder block will use.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViT(nn.Module):
     def __init__(self, chw, n_patches=7, n_blocks=2, hidden_d=8, n_heads=2, out_d=10):
         # Super constructor
@@ -487,11 +484,11 @@ if __name__ == "__main__":
 `}
             </CodeBlock>
             <Text mb={5}>Once more, if we run a random <Code>(7, 1, 28, 28)</Code> tensor through our model, we still get a <Code>(7, 50, 8)</Code> tensor.</Text>
-            
-            <Text fontSize={"xl"} fontWeight={"bold"} mb={5}>Step 6: Classification MLP</Text>
+
+            <Text fontSize={'xl'} fontWeight={'bold'} mb={5}>Step 6: Classification MLP</Text>
             <Text mb={5}>Finally, we can extract just the classification token (first token) out of our N sequences, and use each token to get N classifications.</Text>
             <Text mb={5}>Since we decided that each token is an 8-dimensional vector, and since we have 10 possible digits, we can implement the classification MLP as a simple 8x10 matrix, activated with the SoftMax function.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`class MyViT(nn.Module):
     def __init__(self, chw, n_patches=7, n_blocks=2, hidden_d=8, n_heads=2, out_d=10):
         # Super constructor
@@ -555,30 +552,30 @@ if __name__ == "__main__":
             </CodeBlock>
             <Text mb={5}>The output of our model is now an <Code>(N, 10)</Code> tensor. Hurray, we are done!</Text>
 
-            <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>Results</Text>
+            <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Results</Text>
             <Text mb={5}>We change the only line in the main program that was previously undefined.</Text>
-            <CodeBlock language={"python"}>
+            <CodeBlock language={'python'}>
 {`model = MyVit((1, 28, 28), n_patches=7, n_blocks=2, hidden_d=8, n_heads=2, out_d=10).to(device)
 `}
             </CodeBlock>
             <Text mb={5}>We now just need to run the training and test loops and see how our model performs. If you’ve set torch seed manually (to 0), you should get this printed:</Text>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/vit/results.png" alt="ViT results"/>
-                <Text textColor={"gray.500"} fontSize={"sm"} textAlign={"center"}>Training losses, test loss, and test accuracy obtained.</Text>
+                <Text textColor={'gray.500'} fontSize={'sm'} textAlign={'center'}>Training losses, test loss, and test accuracy obtained.</Text>
             </Center>
             <Text mb={5}>And that’s it! We have now created a ViT from scratch. Our model achieves <b>~80% accuracy in just 5 epochs</b> and with few parameters.</Text>
-            <Text mb={5}>You can find the full script at the following <Link href="https://github.com/BrianPulfer/PapersReimplementations/blob/main/vit/vit_torch.py" textColor={"blue.500"}>link</Link>. Let me know if this post was useful or think something was unclear!</Text>
+            <Text mb={5}>You can find the full script at the following <Link href="https://github.com/BrianPulfer/PapersReimplementations/blob/main/vit/vit_torch.py" textColor={'blue.500'}>link</Link>. Let me know if this post was useful or think something was unclear!</Text>
 
         </>
-    )
+  )
 }
 
-ViT.getLayout = function getLayout(page: React.ReactElement) {
-    return (
+ViT.getLayout = function getLayout (page: React.ReactElement) {
+  return (
         <AppLayout>
             <BlogLayout>
                 {page}
             </BlogLayout>
         </AppLayout>
-    )
+  )
 }

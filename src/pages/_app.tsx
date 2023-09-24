@@ -1,25 +1,21 @@
 import '@/styles/globals.css'
 
-import Head from "next/head"
-import Script from "next/script"
+import Head from 'next/head'
+import Script from 'next/script'
 import type { AppProps } from 'next/app'
 
-
-import theme from "../styles/theme"
+import theme from '../styles/theme'
 import { ChakraProvider } from '@chakra-ui/react'
 
-import "@fontsource/raleway/400.css";
-import "@fontsource/open-sans/700.css";
+import '@fontsource/raleway/400.css'
+import '@fontsource/open-sans/700.css'
 
-
-export default function App({ Component, pageProps }: { Component: any, pageProps: AppProps}) {
+export default function App ({ Component, pageProps }: { Component: any, pageProps: AppProps }) {
   const getLayout = Component.getLayout || ((page: React.ReactElement) => page)
   const content = getLayout(<Component {...pageProps} />)
 
   // Initializing Google Analytics
-  const GA_ID = "G-2KSCVRRZHY"
-
-
+  const GA_ID = 'G-2KSCVRRZHY'
 
   return (
     <>
@@ -49,4 +45,3 @@ export default function App({ Component, pageProps }: { Component: any, pageProp
     </>
   )
 }
- 

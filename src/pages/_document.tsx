@@ -3,9 +3,8 @@ import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 
 import theme from '../styles/theme'
 
-
 export default class Document extends NextDocument {
-  render() {
+  render () {
     return (
     <Html lang="en">
       <Head>
@@ -17,5 +16,6 @@ export default class Document extends NextDocument {
         <NextScript />
       </body>
     </Html>
-  )}
+    )
+  }
 }
