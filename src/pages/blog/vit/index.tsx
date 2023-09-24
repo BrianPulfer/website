@@ -1,11 +1,13 @@
 import AppLayout from "@/components/Layout/AppLayout"
 import BlogLayout from "../layout"
 import CodeBlock from "@/components/Blog/CodeBlock"
+import Head from "next/head"
 import { Center, Code, Image, Link, Text} from "@chakra-ui/react"
 
 export default function ViT(){
     return (
         <>
+            <Head><title>Blog - ViT</title></Head>
             <Text fontSize={"5xl"} textAlign={"center"}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
 
 

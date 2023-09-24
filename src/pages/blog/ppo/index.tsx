@@ -1,12 +1,14 @@
 import AppLayout from "@/components/Layout/AppLayout"
 import CodeBlock from "@/components/Blog/CodeBlock"
 
+import Head from "next/head"
 import BlogLayout from "../layout"
 import { Center, Code, Image, Link, Text } from "@chakra-ui/react"
 
 export default function PPO(){
     return (
         <>
+            <Head><title>Blog - PPO</title></Head>
             <Text fontSize={"5xl"} textAlign={"center"}>PPO — Intuitive guide to state-of-the-art Reinforcement Learning</Text>
             <Center>
                 <Link target="_blank" href="https://colab.research.google.com/drive/1u7YTohPaQFJPud8289pV6H65f9ZqSKWp?usp=sharing">

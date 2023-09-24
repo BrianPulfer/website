@@ -1,9 +1,11 @@
+import Head from 'next/head';
 import AppLayout from '@/components/Layout/AppLayout';
 import {Image, Link, Text} from "@chakra-ui/react";
 
 export default function Disambiguation(){
     return (
         <>
+            <Head><title>Projects - Disambiguation</title></Head>
             <Text fontSize={"3xl"} textAlign={"center"} mb={10}>
                 Machine Learning for disambiguation of scientific article authors
             </Text>

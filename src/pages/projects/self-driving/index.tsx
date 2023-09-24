@@ -1,9 +1,11 @@
+import Head from 'next/head';
 import AppLayout from '@/components/Layout/AppLayout';
 import {AspectRatio, Link, Text} from "@chakra-ui/react";
 
 export default function SelfDriving(){
     return (
         <>
+            <Head><title>Projects - Self-Driving</title></Head>
             <Text fontSize={"3xl"} textAlign={"center"} mb={10}>
                 From Simulated to Real Test Environments for Self Driving Cars
             </Text>

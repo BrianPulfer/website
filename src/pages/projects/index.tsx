@@ -1,10 +1,12 @@
 import AppLayout from '@/components/Layout/AppLayout';
 
+import Head from 'next/head';
 import { AspectRatio, Center, Image, Link, Stack, StackItem, Text } from "@chakra-ui/react";
 
 export default function Projects() {
   return (
     <>
+      <Head><title>Projects</title></Head>
       <Text fontSize={"4xl"} textAlign={"center"}>Projects</Text>
       <Text fontSize={"xl"}>
         {"Here's"} a few projects that I have worked or am currently working on.

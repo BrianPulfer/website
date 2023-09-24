@@ -1,5 +1,6 @@
 import AppLayout from '@/components/Layout/AppLayout';
 
+import Head from 'next/head';
 import {Link} from '@chakra-ui/react'
 
 import Publication from '../../components/Publication'
@@ -8,6 +9,7 @@ import {PublicationTitle, PublicationAbstract, PublicationVenue, PublicationCita
 export default function Publications() {
     return (
       <>
+          <Head><title>Research</title></Head>
           <Publication>
               <PublicationTitle className={"mb-4"}>
                 <Link textColor={"blue.500"} href="https://proceedings.mlr.press/v220/gruca22a.html">Weather4cast at NeurIPS 2022: Super-Resolution Rain Movie Prediction under Spatio-temporal Shifts</Link> (Sep 23)

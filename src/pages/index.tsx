@@ -9,7 +9,7 @@ import AppLayout from '@/components/Layout/AppLayout'
 export default function Home() {
   return (
     <>
-      <Head><title>Brian - Home</title></Head>
+      <Head><title>Brian Pulfer</title></Head>
       
       <Image src="/imgs/home/avatar.png" alt="Brian"/>
 

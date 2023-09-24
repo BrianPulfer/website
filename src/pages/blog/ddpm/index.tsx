@@ -1,11 +1,13 @@
 import AppLayout from "@/components/Layout/AppLayout";
 import BlogLayout from "../layout";
+import Head from "next/head";
 import { Center, Code, Image, Link, Text } from "@chakra-ui/react";
 import CodeBlock from "@/components/Blog/CodeBlock";
 
 export default function DDPM() {
   return (
     <>
+      <Head><title>Blog - ViT</title></Head>
       <Text fontSize={"5xl"} textAlign={"center"}>
         Generating images with DDPMs: A PyTorch Implementation
       </Text>

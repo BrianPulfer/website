@@ -1,10 +1,12 @@
 import AppLayout from '@/components/Layout/AppLayout';
 
+import Head from 'next/head';
 import { Center, Image, Link, Stack, StackItem, Text } from "@chakra-ui/react";
 
 export default function Projects() {
     return (
       <>
+          <Head><title>Blog</title></Head>
           <Text fontSize={"4xl"} textAlign={"center"}>Blog</Text>
           <Text fontSize={"xl"} mb={10}>
             Welcome to my blog! If you like its content and would like to stay up-to-date,
@@ -15,7 +17,7 @@ export default function Projects() {
               <Link href="/blog/hackzurich23" textColor={"blue.500"}>
                 <Text fontWeight={"bold"} fontSize={"2xl"} textAlign={"center"}>HackZurich 2023</Text>
                 <Center>
-                  <Image src="/imgs/blog/hackzurich23/win.png" alt="HackZurich 2023 team" maxWidth={"800px"}/>
+                  <Image src="/imgs/blog/hackzurich23/win.png" alt="HackZurich 2023 team"/>
                 </Center>
               </Link>
             </StackItem>

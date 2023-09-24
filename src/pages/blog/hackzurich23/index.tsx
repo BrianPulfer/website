@@ -1,5 +1,6 @@
 import AppLayout from "@/components/Layout/AppLayout"
 
+import Head from "next/head"
 import BlogLayout from "../layout"
 import { AspectRatio, Center, Image, Link, Text } from "@chakra-ui/react"
 
@@ -7,6 +8,7 @@ export default function HackZurich23(){
 
     return(
         <>
+            <Head><title>Blog - HackZurich23</title></Head>
             <Text fontSize={"5xl"} textAlign={"center"}>
                 HackZurich 2023
             </Text>
