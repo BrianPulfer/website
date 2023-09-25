@@ -9,8 +9,7 @@ export default function Projects () {
           <Head><title>Blog</title></Head>
           <Text fontSize={'4xl'} textAlign={'center'}>Blog</Text>
           <Text fontSize={'xl'} mb={10}>
-            Welcome to my blog! If you like its content and would like to stay up-to-date,
-            consider subscribing to the mailing list (coming soon!)
+            Welcome to my blog. Here I write about my projects, past events and other stuff that I feel like sharing.
           </Text>
           <Stack spacing={10}>
             <StackItem>
