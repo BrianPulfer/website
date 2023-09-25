@@ -5,7 +5,7 @@ import Head from 'next/head'
 import BlogLayout from '../layout'
 import { Center, Code, Image, Link, Text } from '@chakra-ui/react'
 
-export default function PPO () {
+export default function PPO (): JSX.Element {
   return (
         <>
             <Head><title>Blog - PPO</title></Head>

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import AppLayout from '@/components/Layout/AppLayout'
 import { Image, Link, Text } from '@chakra-ui/react'
 
-export default function Disambiguation () {
+export default function Disambiguation (): JSX.Element {
   return (
         <>
             <Head><title>Projects - Disambiguation</title></Head>

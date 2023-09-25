@@ -10,8 +10,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 import '@fontsource/raleway/400.css'
 import '@fontsource/open-sans/700.css'
 
-export default function App ({ Component, pageProps }: { Component: any, pageProps: AppProps }) {
-  const getLayout = Component.getLayout || ((page: React.ReactElement) => page)
+export default function App ({ Component, pageProps }: { Component: any, pageProps: AppProps }): JSX.Element {
+  const getLayout = Component.getLayout === undefined ? (page: React.ReactElement) => page : Component.getLayout
   const content = getLayout(<Component {...pageProps} />)
 
   // Initializing Google Analytics

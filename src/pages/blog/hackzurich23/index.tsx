@@ -2,9 +2,9 @@ import AppLayout from '@/components/Layout/AppLayout'
 
 import Head from 'next/head'
 import BlogLayout from '../layout'
-import { AspectRatio, Center, Image, Link, Text } from '@chakra-ui/react'
+import { Center, Image, Link, Text } from '@chakra-ui/react'
 
-export default function HackZurich23 () {
+export default function HackZurich23 (): JSX.Element {
   return (
         <>
             <Head><title>Blog - HackZurich23</title></Head>
@@ -38,7 +38,7 @@ export default function HackZurich23 () {
             </Text>
 
             <Text fontSize={'xl'} mb={5}>
-                Together with the toys, we also created a web application that allows the customers to scan the stickers and show the story or "lore" along with an AI-generated image of the assembled scrapster.
+                {'Together with the toys, we also created a web application that allows the customers to scan the stickers and show the story or "lore" along with an AI-generated image of the assembled scrapster'}.
             </Text>
             <Text fontSize={'xl'} mb={5}>
                 If you want to learn more and access the application, check out our project on <Link textColor={'blue.500'} href="https://devpost.com/software/scrapsters">Devpost</Link>!
@@ -51,10 +51,10 @@ export default function HackZurich23 () {
                 </Text>
             </Center>
             <Text fontSize={'xl'} mb={5}>
-                I'd like once more to thank the team for the amazing work we did together and for the very unique experience. I had a lot of fun and I hope we can meet again in the future!
+                {"I'd like once more to thank the team for the amazing work we did together and for the very unique experience. I had a lot of fun and I hope we can meet again in the future!"}
             </Text>
             <Text fontSize={'xl'} mb={5}>
-                I'm also thanking the HackZurich team for the amazing organization, the sponsors and the workshop providers, especially Migros for providing us with the opportunity to work on such an interesting project.
+                I am also thankful to the HackZurich team for the amazing organization, the sponsors and the workshop providers, especially Migros for providing us with the opportunity to work on such an interesting project.
             </Text>
 
         </>

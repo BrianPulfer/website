@@ -11,7 +11,7 @@ import {
 import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 
 // TODO: Collapse navbar past a certain width
-export default function Navbar () {
+export default function Navbar (): JSX.Element {
   const [isOpen, setIsOpen] = useState(false)
   const { colorMode, toggleColorMode } = useColorMode()
 
@@ -21,8 +21,6 @@ export default function Navbar () {
     '/projects': 'Projects',
     '/blog': 'Blog'
   }
-
-  const nPaths = Object.keys(paths).length
 
   const pageLinks = []
   for (const [path, title] of Object.entries(paths)) {

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import AppLayout from '@/components/Layout/AppLayout'
 import { AspectRatio, Link, Text } from '@chakra-ui/react'
 
-export default function SelfDriving () {
+export default function SelfDriving (): JSX.Element {
   return (
         <>
             <Head><title>Projects - Self-Driving</title></Head>

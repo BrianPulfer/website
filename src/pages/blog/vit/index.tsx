@@ -4,7 +4,7 @@ import CodeBlock from '@/components/Blog/CodeBlock'
 import Head from 'next/head'
 import { Center, Code, Image, Link, Text } from '@chakra-ui/react'
 
-export default function ViT () {
+export default function ViT (): JSX.Element {
   return (
         <>
             <Head><title>Blog - ViT</title></Head>

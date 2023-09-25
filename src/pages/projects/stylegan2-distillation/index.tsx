@@ -3,7 +3,7 @@ import AppLayout from '@/components/Layout/AppLayout'
 import Head from 'next/head'
 import { Image, Link, Text } from '@chakra-ui/react'
 
-export default function StyleGANDistillation () {
+export default function StyleGANDistillation (): JSX.Element {
   return (
         <>
             <Head><title>Projects - StyleGAN</title></Head>

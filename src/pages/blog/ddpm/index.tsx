@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { Center, Code, Image, Link, Text } from '@chakra-ui/react'
 import CodeBlock from '@/components/Blog/CodeBlock'
 
-export default function DDPM () {
+export default function DDPM (): JSX.Element {
   return (
     <>
       <Head><title>Blog - ViT</title></Head>

@@ -5,7 +5,7 @@ import { Link } from '@chakra-ui/react'
 
 import Publication, { PublicationTitle, PublicationAbstract, PublicationVenue, PublicationCitation } from '../../components/Publication'
 
-export default function Publications () {
+export default function Publications (): JSX.Element {
   return (
       <>
           <Head><title>Research</title></Head>

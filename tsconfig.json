@@ -21,6 +21,6 @@
       "@pages/*": ["./src/pages/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Blog/CodeBlock.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Blog/CodeBlock.tsx"],
   "exclude": ["node_modules"]
 }

@@ -6,7 +6,7 @@ import { Image, Text, Box, Link } from '@chakra-ui/react'
 import News from '@/components/News'
 import AppLayout from '@/components/Layout/AppLayout'
 
-export default function Home () {
+export default function Home (): JSX.Element {
   return (
     <>
       <Head><title>Brian Pulfer</title></Head>

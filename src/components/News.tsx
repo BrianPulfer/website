@@ -1,6 +1,6 @@
 import { Box, Text, useColorModeValue } from '@chakra-ui/react'
 
-export default function News ({ title, children }: { title: string, children: React.ReactNode }) {
+export default function News ({ title, children }: { title: string, children: React.ReactNode }): JSX.Element {
   const bgColor = useColorModeValue('#f5f5f5', '#252525')
 
   return (

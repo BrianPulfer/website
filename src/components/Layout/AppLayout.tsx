@@ -1,10 +1,7 @@
 import Navbar from './../Navbar'
 import { Container } from '@chakra-ui/react'
-import { Inter } from 'next/font/google'
 
-export default function AppLayout ({ children }: { children: React.ReactNode }) {
-  // const inter = Inter({ subsets: ['latin'] })
-
+export default function AppLayout ({ children }: { children: React.ReactNode }): JSX.Element {
   return (
         <>
             <Navbar />

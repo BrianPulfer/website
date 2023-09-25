@@ -3,7 +3,7 @@ import AppLayout from '@/components/Layout/AppLayout'
 import Head from 'next/head'
 import { Center, Image, Link, Stack, StackItem, Text } from '@chakra-ui/react'
 
-export default function Projects () {
+export default function Projects (): JSX.Element {
   return (
       <>
           <Head><title>Blog</title></Head>
