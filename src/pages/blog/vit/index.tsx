@@ -247,7 +247,7 @@ torch.manual_seed(0)
 
             <Text fontSize={'xl'} fontWeight={'bold'} mb={5}>Step 3: Positional encoding</Text>
             <Text mb={5}>As anticipated, positional encoding allows the model to understand where each patch would be placed in the original image. While it is theoretically possible to learn such positional embeddings, previous work by <Link textColor={'blue.500'} href="https://arxiv.org/abs/1706.03762">Vaswani et. al.</Link> suggests that we can just add sines and cosines waves.</Text>
-            <Text mb={5}>In particular, positional encoding adds low-frequency values to the first dimensions and higher-frequency values to the latter dimensions.</Text>
+            <Text mb={5}>In particular, positional encoding adds high-frequency values to the first dimensions and lower-frequency values to the latter dimensions.</Text>
             <Text mb={5}>In each sequence, for token i we add to its j-th coordinate the following value:</Text>
             <Center mb={5} className="flex flex-col">
                 <Image src="/imgs/blog/vit/embedding.png" alt="ViT embedding"/>
