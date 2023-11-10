@@ -7,7 +7,7 @@ import CodeBlock from '@/components/Blog/CodeBlock'
 export default function DDPM (): JSX.Element {
   return (
     <>
-      <Head><title>Blog - ViT</title></Head>
+      <Head><title>Blog - DDPM</title></Head>
       <Text fontSize={'5xl'} textAlign={'center'}>
         Generating images with DDPMs: A PyTorch Implementation
       </Text>
