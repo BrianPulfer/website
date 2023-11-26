@@ -16,7 +16,7 @@ export default function Projects (): JSX.Element {
               <Link href="/blog/hackzurich23" textColor={'blue.500'}>
                 <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'center'}>HackZurich 2023</Text>
                 <Center>
-                  <Image src="/imgs/blog/hackzurich23/win.png" alt="HackZurich 2023 team"/>
+                  <Image src="/imgs/blog/hackzurich23/win.png" alt="HackZurich 2023 team" maxWidth={"600px"}/>
                 </Center>
               </Link>
             </StackItem>
