@@ -5,7 +5,7 @@
 </center>
 
 Repository of my own website.<br/>
-The website is built using [NextJs](https://nextjs.org/), [Tailwind](https://tailwindcss.com/) and [Chakra-UI](https://chakra-ui.com/).
+The website is built using [NextJs](https://nextjs.org/), [Tailwind](https://tailwindcss.com/) and [Chakra-UI](https://chakra-ui.com/). Equations are rendered using [react-katex](https://www.npmjs.com/package/react-katex).
 
 In the website, you'll be able to know more about who I am, my career, projects and how to contact me.
 

@@ -8,6 +8,8 @@ export default function ViT (): JSX.Element {
   return (
         <>
             <Head><title>Blog - ViT</title></Head>
+            <Text fontSize={'l'} textAlign={'right'}><b>Published:</b> 03.02.2022</Text>
+
             <Text fontSize={'5xl'} textAlign={'center'}>Vision Transformers from Scratch (PyTorch): A step-by-step guide</Text>
 
             <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Introduction</Text>
