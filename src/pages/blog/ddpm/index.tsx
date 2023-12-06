@@ -8,6 +8,8 @@ export default function DDPM (): JSX.Element {
   return (
     <>
       <Head><title>Blog - DDPM</title></Head>
+      <Text fontSize={'l'} textAlign={'right'}><b>Published:</b> 10.07.2022</Text>
+
       <Text fontSize={'5xl'} textAlign={'center'}>
         Generating images with DDPMs: A PyTorch Implementation
       </Text>
