@@ -48,7 +48,7 @@ export default function ViR (): JSX.Element {
       <BlockMath>{'\\mathbf{s}_n = \\alpha \\mathbf{s}_{n-1} + \\mathbf{k}_n^t \\mathbf{v}_n'}</BlockMath>
       <BlockMath>{'\\text{Retention}(\\mathbf{x})=\\mathbf{o}_n = \\mathbf{q}_n \\mathbf{s}_n'}</BlockMath>
 
-      <Text mb={5}>where <InlineMath math='\mathbf{s}_n' /> is the inner state at step <InlineMath math='n' />, <InlineMath math='\mathbf{k}_n' /> is the key and <InlineMath math='\mathbf{v}_n' /> is the query (row vectors, so <InlineMath math='\mathbf{s}_n, \mathbf{k_n^Tv_n} \in \mathbb{R}^{D \times D}' />).
+      <Text mb={5}>where <InlineMath math='\mathbf{s}_n' /> is the inner state at step <InlineMath math='n' />, <InlineMath math='\mathbf{k}_n' /> is the key and <InlineMath math='\mathbf{v}_n' /> is the value of the current (n-th) element in the sequence (row vectors, so <InlineMath math='\mathbf{s}_n, \mathbf{k_n^Tv_n} \in \mathbb{R}^{D \times D}' />).
         Needless to say, <InlineMath math='\mathbf{q}_n, \mathbf{k}_n, \mathbf{v}_n' /> are linear projections of the n-th sequence element <InlineMath math='\mathbf{x}_n' />. Finally, <InlineMath math='0 \le \alpha \le 1' /> is a constant that exponentially decays older key-values products.</Text>
 
       <Text mb={5}>Translating into text these equations, the idea is the following: <InlineMath math='\mathbf{s}_n' /> will contain the <i>state</i> in the form of all key-value products. The ouput is obtained by fetching the desired value (mixture of values) by using the current query <InlineMath math='\mathbf{q}_n'></InlineMath>.</Text>
