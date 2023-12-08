@@ -10,7 +10,7 @@ export default function ViR (): JSX.Element {
   return (
     <>
       <Head><title>Blog - ViR</title></Head>
-      <Text fontSize={'l'} textAlign={'right'}><b>Published:</b> 27.11.2023</Text>
+      <Text fontSize={'l'} textAlign={'right'}><b>Published:</b> 06.12.2023</Text>
       <Text fontSize={'5xl'} textAlign={'center'}>Vision Retention Networks</Text>
 
       <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Introduction</Text>
