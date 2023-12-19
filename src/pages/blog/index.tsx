@@ -12,6 +12,16 @@ export default function Projects (): JSX.Element {
             Welcome to my blog. Here I write about my projects, past events and other stuff that I feel like sharing.
           </Text>
           <Stack spacing={10}>
+
+            <StackItem>
+              <Link href="/blog/ign" textColor={'blue.500'}>
+                <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'center'}>Idempotent Generative Networks</Text>
+                <Center>
+                  <Image src="/imgs/blog/ign/ign.png" alt="Idempotent Generative Network" maxWidth={'600px'}/>
+                </Center>
+              </Link>
+            </StackItem>
+
             <StackItem>
               <Link href="/blog/vir" textColor={'blue.500'}>
                 <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'center'}>Vision Retention Networks</Text>
