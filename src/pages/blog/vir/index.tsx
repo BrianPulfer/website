@@ -69,7 +69,7 @@ export default function ViR (): JSX.Element {
       <Text mb={5}>Here we have the <b style={{ color: 'orange' }}>CHUNKWISE RECURRENT</b> formulation of Retention:</Text>
       <BlockMath>{'Q_{[i]} = Q_{Ci:C(i+1)}, \\quad K_{[i]} = K_{Ci:C(i+1)}, \\quad V_{[i]} = V_{Ci:C(i+1)}'}</BlockMath>
       <BlockMath>{'R_i = K^T_{[i]}(V_{[i]} \\odot \\Alpha) + \\alpha^CR_{i-1}, \\quad \\Alpha_{ij} = \\alpha^{C-i-1} '}</BlockMath>
-      <BlockMath>{'\\text{Retention}(X_{i}) = \\underbrace{(Q_{[i]} K^T_{[i]} \\odot M)V_{[i]}}_{\\text{Inner-Chunk}} + \\underbrace{(Q_{[i]}R_{i-1}) \\odot \\xi}_{\\text{Inner-Chunk}}, \\quad \\xi_{ij} = \\alpha^{i+1}'}</BlockMath>
+      <BlockMath>{'\\text{Retention}(X_{i}) = \\underbrace{(Q_{[i]} K^T_{[i]} \\odot M)V_{[i]}}_{\\text{Inner-Chunk}} + \\underbrace{(Q_{[i]}R_{i-1}) \\odot \\xi}_{\\text{Intra-Chunk}}, \\quad \\xi_{ij} = \\alpha^{i+1}'}</BlockMath>
       <Text mb={5}>The math looks scary, but really we are just applying the parallel computation for all chunks and, once we have the <i>Inner-Chunk</i> parts, we can merge them using the recurrent formulation.</Text>
 
       <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>Comparison of Attention and Retention</Text>
