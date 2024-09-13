@@ -11,9 +11,9 @@ export default function Publications (): JSX.Element {
           <Head><title>Research</title></Head>
           <Publication>
               <PublicationTitle className={'mb-4'}>
-                <Link textColor={'blue.500'} href="/">Robustness Tokens: Towards Adversarial Robustness of Transformers</Link> (Jul 24)
+                <Link textColor={'blue.500'}>Robustness Tokens: Towards Adversarial Robustness of Transformers</Link> (Jul 24)
               </PublicationTitle>
-              <Link href='/research/robustness-tokens' textColor={'blue.500'} textAlign={'center'}>Paper page</Link>
+               <Text textColor={'red.500'}><Link textColor={'blue.500'} textAlign={'center'}>Paper page</Link> (Coming soon...)</Text>
               <PublicationAbstract>
               Recently, large pre-trained foundation models have become widely adopted by machine learning practitioners for a multitude of tasks. Given that such models are publicly available, relying on their use as backbone models for downstream tasks might result in high vul- nerability to adversarial attacks crafted with the same public model. In this work, we propose Robustness Tokens, a novel approach specific to the transformer architecture that fine-tunes a few additional private tokens with low computational requirements instead of tuning model parameters as done in traditional adversarial training. We show that Robustness Tokens make Vision Transformer models significantly more robust to white-box adversarial attacks while also retaining the original downstream performances.
               </PublicationAbstract>
@@ -26,7 +26,7 @@ export default function Publications (): JSX.Element {
           </Publication>
           <Publication>
               <PublicationTitle className={'mb-4'}>
-                <Link textColor={'blue.500'} href="https://proceedings.mlr.press/v220/gruca22a.html">Weather4cast at NeurIPS 2022: Super-Resolution Rain Movie Prediction under Spatio-temporal Shifts</Link> (Sep 23)
+                <Link textColor={'blue.500'} href='https://neurips.cc/virtual/2022/competition/50099'>Weather4cast at NeurIPS 2022: Super-Resolution Rain Movie Prediction under Spatio-temporal Shifts</Link> (Sep 23)
               </PublicationTitle>
               <PublicationAbstract>
                 Weather4cast again advanced modern algorithms in AI and machine learning through a highly topical interdisciplinary competition challenge: The prediction of hi-res rain radar movies from multi-band satellite sensors, requiring data fusion, multi-channel video frame prediction, and super-resolution. Accurate predictions of rain events are becoming ever more critical, with climate change increasing the frequency of unexpected rainfall. The resulting models will have a particular impact where costly weather radar is not available. We here present highlights and insights emerging from the thirty teams participating from over a dozen countries. To extract relevant patterns, models were challenged by spatio-temporal shifts. Geometric data augmentation and test-time ensemble models with a suitable smoother loss helped this transfer learning. Even though, in ablation, static information like geographical location and elevation was not linked to performance, the general success of models incorporating physics in this competition suggests that approaches combining machine learning with application domain knowledge seem a promising avenue for future research. Weather4cast will continue to explore the powerful benchmark reference data set introduced here, advancing competition tasks to quantitative predictions, and exploring the effects of metric choice on model performance and qualitative prediction properties.
