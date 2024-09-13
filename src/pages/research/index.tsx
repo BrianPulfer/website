@@ -1,7 +1,7 @@
 import AppLayout from '@/components/Layout/AppLayout'
 
 import Head from 'next/head'
-import { Link } from '@chakra-ui/react'
+import { Text, Link } from '@chakra-ui/react'
 
 import Publication, { PublicationTitle, PublicationAbstract, PublicationVenue, PublicationCitation } from '../../components/Publication'
 
@@ -9,6 +9,21 @@ export default function Publications (): JSX.Element {
   return (
       <>
           <Head><title>Research</title></Head>
+          <Publication>
+              <PublicationTitle className={'mb-4'}>
+                <Link textColor={'blue.500'} href="/">Robustness Tokens: Towards Adversarial Robustness of Transformers</Link> (Jul 24)
+              </PublicationTitle>
+              <Link href='/research/robustness-tokens' textColor={'blue.500'} textAlign={'center'}>Paper page</Link>
+              <PublicationAbstract>
+              Recently, large pre-trained foundation models have become widely adopted by machine learning practitioners for a multitude of tasks. Given that such models are publicly available, relying on their use as backbone models for downstream tasks might result in high vul- nerability to adversarial attacks crafted with the same public model. In this work, we propose Robustness Tokens, a novel approach specific to the transformer architecture that fine-tunes a few additional private tokens with low computational requirements instead of tuning model parameters as done in traditional adversarial training. We show that Robustness Tokens make Vision Transformer models significantly more robust to white-box adversarial attacks while also retaining the original downstream performances.
+              </PublicationAbstract>
+              <PublicationVenue className={'mt-2'}>
+                European Conference on Computer Vision (ECCV), 2024
+              </PublicationVenue>
+              <PublicationCitation>
+                <Text textColor={'red.500'}>Coming soon...</Text>
+              </PublicationCitation>
+          </Publication>
           <Publication>
               <PublicationTitle className={'mb-4'}>
                 <Link textColor={'blue.500'} href="https://proceedings.mlr.press/v220/gruca22a.html">Weather4cast at NeurIPS 2022: Super-Resolution Rain Movie Prediction under Spatio-temporal Shifts</Link> (Sep 23)
