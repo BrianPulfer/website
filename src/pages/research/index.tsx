@@ -11,9 +11,8 @@ export default function Publications (): JSX.Element {
           <Head><title>Research</title></Head>
           <Publication>
               <PublicationTitle className={'mb-4'}>
-                <Link textColor={'blue.500'}>Robustness Tokens: Towards Adversarial Robustness of Transformers</Link> (Jul 24)
+                <Link textColor={'blue.500'} href='https://link.springer.com/chapter/10.1007/978-3-031-73202-7_7'>Robustness Tokens: Towards Adversarial Robustness of Transformers</Link> (Jul 24)
               </PublicationTitle>
-               <Text textColor={'red.500'}><Link textColor={'blue.500'} textAlign={'center'}>Paper page</Link> (Coming soon...)</Text>
               <PublicationAbstract>
               Recently, large pre-trained foundation models have become widely adopted by machine learning practitioners for a multitude of tasks. Given that such models are publicly available, relying on their use as backbone models for downstream tasks might result in high vul- nerability to adversarial attacks crafted with the same public model. In this work, we propose Robustness Tokens, a novel approach specific to the transformer architecture that fine-tunes a few additional private tokens with low computational requirements instead of tuning model parameters as done in traditional adversarial training. We show that Robustness Tokens make Vision Transformer models significantly more robust to white-box adversarial attacks while also retaining the original downstream performances.
               </PublicationAbstract>
@@ -21,7 +20,7 @@ export default function Publications (): JSX.Element {
                 European Conference on Computer Vision (ECCV), 2024
               </PublicationVenue>
               <PublicationCitation>
-                <Text textColor={'red.500'}>Coming soon...</Text>
+                Pulfer, B., Belousov, Y., & Voloshynovskiy, S. (2025). Robustness Tokens: Towards Adversarial Robustness of Transformers. In A. Leonardis, E. Ricci, S. Roth, O. Russakovsky, T. Sattler, & G. Varol (Eds.), Computer Vision – ECCV 2024 (pp. 110–127). Springer Nature Switzerland.
               </PublicationCitation>
           </Publication>
           <Publication>
