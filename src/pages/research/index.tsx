@@ -1,7 +1,7 @@
 import AppLayout from '@/components/Layout/AppLayout'
 
 import Head from 'next/head'
-import { Text, Link } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/react'
 
 import Publication, { PublicationTitle, PublicationAbstract, PublicationVenue, PublicationCitation } from '../../components/Publication'
 
