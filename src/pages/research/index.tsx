@@ -9,6 +9,37 @@ export default function Publications (): JSX.Element {
   return (
       <>
           <Head><title>Research</title></Head>
+
+          <Publication>
+              <PublicationTitle className={'mb-4'}>
+                <Link textColor={'blue.500'} href='https://arxiv.org/abs/2503.03842'>Task-Agnostic Attacks Against Vision Foundation Models</Link> (Mar 25)
+              </PublicationTitle>
+              <PublicationAbstract>
+                The study of security in machine learning mainly focuses on downstream task-specific attacks, where the adversarial example is obtained by optimizing a loss function specific to the downstream task. At the same time, it has become standard practice for machine learning practitioners to adopt publicly available pre-trained vision foundation models, effectively sharing a common backbone architecture across a multitude of applications such as classification, segmentation, depth estimation, retrieval, question-answering and more. The study of attacks on such foundation models and their impact to multiple downstream tasks remains vastly unexplored. This work proposes a general framework that forges task-agnostic adversarial examples by maximally disrupting the feature representation obtained with foundation models. We extensively evaluate the security of the feature representations obtained by popular vision foundation models by measuring the impact of this attack on multiple downstream tasks and its transferability between models.
+              </PublicationAbstract>
+              <PublicationVenue className={'mt-2'}>
+                Arxiv
+              </PublicationVenue>
+              <PublicationCitation>
+                Pulfer, B., Belousov, Y., Kinakh, V., Furon, T., & Voloshynovskiy, S. (2025). Task-Agnostic Attacks Against Vision Foundation Models. https://arxiv.org/abs/2503.03842
+              </PublicationCitation>
+          </Publication>
+
+          <Publication>
+              <PublicationTitle className={'mb-4'}>
+                <Link textColor={'blue.500'} href='https://arxiv.org/abs/2502.09696'>ZeroBench: An Impossible Visual Benchmark for Contemporary Large Multimodal Models</Link> (Feb 25)
+              </PublicationTitle>
+              <PublicationAbstract>
+              Large Multimodal Models (LMMs) exhibit major shortfalls when interpreting images and, by some measures, have poorer spatial cognition than small children or animals. Despite this, they attain high scores on many popular visual benchmarks, with headroom rapidly eroded by an ongoing surge of model progress. To address this, there is a pressing need for difficult benchmarks that remain relevant for longer. We take this idea to its limit by introducing ZeroBench-a lightweight visual reasoning benchmark that is entirely impossible for contemporary frontier LMMs. Our benchmark consists of 100 manually curated questions and 334 less difficult subquestions. We evaluate 20 LMMs on ZeroBench, all of which score 0.0%, and rigorously analyse the errors. To encourage progress in visual understanding, we publicly release ZeroBench.
+             </PublicationAbstract>
+              <PublicationVenue className={'mt-2'}>
+                Arxiv
+              </PublicationVenue>
+              <PublicationCitation>
+                Roberts, J., Taesiri, M. R., Sharma, A., Gupta, A., Roberts, S., Croitoru, I., Bogolin, S.-V., Tang, J., Langer, F., Raina, V., Raina, V., Xiong, H., Udandarao, V., Lu, J., Chen, S., Purkis, S., Yan, T., Lin, W., Shin, G., … Albanie, S. (2025). ZeroBench: An Impossible Visual Benchmark for Contemporary Large Multimodal Models. https://arxiv.org/abs/2502.09696
+              </PublicationCitation>
+          </Publication>
+
           <Publication>
               <PublicationTitle className={'mb-4'}>
                 <Link textColor={'blue.500'} href='https://link.springer.com/chapter/10.1007/978-3-031-73202-7_7'>Robustness Tokens: Towards Adversarial Robustness of Transformers</Link> (Jul 24)

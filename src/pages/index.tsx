@@ -33,8 +33,14 @@ export default function Home (): JSX.Element {
         News 🗞️
       </Text>
       <Box className='flex flex-col space-y-4'>
+        <News title={'March 2025'}>
+          📃 Our paper <Link textColor={'blue.500'} href={'https://arxiv.org/abs/2503.03842'}>Task-Agnostic Attacks Against Vision Foundation Models</Link> is now available on ArXiv.
+        </News>
+        <News title={'February 2025'}>
+          📃 I contributed as part of the red team for <Link textColor={'blue.500'} href={'https://arxiv.org/abs/2502.09696'}>ZeroBench: An Impossible Visual Benchmark for Contemporary Large Multimodal Models</Link>.
+        </News>
         <News title={'July 2024'}>
-          📃 Our paper <i>Robustness Tokens: Towards Adversarial Robustness for Transformers</i> (deep double blind) has been accepted for publication at the <Link textColor={'blue.500'} href={'https://eccv2024.ecva.net/'}>European Conference on Computer Vision (ECCV) 2024.</Link>.
+          📃 Our paper <Link textColor={'blue.500'} href={'https://link.springer.com/chapter/10.1007/978-3-031-73202-7_7'}>Robustness Tokens: Towards Adversarial Robustness for Transformers</Link> (deep double blind) has been accepted for publication at the <Link textColor={'blue.500'} href={'https://eccv2024.ecva.net/'}>European Conference on Computer Vision (ECCV) 2024.</Link>.
         </News>
         <News title={'September 2023'}>
           🥇 My team and I won the Migros workshop at the <Link textColor={'blue.500'} href={'https://hackzurich.com/'}>HackZurich 2023</Link> hackathon. <Link textColor={'blue.500'} href={'/blog/hackzurich23'}>Read the blog post</Link>.
