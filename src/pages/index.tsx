@@ -39,6 +39,9 @@ export default function Home (): JSX.Element {
         <News title={'February 2025'}>
           📃 I contributed as part of the red team for <Link textColor={'blue.500'} href={'https://arxiv.org/abs/2502.09696'}>ZeroBench: An Impossible Visual Benchmark for Contemporary Large Multimodal Models</Link>.
         </News>
+        <News title={'November 2024'}>
+          🕵️ I contributed as a reviewer of 3 papers for <Link textColor={'blue.500'} href={'https://cvpr.thecvf.com/Conferences/2025'}>CVPR 2025</Link>.
+        </News>
         <News title={'July 2024'}>
           📃 Our paper <Link textColor={'blue.500'} href={'https://link.springer.com/chapter/10.1007/978-3-031-73202-7_7'}>Robustness Tokens: Towards Adversarial Robustness for Transformers</Link> (deep double blind) has been accepted for publication at the <Link textColor={'blue.500'} href={'https://eccv2024.ecva.net/'}>European Conference on Computer Vision (ECCV) 2024.</Link>.
         </News>
