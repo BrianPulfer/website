@@ -14,6 +14,15 @@ export default function Projects (): JSX.Element {
           <Stack spacing={10}>
 
             <StackItem>
+              <Link href="/blog/gcg" textColor={'blue.500'}>
+                <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'center'}>GCG: Adversarial Attacks on Large Language Models</Text>
+                <Center>
+                  <Image src="/imgs/blog/gcg/gcg.png" alt="GCG: Adversarial Attacks on Large Language Models" maxWidth={'600px'}/>
+                </Center>
+              </Link>
+            </StackItem>
+
+            <StackItem>
               <Link href="/blog/ign" textColor={'blue.500'}>
                 <Text fontWeight={'bold'} fontSize={'2xl'} textAlign={'center'}>Idempotent Generative Networks</Text>
                 <Center>
