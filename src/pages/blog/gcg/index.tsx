@@ -122,11 +122,21 @@ export default function GCG(): JSX.Element {
         This much more sparse search space also means that if we are at a
         discrete point (sequence of tokens), it will be harder (with respect to
         attacks on images) to find another point "in the neighbourhood" of the
-        current one that will work better. Of course, if we could evaluate all{" "}
-        <InlineMath math="V^{20}" /> possible sequences of tokens of length 20,
-        then we could simply pick the one that works best. In practice,{" "}
-        <InlineMath math="V^{20}" /> is still an enourmous number, and so we
-        need a search strategy.
+        current one that will work better. Another way to interpret this, is
+        saying that when we attack an image with continuous perturbations, when
+        we then round to discrete values (in range{" "}
+        <InlineMath math="[0, 255]" />
+        ), we can still get a good approximation of the pertubation we found
+        assuming that the values in the image were continuous. For text,
+        however, if we just modify the token embeddings to our likings, we
+        won&apos;t be able to get a good approximation of the continuous
+        pertubation when we round to discrete values (the tokens).
+      </Text>
+
+      <Text mb={5}>
+        Despite this, <InlineMath math="V^{20}" /> (the number of possible
+        sequences of 20 tokens) is still an enourmous number and we cannot
+        evaluate all possibilities, so we need a search strategy.
       </Text>
 
       <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>
@@ -137,6 +147,25 @@ export default function GCG(): JSX.Element {
 
       <Text fontSize={"3xl"} fontWeight={"bold"} mb={5}>
         Implementation
+      </Text>
+
+      <Text mb={5}>
+        We now implement the GCG attack in python. In the following code, we
+        take a malicious request and target response from the model using the{" "}
+        <Link
+          href="https://huggingface.co/datasets/walledai/HarmBench"
+          textColor={"blue.500"}
+        >
+          HarmBench
+        </Link>{" "}
+        dataset, a standard benchmark proposed in{" "}
+        <Link href="https://arxiv.org/abs/2402.04249" textColor={"blue.500"}>
+          <i>
+            HarmBench: A Standardized Evaluation Framework for Automated Red
+            Teaming and Robust Refusal
+          </i>
+        </Link>
+        . First off, we start with the imports.
       </Text>
 
       <CodeBlock language="python">
@@ -166,6 +195,76 @@ YELLOW = lambda x: colorama.Fore.YELLOW + x + colorama.Fore.RESET
 RED= lambda x: colorama.Fore.RED + x + colorama.Fore.RESET
 `}
       </CodeBlock>
+
+      <Text mb={5}>
+        Next, we define what parameters we want to run the notebook with. Below,
+        is the list of all parameters used in this notebook. Here's a quick
+        breakdown of what they mean:
+      </Text>
+      <ul className="list-disc px-10">
+        <li>
+          <b>model_name</b>: The model that will be attacked. Note that Llama
+          3.2 is particularly hard to attack. Also, the{" "}
+          <Link href={"https://qwenlm.github.io/about/"} textColor={"blue.500"}>
+            Qwen team
+          </Link>{" "}
+          recently{" "}
+          <Link
+            textColor={"blue.500"}
+            href={"https://x.com/Alibaba_Qwen/status/1916962087676612998"}
+          >
+            released Qwen3
+          </Link>
+          , a very strong model which conveniently comes in many sizes,
+          including some very small ones. The results shown here are for the{" "}
+          <Link
+            href={"https://huggingface.co/Qwen/Qwen3-1.7B"}
+            textColor={"blue.500"}
+          >
+            Qwen/Qwen3-1.7B
+          </Link>{" "}
+          model.
+        </li>
+        <li>
+          <b>quantization_config</b>: The bitsandbytes quantization
+          configuration to save memory.
+        </li>
+        <li>
+          <b>batch_size</b>: The number of different substitutions we will
+          evaluate at each step.
+        </li>
+        <li>
+          <b>search_batch_size</b>: The number of samples we actually feed at
+          once to the model. <b>batch_size</b> must be entirely divisible by{" "}
+          <b>search_batch_size</b>.
+        </li>
+        <li>
+          <b>top_k</b>: The number of possible substitutions we will consider
+          for each token in the suffix.
+        </li>
+        <li>
+          <b>steps</b>: The number of iterations we will run the attack for.
+        </li>
+        <li>
+          <b>suffix_length</b>: The length, in tokens, of the suffix we will be
+          crafting.
+        </li>
+        <li>
+          <b>suffix_initial_token</b>: This is the token we will repeat in the
+          beginning to have our starting suffix. Note that this string must be a
+          single token when tokenized.
+        </li>
+        <li>
+          <b>system_prompt</b>: Optional system prompt we will feed to the
+          model.
+        </li>
+        <li>
+          <b>dataset_index</b>: The index of the sample in the
+          [AdvBench](https://huggingface.co/datasets/walledai/AdvBench) dataset
+          that we will attack. The dataset contains, for each sample, the user
+          prompt and a desired target response.
+        </li>
+      </ul>
 
       <CodeBlock language="python">
         {`# model_name = "meta-llama/Llama-3.2-1B-Instruct" # Tough cookie! Also, requires permissions through HF authentication
@@ -578,7 +677,7 @@ test_suffix(suffix_text_best)`}
 
       <Text mb={5}>
         The Colab Notebook with the shown implementation is freely accessible at{" "}
-        <Link textColor={"blue.500"} href="">
+        <Link textColor={"blue.500"} href={""}>
           this link
         </Link>
         , while the{" "}
