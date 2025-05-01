@@ -129,9 +129,29 @@ export default function GCG (): JSX.Element {
         evaluate all possibilities, so we need a search strategy.
       </Text>
       <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>
-        Greedy Coordinate Gradient
+        The theory (very briefly)
       </Text>
-      <Text mb={5}></Text>
+
+      <Text mb={5}>
+        The overall idea of GCG can be summarized as follows:
+      </Text>
+
+      <ul className="list-numerical px-10">
+        <li className='mb-5'><b>Goal</b>: Find a suffix prompt that, when appended to a given prefix prompt, will cause the LLM to generate a target response. Mathematically, we simply want to maximize the likelihood of the target response given the prefix prompt and the suffix prompt:<br/>
+        <BlockMath math="\mathcal{L}(\{{s_i}\}_{i \in L_s}) = - \log( \prod_{j=0}^{L_t} \pi(t_j | p, \{{s_i}\}_{i \in L_s}, t_{<j}) )" />
+        where:
+        <ul className="list-disc px-10">
+         <li><InlineMath math="s_i"/> is the i-th token of the suffix,</li>
+         <li><InlineMath math="L_s"/> is the length of the suffix,</li>
+         <li><InlineMath math="t_j"/> is the j-th token of the target response,</li>
+         <li><InlineMath math="L_t"/> is the length of the target response,</li>
+         <li><InlineMath math="\pi"/> is the probability that the LLM generates the target token <InlineMath math="t_j"/> given the prefix prompt <InlineMath math="p"/>, the suffix <InlineMath math="s_i"/>, and the previous tokens of the target response <InlineMath math="t_{<j}"/>.</li>
+        </ul>
+        </li>
+        <li className='mb-5'><b>Gradient computation</b>: To find such suffix, we exploit the gradient of the cross-entropy loss with respect to the one-hot encoding of the suffix tokens. This gradient will basically tell us what tokens seem likely to decrease the loss (i.e. increase the probability of the target response). Out of this gradient, we will select the top  <Code>k</Code> tokens with the highest gradient values as possible candidates for substitution (this gives us a tensor of shape <Code>suffix_length</Code>  x <Code>k</Code>). We thus obtain, for each token position <Code>i</Code>, a set of possible substitutions</li>
+        <li className='mb-5'><b>Token substitution</b>: In principle, we would like to test all <Code>suffix_length</Code> x <Code>k</Code> combinations of tokens and pick the one that seems to minimize the loss the most. In practice, this is computationally expensive, so we sample a few <Code>batch_size</Code> of such combinations uniformly at random and greedily pick the one that minimizes the loss the most. This is repeated for a number of iterations.</li>
+      </ul>
+
       <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>
         Implementation
       </Text>
