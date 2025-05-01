@@ -36,8 +36,10 @@
   },
   "devDependencies": {
     "@types/react-katex": "^3.0.4",
-    "eslint": "^8.50.0",
+    "eslint": "^8.57.1",
     "eslint-config-standard-with-typescript": "^39.1.0",
-    "eslint-plugin-react": "^7.33.2"
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.0.0",
+    "typescript-eslint": "^8.31.1"
   }
 }
