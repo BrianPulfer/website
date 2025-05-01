@@ -83,40 +83,42 @@ export default function GCG (): JSX.Element {
         perturbations that we can obtain (each pixel can change in the range
         <InlineMath math="[-8, 8]" />. Note that this is an upper bound, since
         we have to obtain an image in range <InlineMath math="[0, 255]" /> and
-        cannot go past these bounds). For text however, there are &quot;only&quot;{' '}
-        <InlineMath math="V^L" /> possible sequences. To find how long our
-        sequence should be to have roughly the same number of possible
-        perturbations, we can set the two equations equal to each other:
+        cannot go past these bounds). For text however, there are
+        &quot;only&quot; <InlineMath math="V^L" /> possible sequences. To find
+        how long our sequence should be to have roughly the same number of
+        possible perturbations, we can set the two equations equal to each
+        other:
       </Text>
       <BlockMath math="17^{H \times W \times 3} = V^L" />
       <BlockMath math="17^{H \times W \times 3} = 17^{\log_{17}(V) L}" />
       <BlockMath math="H \times W \times 3 = \log_{17}(V) L" />
       <BlockMath math="\frac{H \times W \times 3}{\log_{17}(V)} =  L" />
       <Text mb={5}>
-        Typical vocabularies have a size within 30&apos;000 and 1&apos;000&apos;000 tokens, so
-        we can round <InlineMath math="\log_{17}(V) \approx 5" /> to get a
-        lower-bound on the length of the text we need to have the same number of
-        possible perturbations, which becomes{' '}
+        Typical vocabularies have a size within 30&apos;000 and
+        1&apos;000&apos;000 tokens, so we can round{' '}
+        <InlineMath math="\log_{17}(V) \approx 5" /> to get a lower-bound on the
+        length of the text we need to have the same number of possible
+        perturbations, which becomes{' '}
         <InlineMath math="L = 0.6 \times H \times W" />. Considering that a
         small image has a size of <InlineMath math="224 \times 224" />, the
         sequence length needed to have a comparable number of possible
         perturbations is roughly{' '}
         <InlineMath math="L = 0.6 \times 224 \times 224 \approx 30'100" /> (with
-        a vocabulary size over 1&apos;400&apos;000, which is atypical). In practice,
-        however, we do not wish to append tens of thousands of adversarial
-        tokens to our sequence (which typically involves a few tens to a few
-        thousands), and thus we set <InlineMath math="L = 20" />, resulting in
-        an incredibly smaller (many many orders of magnitude) search space for
-        text.
+        a vocabulary size over 1&apos;400&apos;000, which is atypical). In
+        practice, however, we do not wish to append tens of thousands of
+        adversarial tokens to our sequence (which typically involves a few tens
+        to a few thousands), and thus we set <InlineMath math="L = 20" />,
+        resulting in an incredibly smaller (many many orders of magnitude)
+        search space for text.
       </Text>
       <Text mb={5}>
         This much more sparse search space also means that if we are at a
         discrete point (sequence of tokens), it will be harder (with respect to
-        attacks on images) to find another point &quot;in the neighbourhood&quot; of the
-        current one that will work better. Another way to interpret this, is
-        saying that when we attack an image with continuous perturbations, when
-        we then round to discrete values (in range{' '}
-        <InlineMath math="[0, 255]" />
+        attacks on images) to find another point &quot;in the
+        neighbourhood&quot; of the current one that will work better. Another
+        way to interpret this, is saying that when we attack an image with
+        continuous perturbations, when we then round to discrete values (in
+        range <InlineMath math="[0, 255]" />
         ), we can still get a good approximation of the pertubation we found
         assuming that the values in the image were continuous. For text,
         however, if we just modify the token embeddings to our likings, we
@@ -132,24 +134,61 @@ export default function GCG (): JSX.Element {
         The theory (very briefly)
       </Text>
 
-      <Text mb={5}>
-        The overall idea of GCG can be summarized as follows:
-      </Text>
+      <Text mb={5}>The overall idea of GCG can be summarized as follows:</Text>
 
       <ul className="list-numerical px-10">
-        <li className='mb-5'><b>Goal</b>: Find a suffix prompt that, when appended to a given prefix prompt, will cause the LLM to generate a target response. Mathematically, we simply want to maximize the likelihood of the target response given the prefix prompt and the suffix prompt:<br/>
-        <BlockMath math="\mathcal{L}(\{{s_i}\}_{i \in L_s}) = - \log( \prod_{j=0}^{L_t} \pi(t_j | p, \{{s_i}\}_{i \in L_s}, t_{<j}) )" />
-        where:
-        <ul className="list-disc px-10">
-         <li><InlineMath math="s_i"/> is the i-th token of the suffix,</li>
-         <li><InlineMath math="L_s"/> is the length of the suffix,</li>
-         <li><InlineMath math="t_j"/> is the j-th token of the target response,</li>
-         <li><InlineMath math="L_t"/> is the length of the target response,</li>
-         <li><InlineMath math="\pi"/> is the probability that the LLM generates the target token <InlineMath math="t_j"/> given the prefix prompt <InlineMath math="p"/>, the suffix <InlineMath math="s_i"/>, and the previous tokens of the target response <InlineMath math="t_{<j}"/>.</li>
-        </ul>
+        <li className="mb-5">
+          <b>Goal</b>: Find a suffix prompt that, when appended to a given
+          prefix prompt, will cause the LLM to generate a target response.
+          Mathematically, we simply want to maximize the likelihood of the
+          target response given the prefix prompt and the suffix prompt:
+          <br />
+          <BlockMath math="\mathcal{L}(\{{s_i}\}_{i \in L_s}) = - \log( \prod_{j=0}^{L_t} \pi(t_j | p, \{{s_i}\}_{i \in L_s}, t_{<j}) )" />
+          where:
+          <ul className="list-disc px-10">
+            <li>
+              <InlineMath math="s_i" /> is the i-th token of the suffix,
+            </li>
+            <li>
+              <InlineMath math="L_s" /> is the length of the suffix,
+            </li>
+            <li>
+              <InlineMath math="t_j" /> is the j-th token of the target
+              response,
+            </li>
+            <li>
+              <InlineMath math="L_t" /> is the length of the target response,
+            </li>
+            <li>
+              <InlineMath math="\pi" /> is the probability that the LLM
+              generates the target token <InlineMath math="t_j" /> given the
+              prefix prompt <InlineMath math="p" />, the suffix{' '}
+              <InlineMath math="s_i" />, and the previous tokens of the target
+              response <InlineMath math="t_{<j}" />.
+            </li>
+          </ul>
         </li>
-        <li className='mb-5'><b>Gradient computation</b>: To find such suffix, we exploit the gradient of the cross-entropy loss with respect to the one-hot encoding of the suffix tokens. This gradient will basically tell us what tokens seem likely to decrease the loss (i.e. increase the probability of the target response). Out of this gradient, we will select the top  <Code>k</Code> tokens with the highest gradient values as possible candidates for substitution (this gives us a tensor of shape <Code>suffix_length</Code>  x <Code>k</Code>). We thus obtain, for each token position <Code>i</Code>, a set of possible substitutions</li>
-        <li className='mb-5'><b>Token substitution</b>: In principle, we would like to test all <Code>suffix_length</Code> x <Code>k</Code> combinations of tokens and pick the one that seems to minimize the loss the most. In practice, this is computationally expensive, so we sample a few <Code>batch_size</Code> of such combinations uniformly at random and greedily pick the one that minimizes the loss the most. This is repeated for a number of iterations.</li>
+        <li className="mb-5">
+          <b>Gradient computation</b>: To find such suffix, we exploit the
+          gradient of the cross-entropy loss with respect to the one-hot
+          encoding of the suffix tokens. This gradient will basically tell us
+          what tokens seem likely to decrease the loss (i.e. increase the
+          probability of the target response). Out of this gradient, we will
+          select the top <Code>k</Code> tokens with the highest gradient values
+          as possible candidates for substitution (this gives us a tensor of
+          shape <Code>suffix_length</Code> x <Code>k</Code>). We thus obtain,
+          for each token position <Code>i</Code>, a set of possible
+          substitutions
+        </li>
+        <li className="mb-5">
+          <b>Token substitution</b>: In principle, we would like to test all{' '}
+          <Code>suffix_length</Code> x <Code>k</Code> combinations of tokens and
+          pick the one that seems to minimize the loss the most. In practice,
+          this is computationally expensive, so we sample a few{' '}
+          <Code>batch_size</Code> of such combinations uniformly at random and
+          greedily pick the one that minimizes the loss the most. This is
+          repeated for a number of iterations.
+        </li>
       </ul>
 
       <Text fontSize={'3xl'} fontWeight={'bold'} mb={5}>
@@ -263,10 +302,15 @@ RED= lambda x: colorama.Fore.RED + x + colorama.Fore.RESET
           model.
         </li>
         <li>
-          <b>dataset_index</b>: The index of the sample in the
-          [AdvBench](https://huggingface.co/datasets/walledai/AdvBench) dataset
-          that we will attack. The dataset contains, for each sample, the user
-          prompt and a desired target response.
+          <b>dataset_index</b>: The index of the sample in the{' '}
+          <Link
+            href="https://huggingface.co/datasets/walledai/AdvBench"
+            textColor={'blue.500'}
+          >
+            AdvBench
+          </Link>{' '}
+          dataset that we will attack. The dataset contains, for each sample,
+          the user prompt and a desired target response.
         </li>
       </ul>
       <CodeBlock language="python">
@@ -339,8 +383,8 @@ assert ids_suffix.shape[1] == suffix_length, f"Initial suffix length {ids_suffix
         ), it is best to optimize for a target that starts by answering
         positively to the request in particular (e.g.{' '}
         <i>
-          &quot;Sure, here is a script that can exploit vulnerabilities in a software
-          or operating system&quot;
+          &quot;Sure, here is a script that can exploit vulnerabilities in a
+          software or operating system&quot;
         </i>
         ). This is exactly what we do in the code below.
       </Text>
@@ -418,7 +462,7 @@ def visualize(ids_before, ids_suffix, ids_after):
             print(GREEN(token), end='')
         else:
             print(token, end='')
-    print('\n')
+    print('\\n')
 
 visualize(ids_before, ids_suffix, ids_after)`}
       </CodeBlock>
@@ -466,13 +510,13 @@ visualize(ids_before, ids_suffix, ids_after)`}
         their corresponding embeddings. Since the input embeddings that come
         before the suffix (those where the user is asking the qeustion) are not
         going to be modified, we can just pass them through the model once and
-        get the KV-cache for those tokens. In this way, we won&apos;t need to pass
-        them through the model ever again in our optimization loop! This saves
-        quite a bit of time, at the cost of a bit of memory. Finally, we also
-        prepare the labels for the loss function. Since we only want to compute
-        the loss on the target response, we mask all other tokens with the
-        `-100` value. This is the value that PyTorch uses to ignore tokens in
-        the loss function.
+        get the KV-cache for those tokens. In this way, we won&apos;t need to
+        pass them through the model ever again in our optimization loop! This
+        saves quite a bit of time, at the cost of a bit of memory. Finally, we
+        also prepare the labels for the loss function. Since we only want to
+        compute the loss on the target response, we mask all other tokens with
+        the `-100` value. This is the value that PyTorch uses to ignore tokens
+        in the loss function.
       </Text>
 
       <CodeBlock language="python">
@@ -620,7 +664,7 @@ plt.show()
       <Center textAlign={'center'} mb={5} className="flex flex-col">
         <Image
           src="/imgs/blog/gcg/loss.png"
-          alt="Loss of suffix through training."
+          alt="Loss of suffix through optimization."
         />
         <Text textColor={'gray.500'} fontSize={'sm'} textAlign={'center'}>
           Loss of suffix through training.
@@ -720,8 +764,8 @@ test_suffix(suffix_text_best)`}
       </Text>
 
       <Text mb={10}>
-        As we can see, any random suffix we come up with won&apos;t necessarily work.
-        So, how does the optimized suffix perform?
+        As we can see, any random suffix we come up with won&apos;t necessarily
+        work. So, how does the optimized suffix perform?
       </Text>
 
       <Text mb={5} fontSize={'xl'} textAlign={'center'}>
@@ -846,11 +890,16 @@ test_suffix(suffix_text_best)`}
 
       <Text mb={5}>
         The Colab Notebook with the shown implementation is freely accessible at{' '}
-        <Link textColor={'blue.500'} href={''}>
+        <Link
+          textColor={'blue.500'}
+          href={
+            'https://drive.google.com/file/d/1Y5DghFIZCxQOjFoKaItuLFAPMtUxIwjQ/view?usp=sharing'
+          }
+        >
           this link
         </Link>
         , while the{' '}
-        <Link href="" textColor={'blue.500'}>
+        <Link href="https://github.com/BrianPulfer/gcg" textColor={'blue.500'}>
           GitHub repository
         </Link>{' '}
         contains the notebook file.
