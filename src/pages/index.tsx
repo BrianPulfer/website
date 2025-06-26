@@ -33,6 +33,12 @@ export default function Home (): JSX.Element {
         News 🗞️
       </Text>
       <Box className='flex flex-col space-y-4'>
+        <News title={'June 2025'}>
+           👨🏽‍💻I am interning a as a Ph.D. student at <b>Meta</b> in Menlo Park, California, for the summer of 2025 in the GPU Techniques Team!
+        </News>
+        <News title={'June 2025'}>
+          📃 I presented our paper <Link textColor={'blue.500'} href={'https://openaccess.thecvf.com/content/CVPR2025W/AdvML/papers/Pulfer_Task-Agnostic_Attacks_Against_Vision_Foundation_Models_CVPRW_2025_paper.pdf'}>Task-Agnostic Attacks Against Vision Foundation Models</Link> at <b>CVPR 2025</b> for the <i>5th Workshop of Adversarial Machine Learning on Computer Vision: Foundation Models + X</i>.
+        </News>
         <News title={'March 2025'}>
           📃 Our paper <Link textColor={'blue.500'} href={'https://arxiv.org/abs/2503.03842'}>Task-Agnostic Attacks Against Vision Foundation Models</Link> is now available on ArXiv.
         </News>
