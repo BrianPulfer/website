@@ -1,10 +1,53 @@
 import Head from 'next/head'
-import { SocialIcon } from 'react-social-icons'
 
-import { Image, Text, Box, Link } from '@chakra-ui/react'
+import { Box, HStack, Icon, Image, Link, Text } from '@chakra-ui/react'
 
 import News from '@/components/News'
 import AppLayout from '@/components/Layout/AppLayout'
+
+// Icon paths adapted from the former react-social-icons dependency.
+const SOCIAL_ICONS = {
+  github: {
+    color: '#24292e',
+    path: 'M0,0v64h64V0H0z M37.1,47.2c-0.8,0.2-1.1-0.3-1.1-0.8c0-0.5,0-2.3,0-4.4c0-1.5-0.5-2.5-1.1-3 c3.6-0.4,7.3-1.7,7.3-7.9c0-1.7-0.6-3.2-1.6-4.3c0.2-0.4,0.7-2-0.2-4.2c0,0-1.3-0.4-4.4,1.6c-1.3-0.4-2.6-0.5-4-0.5 c-1.4,0-2.7,0.2-4,0.5c-3.1-2.1-4.4-1.6-4.4-1.6c-0.9,2.2-0.3,3.8-0.2,4.2c-1,1.1-1.6,2.5-1.6,4.3c0,6.1,3.7,7.5,7.3,7.9 c-0.5,0.4-0.9,1.1-1,2.1c-0.9,0.4-3.2,1.1-4.7-1.3c0,0-0.8-1.5-2.5-1.6c0,0-1.6,0-0.1,1c0,0,1,0.5,1.8,2.3c0,0,0.9,3.1,5.4,2.1 c0,1.3,0,2.3,0,2.7c0,0.4-0.3,0.9-1.1,0.8C20.6,45.1,16,39.1,16,32c0-8.8,7.2-16,16-16c8.8,0,16,7.2,16,16 C48,39.1,43.4,45.1,37.1,47.2z'
+  },
+  linkedin: {
+    color: '#007fb1',
+    path: 'M0,0v64h64V0H0z M25.8,44h-5.4V26.6h5.4V44z M23.1,24.3c-1.7,0-3.1-1.4-3.1-3.1c0-1.7,1.4-3.1,3.1-3.1 c1.7,0,3.1,1.4,3.1,3.1C26.2,22.9,24.8,24.3,23.1,24.3z M46,44h-5.4v-8.4c0-2,0-4.6-2.8-4.6c-2.8,0-3.2,2.2-3.2,4.5V44h-5.4V26.6 h5.2V29h0.1c0.7-1.4,2.5-2.8,5.1-2.8c5.5,0,6.5,3.6,6.5,8.3V44z'
+  },
+  x: {
+    color: '#000000',
+    path: 'M 0 0 L 0 64 L 64 64 L 64 0 L 0 0 z M 16 17.537109 L 26.125 17.537109 L 33.117188 26.779297 L 41.201172 17.537109 L 46.109375 17.537109 L 35.388672 29.789062 L 48 46.462891 L 38.125 46.462891 L 30.390625 36.351562 L 21.541016 46.462891 L 16.632812 46.462891 L 28.097656 33.357422 L 16 17.537109 z M 21.730469 20.320312 L 39.480469 43.525391 L 42.199219 43.525391 L 24.648438 20.320312 L 21.730469 20.320312 z'
+  }
+} satisfies Record<string, { color: string, path: string }>
+
+type SocialKey = keyof typeof SOCIAL_ICONS
+
+function SocialLink ({ href, label, iconKey }: { href: string, label: string, iconKey: SocialKey }): JSX.Element {
+  const { color, path } = SOCIAL_ICONS[iconKey]
+
+  return (
+    <Link
+      href={href}
+      isExternal
+      aria-label={label}
+      display={'inline-flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      w={12}
+      h={12}
+      borderRadius={'full'}
+      transition={'transform 0.2s ease, box-shadow 0.2s ease'}
+      boxShadow={'lg'}
+      _hover={{ transform: 'translateY(-2px)', boxShadow: 'xl' }}
+    >
+      <Icon viewBox={'0 0 64 64'} boxSize={8}>
+        <path fill={'white'} d={`M0,0H64V64H0Z${path}`} />
+        <path fill={color} d={path} />
+      </Icon>
+    </Link>
+  )
+}
 
 export default function Home (): JSX.Element {
   return (
@@ -15,11 +58,11 @@ export default function Home (): JSX.Element {
 
       <Text fontSize={'6xl'} bgGradient={'linear(to-b, gray.100, gray.900)'} className={'bg-clip-text text-transparent'}>Brian Pulfer</Text>
 
-      <Box>
-          <SocialIcon url="www.github.com" href="https://www.github.com/BrianPulfer"/>
-          <SocialIcon url="www.linkedin.com" href="https://www.linkedin.com/in/brianpulfer/"/>
-          <SocialIcon url="www.x.com" href="https://www.x.com/peutlefaire"/>
-      </Box>
+      <HStack spacing={4}>
+        <SocialLink href={'https://www.github.com/BrianPulfer'} label={'GitHub'} iconKey={'github'} />
+        <SocialLink href={'https://www.linkedin.com/in/brianpulfer/'} label={'LinkedIn'} iconKey={'linkedin'} />
+        <SocialLink href={'https://www.x.com/peutlefaire'} label={'X'} iconKey={'x'} />
+      </HStack>
 
       <Text textAlign={'center'} fontWeight={'bold'} className={'mt-10'} fontSize={'xl'}>
         Hey there, this is Brian! 👋
