@@ -76,6 +76,18 @@ export default function Home (): JSX.Element {
         News 🗞️
       </Text>
       <Box className='flex flex-col space-y-4'>
+        <News title={'May 2026'}>
+          🥈 I received the <i>Silver Reviewer Award</i> for my reviews spanning 5 papers for ICML 2026.
+        </News>
+        <News title={'May 2026'}>
+          📃 Our paper ZeroBench <Link textColor={'blue.500'} href={'https://arxiv.org/abs/2502.09696'}>ZeroBench: An Impossible Visual Benchmark for Contemporary Large Multimodal Models</Link> has been accepted at <i>ICML 2026</i>.
+        </News>
+        <News title={'May 2026'}>
+          📃 Our paper <Link textColor={'blue.500'} href={'https://arxiv.org/abs/2605.23065'}>Dithering Defense: Adversarial Robustness of Vision Foundation Models via Multi-Level Floyd-Steinberg Dithering</Link> has been accepted at the <i>IEEE International Conference on Image Processing (ICIP 2026)</i>.
+        </News>
+        <News title={'September 2025'}>
+          📃 Our paper <Link textColor={'blue.500'} href={'https://arxiv.org/abs/2505.15594'}>Beyond Classification: Evaluating Diffusion Denoised Smoothing for Security-Utility Trade off</Link> has been accepted at the <i>IEEE 33rd European Signal Processing Conference (EUSIPCO 2025)</i>.
+        </News>
         <News title={'June 2025'}>
            👨🏽‍💻I am interning a as a Ph.D. student at <b>Meta</b> in Menlo Park, California, for the summer of 2025 in the GPU Techniques Team!
         </News>
