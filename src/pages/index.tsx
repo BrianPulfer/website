@@ -76,6 +76,9 @@ export default function Home (): JSX.Element {
         News 🗞️
       </Text>
       <Box className='flex flex-col space-y-4'>
+        <News title={'June 2026'}>
+          🔎 I contributed as a reviewer for NeurIPS 2026 (4 papers) and BMVC 2026 (3 papers).
+        </News>
         <News title={'May 2026'}>
           🥈 I received the <i>Silver Reviewer Award</i> for my reviews spanning 5 papers for ICML 2026.
         </News>
