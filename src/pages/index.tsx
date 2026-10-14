@@ -34,14 +34,14 @@ function SocialLink ({ href, label, iconKey }: { href: string, label: string, ic
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
-      w={12}
-      h={12}
+      w={16}
+      h={16}
       borderRadius={'full'}
       transition={'transform 0.2s ease, box-shadow 0.2s ease'}
       boxShadow={'lg'}
       _hover={{ transform: 'translateY(-2px)', boxShadow: 'xl' }}
     >
-      <Icon viewBox={'0 0 64 64'} boxSize={8}>
+      <Icon viewBox={'0 0 64 64'} boxSize={10}>
         <path fill={'white'} d={`M0,0H64V64H0Z${path}`} />
         <path fill={color} d={path} />
       </Icon>
@@ -68,7 +68,7 @@ export default function Home (): JSX.Element {
         Hey there, this is Brian! 👋
       </Text>
       <Text fontSize={'l'} maxW={'container.md'}>
-        I am a Machine Learning practitioner and enthusiast. I am currently a Ph.D. student in Machine Learning, with a focus on anomaly detection and adversarial attacks, at the University of Geneva, Switzerland 🇨🇭. <Link textColor={'blue.500'} href='cv/BrianPulfer_CV.pdf'>{"Here's my CV"}</Link>.
+        I am a Machine Learning practitioner and enthusiast. I am currently a Research Scientist at Meta in the Instagram Reels Translations Team in Menlo Park, California, USA. I completed my Ph.D. in Machine Learning, with a focus on anomaly detection and adversarial attacks, at the University of Geneva, Switzerland 🇨🇭. <Link textColor={'blue.500'} href='cv/BrianPulfer_CV.pdf'>{"Here's my CV"}</Link>.
         This is my personal portfolio, where I publish updates on my career, projects, publications and more. Hope you enjoy it!
       </Text>
 
@@ -76,6 +76,12 @@ export default function Home (): JSX.Element {
         News 🗞️
       </Text>
       <Box className='flex flex-col space-y-4'>
+        <News title={'October 2026'}>
+          👨🏽‍💻 I joined <b>Meta</b> as a Research Scientist in the Instagram Reels Translations Team in Menlo Park, California, USA!
+        </News>
+        <News title={'September 2026'}>
+          🎓 I defended my PhD at the University of Geneva!
+        </News>
         <News title={'June 2026'}>
           🔎 I contributed as a reviewer for NeurIPS 2026 (4 papers) and BMVC 2026 (3 papers).
         </News>

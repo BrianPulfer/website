@@ -18,7 +18,6 @@ export default function Navbar (): JSX.Element {
   const paths = {
     '/': 'Brian Pulfer',
     '/research': 'Research',
-    '/projects': 'Projects',
     '/blog': 'Blog'
   }
 

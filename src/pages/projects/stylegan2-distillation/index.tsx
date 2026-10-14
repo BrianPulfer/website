@@ -31,3 +31,8 @@ StyleGANDistillation.getLayout = function getLayout (page: React.ReactElement) {
         </AppLayout>
   )
 }
+
+// Hidden: keep code but do not serve this route.
+export async function getServerSideProps (): Promise<{ notFound: true }> {
+  return { notFound: true }
+}
