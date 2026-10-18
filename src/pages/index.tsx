@@ -77,7 +77,7 @@ export default function Home (): JSX.Element {
       </Text>
       <Box className='flex flex-col space-y-4'>
         <News title={'October 2026'}>
-          👨🏽‍💻 I joined <b>Meta</b> as a Research Scientist in the Instagram Reels Translations Team in Menlo Park, California, USA!
+          👨🏽‍💻 I joined <b>Meta</b> as a Research Scientist in the Instagram Reels Translations Team in Menlo Park, California, USA! I also received the O-1 visa as an individual of extraordinary ability.
         </News>
         <News title={'September 2026'}>
           🎓 I defended my PhD at the University of Geneva!
