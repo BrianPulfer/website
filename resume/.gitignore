@@ -1,0 +1,28 @@
+# LaTeX build artifacts (rebuild with: pdflatex main.tex)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.acn
+*.acr
+*.alg
+*.run.xml
+*-blx.bib
+
+# Generated PDF (build artifact, not source)
+main.pdf
+
+# OS
+.DS_Store

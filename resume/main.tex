@@ -1,0 +1,240 @@
+%-------------------------
+% Resume in Latex
+% Author : Brian Pulfer (Template by Jake Gutierrez)
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingNoPlace}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%----------HEADING----------
+
+%\begin{center}
+%\textbf{\Huge \scshape Brian Pulfer} \\ \vspace{1pt}
+%\end{center}
+\begin{center}
+    \textbf{\Huge \scshape Brian Pulfer} \\ \vspace{1pt}
+    \href{mailto:me@brianpulfer.ch}{\underline{me@brianpulfer.ch}} \\ \vspace{1pt}
+    \href{https://www.brianpulfer.ch}{\underline{brianpulfer.ch}} $|$
+    \href{https://brianpulfer.ch/github}{\underline{brianpulfer.ch/github}} $|$
+    \href{https://brianpulfer.ch/linkedin}{\underline{brianpulfer.ch/linkedin}} $|$
+    \href{https://brianpulfer.ch/scholar}{\underline{brianpulfer.ch/scholar}}
+   \\ \vspace{1pt}
+    \small{Work Authorization: U.S. O-1 visa}
+   \\
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Research Scientist, Instagram Reels Translation}{Oct. 2026 -- Present}
+      {Meta Platforms, Inc.}{Menlo Park, California}
+
+    \resumeSubheading
+      {Research Scientist Intern}{June 2025 -- September 2025}
+      {Meta Platforms, Inc.}{Menlo Park, California}
+      \resumeItemListStart
+      \resumeItem{NVFP4 quantization of LLMs on the vLLM inference engine, cutting memory by \textbf{67.5\%}/\textbf{37.6\%} (vs.\ BF16/FP8) with $< 2\%$ accuracy drop.}
+      \resumeItem{Exploratory studies on NVFP4 quantization of KV-cache in vLLM.}
+      \resumeItemListEnd
+  
+    \resumeSubheading
+      {Graduate Researcher (Ph.D. in Machine Learning)}{November 2021 -- September 2026}
+      {University of Geneva}{Geneva, Switzerland}
+      \resumeItemListStart
+      \resumeItem{Dissertation on self-supervised vision models and robustness to adversarial attacks; published at CVPRW 2025 and ECCV 2024.}
+      \resumeItem{Teaching Assistant for Algorithms and Data Structures courses.}
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {UNIGE - University of Geneva}{Geneva, Switzerland}
+      {Ph.D. in Machine Learning}{Nov. 2021 -- Sep. 2026}
+    \resumeSubheading
+      {USI - University of Southern Switzerland}{Lugano, Switzerland}
+      {MSc in Artificial Intelligence (GPA 9.1/10)}{Aug. 2019 -- Jun 2021}
+    \resumeSubheading
+      {SUPSI - University of Applied Sciences of Southern Switzerland}{Manno, Switzerland}
+      {BSc in Computer Science}{Aug. 2016 -- Jun 2019}
+  \resumeSubHeadingListEnd
+
+
+%-----------Publications-----------
+\section{Selected Publications \small{[Full list: \href{https://brianpulfer.ch/scholar}{Google Scholar}]}}
+    \resumeItemListStart
+        \resumeItem{\textbf{B. Pulfer} et al. \textit{Task-Agnostic Attacks Against Vision Foundation Models.} CVPRW 2025 (AdvML Workshop).}
+    
+        \resumeItem{\textbf{B. Pulfer} et al. \textit{Robustness Tokens: Towards Adversarial Robustness of Transformers.} ECCV 2024.}
+        
+        \resumeItem{A. Stocco, \textbf{B. Pulfer}, P. Tonella. \textit{Mind the Gap! Transferability of Virtual vs.\ Physical-world Testing of Autonomous Driving Systems.} IEEE TSE.}
+
+    \resumeItemListEnd
+
+%-----------HONORS & SERVICE-----------
+\section{Honors \& Service}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      Reviewer for CVPR 2025; Judge at the \href{https://neuralwave.ch}{Neural Wave} hackathon; SODESKA merit scholarship (USI, 2021); 3rd place, NeurIPS Weather4cast Challenge 2022; Winner, HackZ\"urich 2023.
+    }}
+  \end{itemize}
+
+
+%-----------OPTIONAL-----------
+\begin{comment}
+\section{Others}
+    \resumeItemListStart
+        \resumeItem{Moderator of \textit{The AI Epiphany}'s community discord server}
+        
+    \resumeItemListEnd
+\end{comment}
+
+
+
+%-----------TECH SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C++/CUDA} \\
+     \textbf{Frameworks}{: PyTorch, vLLM, Hugging Face} \\
+     \textbf{Areas}{: LLM inference \& quantization, machine translation, adversarial robustness, distributed training}
+    }}
+ \end{itemize}
+
+%-----------PROJECTS-----------
+\begin{comment}
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Master Thesis} $|$ \emph{Python3, C\#, Keras, pandas, Unity, Git, Conda, cv2}}{September 2020 -- June 2021}
+          \resumeItemListStart
+            \resumeItem{Assembled a physical DonkeyCar using a JetsonNano computer and an RC car.}
+            \resumeItem{Created a simulated scene of a real-world lab room in Unity. Improved the Unity simulator to log testing metrics.}
+            \resumeItem{Collected data, trained and tested different DL models for self-driving in the simulated and real world tracks.}
+            \resumeItem{Adapted CycleGAN to translate simulated images to real ones and train a real-world Cross-track-error predictor.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Bachelor Thesis} $|$ \emph{Python3, Git, Unittest, Gensim, PyJNIus, Keras, SkLearn}}{May 2019 -- Sep 2019}
+          \resumeItemListStart
+            \resumeItem{Developed a binary classifier machine learning model that can tell if two scientific articles from the PUBMED database were published by the same author. Work commissioned by La Roche AG.}
+            \resumeItem{Implemented feature extraction code, also using a Java library inpython through the PyJNIus library. Used the Gensim library to apply doc2vec techniques, a novelty in the literature of AND.}
+            \resumeItem{Trained and tested different models: KNN, SVM, Random Forest and Feed-Forward Neural Networks.}
+            \resumeItem{Studied ambiguity level in the PubMed dataset by counting the cardinality of the namespaces.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+\end{comment}
+ 
+%\bibliographystyle{plain}
+%\bibliography{refs}
+\end{document}
